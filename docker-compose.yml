@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   ktmb-scraper:
     build: .
@@ -15,7 +13,7 @@ services:
       # Increase timeout for slow connections
       - PLAYWRIGHT_TIMEOUT=60000
     # Example command - override this when running
-    command: ["python", "ktmb_search.py", "--help"]
+    command: ["python", "monitor.py"]
     # Restart policy for monitoring scenarios
     restart: "no"
     # Resource limits
@@ -25,43 +23,3 @@ services:
           memory: 1G
         reservations:
           memory: 512M
-
-  # Service for monitoring specific dates
-  ktmb-monitor:
-    build: .
-    container_name: ktmb-monitor
-    volumes:
-      - ./output:/app/output
-      - ./.env:/app/.env:ro
-    environment:
-      - PLAYWRIGHT_HEADLESS=true
-      - PLAYWRIGHT_TIMEOUT=60000
-    # Example monitoring command
-    command: ["python", "ktmb_search.py", "--date", "2025-01-15", "--monitor", "--target-seats", "2", "--check-interval", "300"]
-    restart: "no"
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-        reservations:
-          memory: 512M
-
-  # Service for weekend searches
-  ktmb-weekend-search:
-    build: .
-    container_name: ktmb-weekend-search
-    volumes:
-      - ./output:/app/output
-      - ./.env:/app/.env:ro
-    environment:
-      - PLAYWRIGHT_HEADLESS=true
-      - PLAYWRIGHT_TIMEOUT=60000
-    # Example weekend search command
-    command: ["python", "ktmb_search.py", "--start-date", "2025-01-01", "--end-date", "2025-01-31", "--weekend-only"]
-    restart: "no"
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-        reservations:
-          memory: 512M 

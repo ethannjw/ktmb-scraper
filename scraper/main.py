@@ -1,12 +1,59 @@
 from playwright.sync_api import sync_playwright
-from config import ScraperSettings, Direction, DIRECTION_MAPPING, KTMB_CONFIG
+from config import ScraperSettings, Direction, DIRECTION_MAPPING, KTMB_CONFIG, TimeSlot, TIME_SLOT_RANGES
 from typing import Dict, Any
-import time
-from datetime import datetime
+import time as time_module
+from datetime import datetime, time as datetime_time
 
 class KTMBShuttleScraper:
     def __init__(self, settings: ScraperSettings):
         self.settings = settings
+
+    def _get_time_slot(self, time_str: str) -> TimeSlot:
+        """Determine which time slot a given time falls into"""
+        try:
+            # Parse time string (e.g., "19:00" or "7:00 PM")
+            from datetime import datetime
+            
+            # Try different time formats
+            time_formats = ["%H:%M", "%I:%M %p", "%I:%M%p"]
+            parsed_time = None
+            
+            for fmt in time_formats:
+                try:
+                    parsed_time = datetime.strptime(time_str.strip(), fmt).time()
+                    break
+                except ValueError:
+                    continue
+            
+            if not parsed_time:
+                # Default to evening if we can't parse the time
+                return TimeSlot.EVENING
+            
+            # Check which time slot this time falls into
+            for slot, (start_time, end_time) in TIME_SLOT_RANGES.items():
+                if slot == TimeSlot.NIGHT:
+                    # Night slot spans midnight, so check if time is after 22:00 or before 05:00
+                    if parsed_time >= start_time or parsed_time <= datetime_time(4, 59):
+                        return slot
+                else:
+                    # Regular time slots
+                    if start_time <= parsed_time <= end_time:
+                        return slot
+            
+            # Default to evening if no match found
+            return TimeSlot.EVENING
+            
+        except Exception as e:
+            print(f"Error parsing time '{time_str}': {e}")
+            return TimeSlot.EVENING
+
+    def _is_train_in_desired_time_slots(self, departure_time: str) -> bool:
+        """Check if a train's departure time falls within desired time slots"""
+        if not self.settings.desired_time_slots or len(self.settings.desired_time_slots) == 0:
+            return True  # If no time slots specified, accept all trains
+        
+        train_time_slot = self._get_time_slot(departure_time)
+        return train_time_slot in self.settings.desired_time_slots
 
     def run(self) -> Dict[str, Any]:
         with sync_playwright() as p:
@@ -302,14 +349,16 @@ class KTMBShuttleScraper:
                     
                     # Check if this train meets our criteria
                     if available_seats >= self.settings.min_available_seats:
-                        train_info = {
-                            "train_number": train_number,
-                            "departure_time": departure_time,
-                            "arrival_time": arrival_time,
-                            "available_seats": available_seats,
-                            "direction": self.settings.direction.value
-                        }
-                        available_trains.append(train_info)
+                        # Check if train is in desired time slots
+                        if self._is_train_in_desired_time_slots(departure_time):
+                            train_info = {
+                                "train_number": train_number,
+                                "departure_time": departure_time,
+                                "arrival_time": arrival_time,
+                                "available_seats": available_seats,
+                                "direction": self.settings.direction.value
+                            }
+                            available_trains.append(train_info)
                         
                 except (ValueError, IndexError) as e:
                     # Skip rows that can't be parsed

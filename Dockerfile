@@ -20,6 +20,7 @@ COPY config.py ./
 COPY ktmb_search.py ./
 COPY example_with_notifications.py ./
 COPY notifications.py ./
+COPY monitor.py ./
 
 # Install uv for dependency management
 RUN pip install uv

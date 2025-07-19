@@ -59,7 +59,7 @@ class NotificationSender:
             # Check if there are any available trains with sufficient seats
             available_trains = result.get("available_trains", [])
             return any(
-                train.get("available_seats", 0) >= self.config.min_seats_threshold 
+                train.get("available_seats", 0) >= self.config.min_seats_threshold
                 for train in available_trains
             )
         
