@@ -12,10 +12,14 @@ services:
       - PLAYWRIGHT_HEADLESS=true
       # Increase timeout for slow connections
       - PLAYWRIGHT_TIMEOUT=60000
+      # Force Python to run in unbuffered mode for immediate log output
+      - PYTHONUNBUFFERED=1
+
     # Example command - override this when running
-    command: ["python", "monitor.py"]
+    # -u is to force python to run in unbuffered mode for immediate log output
+    command: ["python", "-u", "monitor.py", "--continuous", "--interval", "60"]
     # Restart policy for monitoring scenarios
-    restart: "no"
+    restart: "unless-stopped"
     # Resource limits
     deploy:
       resources:

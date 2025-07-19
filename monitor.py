@@ -307,7 +307,7 @@ Examples:
     parser.add_argument(
         "--interval", "-i",
         type=int,
-        default=30,
+        default=60,
         help="Interval between checks in minutes (default: 30)"
     )
     parser.add_argument(
