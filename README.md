@@ -14,8 +14,8 @@ This tool automates the process of scraping train timings and seat availability 
 ## Installation
 1. Install dependencies:
    ```bash
-   pip install -r requirements.txt
-   playwright install
+   uv sync
+   uv run playwright install
    ```
 
 ## Usage
@@ -64,7 +64,7 @@ settings = ScraperSettings(
 
 ### Running Tests
 ```bash
-python test_scraper.py
+uv run python test_scraper.py
 ```
 
 ## Configuration
@@ -123,7 +123,7 @@ The scraper handles various scenarios:
 - `config.py` - Configuration and settings classes
 - `test_scraper.py` - Test script with examples
 - `SELECTOR_GUIDE.md` - Detailed element interaction guide
-- `requirements.txt` - Python dependencies
+- `pyproject.toml` - Project configuration and dependencies
 
 ## Folder Structure
 ```
@@ -135,7 +135,7 @@ ktmb-scraper/
 ├── config.py            # Settings and configuration
 ├── test_scraper.py      # Test examples
 ├── SELECTOR_GUIDE.md    # Element interaction guide
-├── requirements.txt     # Dependencies
+├── pyproject.toml       # Project configuration and dependencies
 └── README.md           # This file
 ```
 
