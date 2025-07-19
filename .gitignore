@@ -1,0 +1,9 @@
+.env
+__pycache__/*
+output/*
+.venv/*
+.vscode/*
+.pytest_cache/*
+.ruff_cache/*
+.mypy_cache/*
+.ruff_cache/*
