@@ -6,7 +6,7 @@ Configurable for any dates, directions, and time slots
 """
 
 from scraper.main import KTMBShuttleScraper
-from config import ScraperSettings, Direction, TimeSlot, TIME_SLOT_RANGES
+from utils.config import ScraperSettings, Direction, TimeSlot, TIME_SLOT_RANGES
 from datetime import date, timedelta, time
 import json
 import calendar

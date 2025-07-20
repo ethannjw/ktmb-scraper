@@ -1,6 +1,6 @@
-from config import ScraperSettings, Direction, TimeSlot
+from utils.config import ScraperSettings, Direction, TimeSlot
 from .main import KTMBShuttleScraper
-from .logging_config import setup_logging
+from utils.logging_config import setup_logging
 from datetime import date
 
 if __name__ == '__main__':

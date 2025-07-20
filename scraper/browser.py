@@ -1,8 +1,8 @@
 """Browser automation module for KTMB scraper."""
 
 from playwright.sync_api import sync_playwright, Page, Browser
-from .logging_config import get_logger
-from config import BROWSER_CONFIG, KTMB_CONFIG
+from utils.logging_config import get_logger
+from utils.config import BROWSER_CONFIG, KTMB_CONFIG
 from typing import Optional
 import time
 

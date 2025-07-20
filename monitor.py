@@ -17,9 +17,9 @@ from dotenv import load_dotenv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from scraper.main import KTMBShuttleScraper
-from config import ScraperSettings, Direction, TimeSlot
+from utils.config import ScraperSettings, Direction, TimeSlot
 from notifications import create_notification_sender
-from scraper.logging_config import setup_logging, get_logger
+from utils.logging_config import setup_logging, get_logger
 
 # Setup logging
 logger = setup_logging()

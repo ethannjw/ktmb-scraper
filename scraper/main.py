@@ -1,9 +1,9 @@
 from playwright.sync_api import sync_playwright
-from config import ScraperSettings, Direction, DIRECTION_MAPPING, KTMB_CONFIG, TimeSlot, TIME_SLOT_RANGES
+from utils.config import ScraperSettings, Direction, DIRECTION_MAPPING, KTMB_CONFIG, TimeSlot, TIME_SLOT_RANGES
 from typing import Dict, Any
 import time as time_module
 from datetime import datetime, time as datetime_time
-from .logging_config import setup_logging, LoggingConfig, get_logger
+from utils.logging_config import setup_logging, LoggingConfig, get_logger
 
 # Initialize logger with default configuration
 logger = setup_logging()
@@ -69,14 +69,14 @@ class KTMBShuttleScraper:
         return is_desired
 
     def run(self) -> Dict[str, Any]:
-        logger.info("Starting KTMB Shuttle scraping process")
+        logger.debug("Starting KTMB Shuttle scraping process")
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             
             try:
                 # Navigate to the KTMB Shuttle page
-                logger.info("Navigating to KTMB Shuttle page")
+                logger.debug("Navigating to KTMB Shuttle page")
                 page.goto('https://shuttleonline.ktmb.com.my/Home/Shuttle')
                 page.wait_for_load_state('networkidle')
                 
@@ -121,10 +121,10 @@ class KTMBShuttleScraper:
                     }
                 """)
                 page.wait_for_timeout(1000)
-                logger.info("Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)")
+                logger.debug("Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)")
             else:
                 # Default is JB -> SG, so no need to swap
-                logger.info("Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)")
+                logger.debug("Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)")
                     
         except Exception as e:
             logger.error(f"Error selecting direction: {e}", exc_info=True)
@@ -134,7 +134,7 @@ class KTMBShuttleScraper:
         try:
             # Use JavaScript to set the date directly - this works reliably
             date_str = self.settings.depart_date.strftime('%d %b %Y')  # "01 Aug 2025" format
-            logger.info(f"Setting departure date to: {date_str}")
+            logger.debug(f"Setting departure date to: {date_str}")
             
             page.evaluate(f"""
                 document.querySelector('input[name="OnwardDate"]').value = '{date_str}';
@@ -142,7 +142,7 @@ class KTMBShuttleScraper:
             """)
             page.wait_for_timeout(500)
             
-            logger.info(f"Departure date set successfully to: {date_str}")
+            logger.debug(f"Departure date set successfully to: {date_str}")
             
         except Exception as e:
             logger.error(f"Error selecting departure date: {e}", exc_info=True)
@@ -208,7 +208,7 @@ class KTMBShuttleScraper:
             # Click the search button
             search_button = page.get_by_role('button', name='SEARCH')
             search_button.click()
-            logger.info("Search button clicked")
+            logger.debug("Search button clicked")
             
             # Wait a moment for the search to process (reduced timeout)
             page.wait_for_timeout(1000)
@@ -219,14 +219,14 @@ class KTMBShuttleScraper:
             
             # If we were redirected to the results page, that's good
             if "ShuttleTrip" in current_url:
-                logger.info("Successfully redirected to results page")
+                logger.debug("Successfully redirected to results page")
                 return
             
             # Check for various possible outcomes on the search page
             try:
                 # Wait for results table to appear (faster timeout)
                 page.wait_for_selector('#tblTrainList', timeout=5000)
-                logger.info("Search completed successfully - results found")
+                logger.debug("Search completed successfully - results found")
             except:
                 logger.warning("Results table not found, checking for errors...")
                 
@@ -253,8 +253,10 @@ class KTMBShuttleScraper:
                     pass
                 
                 # Take a screenshot for debugging
-                page.screenshot(path="debug_screenshot.png")
-                logger.debug("Screenshot saved as debug_screenshot.png")
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                screenshot_path = f"output/debug_screenshot_{timestamp}.png"
+                page.screenshot(path=screenshot_path)
+                logger.debug(f"Screenshot saved as {screenshot_path}")
                 
                 # Wait a bit more for results
                 page.wait_for_timeout(3000)
@@ -294,8 +296,10 @@ class KTMBShuttleScraper:
             
             if not table_found:
                 # Take a screenshot to see what's on the page
-                page.screenshot(path="results_page_screenshot.png")
-                logger.warning("No results table found, screenshot saved as results_page_screenshot.png")
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                results_screenshot_path = f"output/results_page_screenshot_{timestamp}.png"
+                page.screenshot(path=results_screenshot_path)
+                logger.warning(f"No results table found, screenshot saved as {results_screenshot_path}")
                 
                 # Check if there's a "no results" message
                 no_results_selectors = [
@@ -390,7 +394,7 @@ class KTMBShuttleScraper:
                     logger.warning(f"Skipping row due to parsing error: {e}")
                     continue
             
-            logger.info(f"Successfully parsed {len(available_trains)} available trains out of {len(rows)} total trains")
+            logger.debug(f"Successfully parsed {len(available_trains)} available trains out of {len(rows)} total trains")
             
             return {
                 "success": True,

@@ -9,7 +9,7 @@ import requests
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 import logging
-from config import TrainTiming, ScrapingResult, Direction, DIRECTION_MAPPING
+from utils.config import TrainTiming, ScrapingResult, Direction, DIRECTION_MAPPING
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -59,7 +59,7 @@ class NotificationSender:
             # Check if there are any available trains with sufficient seats
             available_trains = result.get("available_trains", [])
             return any(
-                train.get("available_seats", 0) >= self.config.min_seats_threshold
+                train.get("available_seats", 0) >= self.config.min_seats_threshold 
                 for train in available_trains
             )
         

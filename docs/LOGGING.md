@@ -20,7 +20,7 @@ The logging system uses the following levels:
 ### Basic Usage
 
 ```python
-from config import ScraperSettings, Direction
+from utils.config import ScraperSettings, Direction
 from datetime import date
 from scraper.main import KTMBShuttleScraper
 
@@ -38,7 +38,7 @@ results = scraper.run()
 ### Custom Logging Configuration
 
 ```python
-from logging_config import setup_logging, LoggingConfig
+from utils.logging_config import setup_logging, LoggingConfig
 
 # Create custom configuration
 config = LoggingConfig(
@@ -62,7 +62,7 @@ results = scraper.run()
 Shows all internal details for troubleshooting:
 
 ```python
-from logging_config import setup_logging, get_debug_config
+from utils.logging_config import setup_logging, get_debug_config
 
 logger = setup_logging(get_debug_config())
 ```
@@ -73,7 +73,7 @@ logger = setup_logging(get_debug_config())
 Only important information and errors:
 
 ```python
-from logging_config import setup_logging, get_production_config
+from utils.logging_config import setup_logging, get_production_config
 
 logger = setup_logging(get_production_config())
 ```
@@ -84,7 +84,7 @@ logger = setup_logging(get_production_config())
 Errors only:
 
 ```python
-from logging_config import setup_logging, get_quiet_config
+from utils.logging_config import setup_logging, get_quiet_config
 
 logger = setup_logging(get_quiet_config())
 ```
@@ -195,7 +195,7 @@ The logging system is designed to be non-intrusive. Existing code will continue 
 For troubleshooting, use debug logging:
 
 ```python
-from logging_config import setup_logging, get_debug_config
+from utils.logging_config import setup_logging, get_debug_config
 
 logger = setup_logging(get_debug_config())
 # This will show all internal details and help identify issues

@@ -1,8 +1,8 @@
 """HTML parsing module for KTMB train data."""
 
 from playwright.sync_api import Page
-from .logging_config import get_logger
-from config import TrainTiming, TimeSlot, TIME_SLOT_RANGES
+from utils.logging_config import get_logger
+from utils.config import TrainTiming, TimeSlot, TIME_SLOT_RANGES
 from typing import List, Optional
 from datetime import time
 import re
@@ -32,7 +32,7 @@ class TrainDataParser:
                 logger.warning("No train rows found in table")
                 return trains
             
-            logger.info(f"Found {len(rows)} train rows to parse")
+            logger.debug(f"Found {len(rows)} train rows to parse")
             
             for i, row in enumerate(rows):
                 try:
@@ -44,7 +44,7 @@ class TrainDataParser:
                     logger.warning(f"Failed to parse row {i}: {e}")
                     continue
             
-            logger.info(f"Successfully parsed {len(trains)} trains")
+            logger.debug(f"Successfully parsed {len(trains)} trains")
             
         except Exception as e:
             logger.error(f"Failed to parse train table: {e}")
