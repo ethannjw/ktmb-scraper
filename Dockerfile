@@ -16,9 +16,7 @@ RUN apt-get update && apt-get install -y \
 # Copy project files
 COPY pyproject.toml uv.lock ./
 COPY scraper/ ./scraper/
-COPY config.py ./
-COPY ktmb_search.py ./
-COPY example_with_notifications.py ./
+COPY utils/ ./utils/
 COPY notifications.py ./
 COPY monitor.py ./
 
@@ -46,6 +44,3 @@ RUN chown -R scraper:scraper /ms-playwright
 
 # Switch to non-root user
 USER scraper
-
-# Default command (can be overridden)
-CMD ["python", "ktmb_search.py", "--help"] 

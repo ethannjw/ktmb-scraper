@@ -1,10 +1,12 @@
 services:
   ktmb-scraper:
     build: .
+    image: ethannjw/ktmb-scraper
     container_name: ktmb-scraper
     volumes:
       # Mount output directory to persist results
       - ./output:/app/output
+      - ./logs:/app/logs
       # Mount environment file if needed
       - ./.env:/app/.env:ro
     environment:

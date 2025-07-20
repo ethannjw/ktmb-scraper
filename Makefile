@@ -10,48 +10,35 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 	@echo ""
 	@echo "Examples:"
-	@echo "  make build"
-	@echo "  make search DATE=2025-01-15 DIRECTION=jb_to_sg"
-	@echo "  make monitor DATE=2025-01-15 SEATS=2"
-	@echo "  make weekend START=2025-01-01 END=2025-01-31"
-	@echo "  make schedule-cron SCHEDULE='0 8 * * *' COMMAND='search 2025-01-15 jb_to_sg'"
+	@echo "  make run-continuous"
+	@echo "  make weekend YEAR=2025 MONTH=10 TIMESLOT=evening"
 
 # Build targets
 build: ## Build the Docker image
 	@echo "Building KTMB scraper Docker image..."
-	docker-compose build
+	docker compose build
 	@echo "✅ Docker image built successfully!"
 
 build-no-cache: ## Build the Docker image without cache
 	@echo "Building KTMB scraper Docker image (no cache)..."
-	docker-compose build --no-cache
+	docker compose build --no-cache
 	@echo "✅ Docker image built successfully!"
 
 clean: ## Clean up Docker images and containers
 	@echo "Cleaning up Docker resources..."
-	docker-compose down --rmi all --volumes --remove-orphans
+	docker-compose down --rmi local --volumes
 	docker system prune -f
 	@echo "✅ Cleanup completed!"
 
 # Run targets
-run: ## Run the scraper with default settings
+run-continuous:
 	@echo "Running KTMB scraper..."
-	export PYTHONPATH=.
-	source .venv/bin/activate
-	python monitor.py 
+	python -u monitor.py --continuous --interval 60
 
-search: ## Search for a specific date (DATE=2025-01-15 DIRECTION=jb_to_sg)
-	@if [ -z "$(DATE)" ]; then \
-		echo "❌ Error: DATE is required. Usage: make search DATE=2025-08-15 DIRECTION=jb-to-sg"; \
-		exit 1; \
-	fi
+search-date:
 	@echo "🔍 Searching for date: $(DATE), direction: $(DIRECTION)"
-	docker-compose run --rm ktmb-scraper python ktmb_search.py --date $(DATE) --direction $(DIRECTION)
+	python monitor.py --date $(DATE) --direction $(DIRECTION)
 
-weekend: ## Search all weekends in date range (START=2025-01-01 END=2025-01-31)
-	@if [ -z "$(START)" ] || [ -z "$(END)" ]; then \
-		echo "❌ Error: START and END dates are required. Usage: make weekend START=2025-01-01 END=2025-01-31"; \
-		exit 1; \
-	fi
-	@echo "🏖️ Searching weekends from $(START) to $(END)"
-	docker-compose run --rm ktmb-scraper python ktmb_search.py --start-date $(START) --end-date $(END) --weekend-only
+weekend: 
+	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH) time slot $(TIMESLOT)"
+	python monitor.py --weekends --year $(YEAR) --month $(MONTH) --time-slots $(TIMESLOT)

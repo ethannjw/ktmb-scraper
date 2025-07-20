@@ -64,8 +64,30 @@ class KTMBMonitor:
         
         return result, settings
     
+    def search_weekend_round_trip(self, friday_date: date, sunday_date: date, time_slots: Optional[List[TimeSlot]] = None) -> tuple[dict, ScraperSettings]:
+        """Search for round-trip weekend trains (Friday SG->JB, Sunday JB->SG) in a single scrape"""
+        if time_slots is None:
+            time_slots = [TimeSlot.EVENING]  # Default to evening
+        
+        settings = ScraperSettings(
+            direction=Direction.SG_TO_JB,  # Start with SG->JB direction
+            depart_date=friday_date,
+            return_date=sunday_date,  # Add return date for round-trip search
+            num_adults=1,
+            min_available_seats=1,
+            desired_time_slots=time_slots
+        )
+        
+        logger.info(f"Searching for weekend round-trip: {friday_date.strftime('%A, %d %B %Y')} (SG->JB) to {sunday_date.strftime('%A, %d %B %Y')} (JB->SG)")
+        logger.info(f"Time slots: {[slot.value for slot in time_slots]}")
+        
+        scraper = KTMBShuttleScraper(settings)
+        result = scraper.run()
+        
+        return result, settings
+    
     def search_weekends(self, year: int, month: int, direction: Direction, time_slots: Optional[List[TimeSlot]] = None) -> List[tuple]:
-        """Search for weekend trains in a month"""
+        """Search for weekend trains in a month using round-trip searches for efficiency"""
         results = []
         today = date.today()
         
@@ -75,11 +97,18 @@ class KTMBMonitor:
             # Only search for future dates
             if current_date >= today:
                 if current_date.weekday() == 4:  # Friday
-                    result, settings = self.search_specific_date(current_date, Direction.SG_TO_JB, time_slots)
-                    results.append((result, settings))
-                elif current_date.weekday() == 6:  # Sunday
-                    result, settings = self.search_specific_date(current_date, Direction.JB_TO_SG, time_slots)
-                    results.append((result, settings))
+                    # Search for round-trip: Friday (SG->JB) and Sunday (JB->SG)
+                    friday_date = current_date
+                    sunday_date = current_date + timedelta(days=2)
+                    
+                    # Only search if Sunday is also in the same month
+                    if sunday_date.month == month:
+                        result, settings = self.search_weekend_round_trip(friday_date, sunday_date, time_slots)
+                        results.append((result, settings))
+                    else:
+                        # If Sunday is in next month, just search Friday one-way
+                        result, settings = self.search_specific_date(friday_date, Direction.SG_TO_JB, time_slots)
+                        results.append((result, settings))
             
             current_date += timedelta(days=1)
         
@@ -118,6 +147,24 @@ class KTMBMonitor:
             direction = kwargs['direction']
             time_slots = kwargs.get('time_slots')
             result, settings = self.search_specific_date(search_date, direction, time_slots)
+            
+            # Send notification
+            if self.notification_sender.send_notification(result, settings):
+                logger.info("Notification sent successfully!")
+            else:
+                logger.info("No notification sent")
+            
+            # Display results
+            self._display_results(result)
+            
+        elif search_type == "round_trip":
+            depart_date = kwargs['depart_date']
+            return_date = kwargs['return_date']
+            time_slots = kwargs.get('time_slots')
+            
+            logger.info(f"Searching for round-trip: {depart_date.strftime('%A, %d %B %Y')} to {return_date.strftime('%A, %d %B %Y')}")
+            
+            result, settings = self.search_weekend_round_trip(depart_date, return_date, time_slots)
             
             # Send notification
             if self.notification_sender.send_notification(result, settings):
@@ -168,18 +215,49 @@ class KTMBMonitor:
         """Display search results"""
         if result.get("success", False):
             available_trains = result.get("available_trains", [])
-            logger.info(f"Results: {len(available_trains)} trains found")
+            return_trains = result.get("return_trains", [])
             
-            if available_trains:
-                logger.info("Available Trains:")
-                for train in available_trains:
-                    seats = train.get("available_seats", 0)
-                    status = "🟢" if seats >= 5 else "🟡" if seats >= 2 else "🔴"
-                    logger.info(f"   {status} {train.get('train_number', 'Unknown')}: "
-                          f"{train.get('departure_time', '')} → {train.get('arrival_time', '')} "
-                          f"({seats} seats)")
+            # Check if this is a round-trip search
+            is_round_trip = bool(return_trains)
+            
+            if is_round_trip:
+                logger.info(f"Round-trip Results: {len(available_trains)} outbound trains, {len(return_trains)} return trains found")
+                
+                if available_trains:
+                    logger.info("Outbound Trains (SG→JB):")
+                    for train in available_trains:
+                        seats = train.get("available_seats", 0)
+                        status = "🟢" if seats >= 5 else "🟡" if seats >= 2 else "🔴"
+                        logger.info(f"   {status} {train.get('train_number', 'Unknown')}: "
+                              f"{train.get('departure_time', '')} → {train.get('arrival_time', '')} "
+                              f"({seats} seats)")
+                else:
+                    logger.info("No available outbound trains found")
+                
+                if return_trains:
+                    logger.info("Return Trains (JB→SG):")
+                    for train in return_trains:
+                        seats = train.get("available_seats", 0)
+                        status = "🟢" if seats >= 5 else "🟡" if seats >= 2 else "🔴"
+                        logger.info(f"   {status} {train.get('train_number', 'Unknown')}: "
+                              f"{train.get('departure_time', '')} → {train.get('arrival_time', '')} "
+                              f"({seats} seats)")
+                else:
+                    logger.info("No available return trains found")
             else:
-                logger.info("No available trains found")
+                # Single direction search
+                logger.info(f"Results: {len(available_trains)} trains found")
+                
+                if available_trains:
+                    logger.info("Available Trains:")
+                    for train in available_trains:
+                        seats = train.get("available_seats", 0)
+                        status = "🟢" if seats >= 5 else "🟡" if seats >= 2 else "🔴"
+                        logger.info(f"   {status} {train.get('train_number', 'Unknown')}: "
+                              f"{train.get('departure_time', '')} → {train.get('arrival_time', '')} "
+                              f"({seats} seats)")
+                else:
+                    logger.info("No available trains found")
         else:
             logger.error(f"Search failed: {result.get('error', 'Unknown error')}")
     
@@ -252,6 +330,12 @@ Examples:
   # Single search for afternoon trains only
   python monitor.py --date 2025-08-15 --direction jb-to-sg --time-slots afternoon
 
+  # Round-trip search for specific dates (Friday to Sunday)
+  python monitor.py --round-trip --depart-date 2025-08-15 --return-date 2025-08-17
+
+  # Round-trip search with specific time slots
+  python monitor.py --round-trip --depart-date 2025-08-15 --return-date 2025-08-17 --time-slots morning evening
+
   # Continuous monitoring for next 2 months every 30 minutes
   python monitor.py --continuous --interval 30
 
@@ -263,6 +347,9 @@ Examples:
 
   # Continuous monitoring for weekends with early morning and evening trains
   python monitor.py --weekends --year 2025 --month 8 --time-slots early_morning evening --continuous --interval 120
+
+  # Continuous monitoring for round-trip every 30 minutes
+  python monitor.py --round-trip --depart-date 2025-08-15 --return-date 2025-08-17 --continuous --interval 30
         """
     )
     
@@ -277,6 +364,11 @@ Examples:
         action="store_true",
         help="Search weekends in a specific month (requires --year and --month)"
     )
+    parser.add_argument(
+        "--round-trip", "-rt",
+        action="store_true",
+        help="Search for round-trip trains (requires --depart-date and --return-date)"
+    )
     
     # Weekend search options
     parser.add_argument(
@@ -289,6 +381,18 @@ Examples:
         type=int,
         choices=range(1, 13),
         help="Month for weekend search (required with --weekends)"
+    )
+    
+    # Round-trip search options
+    parser.add_argument(
+        "--depart-date", "-dd",
+        type=parse_date,
+        help="Departure date for round-trip search (YYYY-MM-DD format, required with --round-trip)"
+    )
+    parser.add_argument(
+        "--return-date", "-rd",
+        type=parse_date,
+        help="Return date for round-trip search (YYYY-MM-DD format, required with --round-trip)"
     )
     
     # Direction option
@@ -326,8 +430,14 @@ Examples:
         if args.year is None or args.month is None:
             parser.error("--year and --month are required when using --weekends")
     
+    if args.round_trip:
+        if args.depart_date is None or args.return_date is None:
+            parser.error("--depart-date and --return-date are required when using --round-trip")
+        if args.depart_date >= args.return_date:
+            parser.error("--return-date must be after --depart-date")
+    
     # Check if any search type is specified
-    if not args.date and not args.weekends:
+    if not args.date and not args.weekends and not args.round_trip:
         # Default to next two months weekends
         args.weekends = True
         logger.info("No specific search type provided, defaulting to weekends for next 2 months")
@@ -347,7 +457,14 @@ Examples:
         time_slots = [TimeSlot(slot) for slot in args.time_slots]
     
     # Determine search type and parameters
-    if args.date:
+    if args.round_trip:
+        search_type = "round_trip"
+        kwargs = {
+            "depart_date": args.depart_date,
+            "return_date": args.return_date,
+            "time_slots": time_slots
+        }
+    elif args.date:
         search_type = "specific_date"
         direction = Direction.JB_TO_SG if args.direction == "jb-to-sg" else Direction.SG_TO_JB
         kwargs = {

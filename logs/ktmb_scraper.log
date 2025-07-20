@@ -333,3 +333,1742 @@
 2025-07-20 08:41:30,208 - scraper.logging_config - INFO - No notification for Sunday, 28 September
 2025-07-20 08:41:30,209 - scraper.logging_config - INFO - Results: 0 trains found
 2025-07-20 08:41:30,210 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:44:56,002 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 08:44:56,002 - scraper.logging_config - INFO - ============================================================
+2025-07-20 08:44:56,003 - scraper.logging_config - INFO - KTMB Monitor - 2025-07-20 08:44:56
+2025-07-20 08:44:56,004 - scraper.logging_config - INFO - ============================================================
+2025-07-20 08:44:56,005 - scraper.logging_config - INFO - Searching for trains on Friday, 25 July 2025
+2025-07-20 08:44:56,005 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:44:56,005 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:44:56,006 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-07-25, passengers=1
+2025-07-20 08:44:56,006 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:45:01,469 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:45:03,253 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:45:03,261 - scraper.logging_config - INFO - Setting departure date to: 25 Jul 2025
+2025-07-20 08:45:03,787 - scraper.logging_config - INFO - Departure date set successfully to: 25 Jul 2025
+2025-07-20 08:45:03,886 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:45:03,939 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:45:04,954 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:45:15,729 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:45:15,781 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:45:15,792 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:45:15,793 - scraper.logging_config - INFO - No notification sent
+2025-07-20 08:45:15,793 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:45:15,794 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:52:55,567 - utils.logging_config - INFO - Test logging message
+2025-07-20 08:53:08,438 - utils.logging_config - INFO - Test logging message
+2025-07-20 08:54:43,888 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 08:54:43,889 - utils.logging_config - INFO - ============================================================
+2025-07-20 08:54:43,890 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 08:54:43
+2025-07-20 08:54:43,891 - utils.logging_config - INFO - ============================================================
+2025-07-20 08:54:43,895 - utils.logging_config - INFO - Searching for trains on Thursday, 24 July 2025
+2025-07-20 08:54:43,896 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:54:43,897 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:54:43,897 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-07-24, passengers=1
+2025-07-20 08:54:43,901 - utils.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:54:48,238 - utils.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:54:49,958 - utils.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:54:49,981 - utils.logging_config - INFO - Setting departure date to: 24 Jul 2025
+2025-07-20 08:54:50,505 - utils.logging_config - INFO - Departure date set successfully to: 24 Jul 2025
+2025-07-20 08:54:50,600 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:54:50,653 - utils.logging_config - INFO - Search button clicked
+2025-07-20 08:54:51,705 - utils.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:55:03,208 - utils.logging_config - INFO - Successfully parsed 1 available trains out of 14 total trains
+2025-07-20 08:55:03,272 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:55:03,279 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 08:55:03,280 - utils.logging_config - INFO - No notification sent
+2025-07-20 08:55:03,280 - utils.logging_config - INFO - Results: 1 trains found
+2025-07-20 08:55:03,281 - utils.logging_config - INFO - Available Trains:
+2025-07-20 08:55:03,282 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 92: 21:15 → 21:20 (49 seats)
+2025-07-20 09:00:29,570 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:00:29,571 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:00:29,571 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:00:29
+2025-07-20 09:00:29,571 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:00:29,572 - utils.logging_config - INFO - Searching for trains on Thursday, 24 July 2025
+2025-07-20 09:00:29,573 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:00:29,573 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:00:29,574 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-07-24, passengers=1
+2025-07-20 09:00:39,241 - utils.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 09:00:41,231 - utils.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 09:00:41,232 - utils.logging_config - INFO - Setting departure date to: 24 Jul 2025
+2025-07-20 09:00:41,767 - utils.logging_config - INFO - Departure date set successfully to: 24 Jul 2025
+2025-07-20 09:00:41,842 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:00:53,911 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:00:53,918 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:00:53,919 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:00:53,920 - utils.logging_config - INFO - Results: 1 trains found
+2025-07-20 09:00:53,920 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:00:53,921 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 92: 21:15 → 21:20 (49 seats)
+2025-07-20 09:01:37,845 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:01:37,845 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:01:37,846 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:01:37
+2025-07-20 09:01:37,846 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:01:37,847 - utils.logging_config - INFO - Searching for trains on Wednesday, 23 July 2025
+2025-07-20 09:01:37,848 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:01:37,848 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:01:37,848 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-07-23, passengers=1
+2025-07-20 09:01:50,196 - utils.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 09:01:50,719 - utils.logging_config - INFO - Departure date set successfully to: 23 Jul 2025
+2025-07-20 09:01:50,807 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:02:02,693 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:02:02,700 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:02:02,701 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:02:02,701 - utils.logging_config - INFO - Results: 1 trains found
+2025-07-20 09:02:02,702 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:02:02,703 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 92: 21:15 → 21:20 (203 seats)
+2025-07-20 09:02:46,289 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:02:46,289 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:02:46,290 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:02:46
+2025-07-20 09:02:46,291 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:02:46,292 - utils.logging_config - INFO - Searching for trains on Wednesday, 23 July 2025
+2025-07-20 09:02:46,292 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:02:46,293 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:02:46,293 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-07-23, passengers=1
+2025-07-20 09:02:59,222 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:03:10,970 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:03:10,977 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:03:10,978 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:03:10,979 - utils.logging_config - INFO - Results: 1 trains found
+2025-07-20 09:03:10,979 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:03:10,980 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 92: 21:15 → 21:20 (203 seats)
+2025-07-20 09:16:41,582 - utils.logging_config - INFO - No specific search type provided, defaulting to weekends for next 2 months
+2025-07-20 09:16:41,584 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:16:41,585 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:16:41,585 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:16:41
+2025-07-20 09:16:41,586 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:16:41,586 - utils.logging_config - INFO - Searching weekends for the next 2 months
+2025-07-20 09:16:41,587 - utils.logging_config - INFO - Searching weekends in August 2025
+2025-07-20 09:16:41,588 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 01 August 2025 (SG->JB) to Sunday, 03 August 2025 (JB->SG)
+2025-07-20 09:16:41,589 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:16:41,589 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-01, passengers=1
+2025-07-20 09:17:18,786 - utils.logging_config - ERROR - Error selecting return date: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Return")
+    - locator resolved to <input readonly value="" type="text" id="ReturnDate" name="ReturnDate" placeholder="Return" data-rule-isdate="true" class="close-others form-control text-center bg-white"/>
+    - fill("03/08/2025")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+      - waiting 100ms
+    60 × waiting for element to be visible, enabled and editable
+       - element is not editable
+     - retrying fill action
+       - waiting 500ms
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 180, in _select_return_date
+    return_field.fill(return_date_str)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15851, in fill
+    self._sync(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 212, in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 562, in fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for get_by_role("textbox", name="Return")
+    - locator resolved to <input readonly value="" type="text" id="ReturnDate" name="ReturnDate" placeholder="Return" data-rule-isdate="true" class="close-others form-control text-center bg-white"/>
+    - fill("03/08/2025")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+      - waiting 100ms
+    60 × waiting for element to be visible, enabled and editable
+       - element is not editable
+     - retrying fill action
+       - waiting 500ms
+
+2025-07-20 09:17:18,867 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:17:19,953 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:17:19,985 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:17:20,028 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:17:20,035 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 08 August 2025 (SG->JB) to Sunday, 10 August 2025 (JB->SG)
+2025-07-20 09:17:20,035 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:17:20,036 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-08, passengers=1
+2025-07-20 09:17:51,208 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:17:51,214 - utils.logging_config - ERROR - Error selecting return date: Locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Return")
+    - locator resolved to <input readonly value="" type="text" id="ReturnDate" name="ReturnDate" placeholder="Return" data-rule-isdate="true" class="close-others form-control text-center bg-white"/>
+    - fill("10/08/2025")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+      - waiting 100ms
+    46 × waiting for element to be visible, enabled and editable
+       - element is not editable
+     - retrying fill action
+       - waiting 500ms
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 180, in _select_return_date
+    # Fill the return date
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15851, in fill
+    self._sync(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 212, in fill
+    return await self._frame.fill(self._selector, strict=True, **params)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 562, in fill
+    await self._channel.send("fill", self._timeout, locals_to_params(locals()))
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for get_by_role("textbox", name="Return")
+    - locator resolved to <input readonly value="" type="text" id="ReturnDate" name="ReturnDate" placeholder="Return" data-rule-isdate="true" class="close-others form-control text-center bg-white"/>
+    - fill("10/08/2025")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not editable
+    - retrying fill action
+      - waiting 100ms
+    46 × waiting for element to be visible, enabled and editable
+       - element is not editable
+     - retrying fill action
+       - waiting 500ms
+
+2025-07-20 09:17:51,239 - utils.logging_config - ERROR - Error selecting passengers: Locator.click: Target page, context or browser has been closed
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 194, in _select_passengers
+    # Select the passenger dropdown
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15505, in click
+    self._sync(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Locator.click: Target page, context or browser has been closed
+2025-07-20 09:17:51,258 - utils.logging_config - ERROR - Error during search: Locator.click: Connection closed while reading from the driver
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 210, in _perform_search
+    # Click the search button
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/sync_api/_generated.py", line 15505, in click
+    self._sync(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_locator.py", line 160, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_frame.py", line 521, in click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/.venv/lib/python3.10/site-packages/playwright/_impl/_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+Exception: Locator.click: Connection closed while reading from the driver
+2025-07-20 09:17:52,567 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:17:53,385 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:15,813 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:16,313 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:16,481 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:16,633 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:16,787 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:16,954 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:21:17,091 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 09:24:29,143 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:24:29,144 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:24:29,144 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:24:29
+2025-07-20 09:24:29,145 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:24:29,145 - utils.logging_config - INFO - Searching for round-trip: Friday, 15 August 2025 to Sunday, 17 August 2025
+2025-07-20 09:24:29,146 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 09:24:29,147 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:24:29,147 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 09:24:36,974 - utils.logging_config - ERROR - Could not find departure date field with any selector
+2025-07-20 09:24:36,975 - utils.logging_config - ERROR - Error selecting departure date: Departure date field not found
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 171, in _select_departure_date
+    raise Exception("Departure date field not found")
+Exception: Departure date field not found
+2025-07-20 09:24:37,023 - utils.logging_config - ERROR - Scraping process failed: Departure date field not found
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 89, in run
+    self._select_departure_date(page)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 179, in _select_departure_date
+    raise e
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 171, in _select_departure_date
+    raise Exception("Departure date field not found")
+Exception: Departure date field not found
+2025-07-20 09:24:37,033 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:24:37,034 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:24:37,035 - utils.logging_config - ERROR - Search failed: Departure date field not found
+2025-07-20 09:25:19,691 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:25:19,692 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:25:19,693 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:25:19
+2025-07-20 09:25:19,693 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:25:19,694 - utils.logging_config - INFO - Searching for round-trip: Friday, 15 August 2025 to Sunday, 17 August 2025
+2025-07-20 09:25:19,695 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 09:25:19,696 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:25:19,696 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 09:25:28,412 - utils.logging_config - ERROR - Could not find departure date field with any selector
+2025-07-20 09:25:28,413 - utils.logging_config - ERROR - Error selecting departure date: Departure date field not found
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 171, in _select_departure_date
+    raise Exception("Departure date field not found")
+Exception: Departure date field not found
+2025-07-20 09:25:28,442 - utils.logging_config - ERROR - Scraping process failed: Departure date field not found
+Traceback (most recent call last):
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 89, in run
+    self._select_departure_date(page)
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 179, in _select_departure_date
+    raise e
+  File "/mnt/c/Users/ethan/apps/ktmb-scraper/ktmb-scraper/scraper/main.py", line 171, in _select_departure_date
+    raise Exception("Departure date field not found")
+Exception: Departure date field not found
+2025-07-20 09:25:28,450 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:25:28,451 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:25:28,451 - utils.logging_config - ERROR - Search failed: Departure date field not found
+2025-07-20 09:33:19,202 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:33:19,203 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:33:19,203 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:33:19
+2025-07-20 09:33:19,204 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:33:19,205 - utils.logging_config - INFO - Searching for round-trip: Friday, 15 August 2025 to Sunday, 17 August 2025
+2025-07-20 09:33:19,206 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 09:33:19,206 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:33:19,207 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 09:33:26,698 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:33:27,777 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:33:27,821 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:33:27,857 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:33:27,864 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:33:27,865 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:33:27,866 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:33:27,866 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:34:11,698 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:34:11,698 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:34:11,699 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:34:11
+2025-07-20 09:34:11,700 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:34:11,700 - utils.logging_config - INFO - Searching for round-trip: Friday, 15 August 2025 to Sunday, 17 August 2025
+2025-07-20 09:34:11,701 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 09:34:11,701 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 09:34:11,702 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 09:34:24,473 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:34:25,704 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:34:26,862 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:34:27,151 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:34:27,158 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:34:27,159 - utils.logging_config - INFO - No notification sent
+2025-07-20 09:34:27,160 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:34:27,160 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:38:57,189 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:38:57,190 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:38:57,190 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:38:57
+2025-07-20 09:38:57,191 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:38:57,192 - utils.logging_config - INFO - Searching weekends in August 2025
+2025-07-20 09:38:57,193 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:38:57,203 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 01 August 2025 (SG->JB) to Sunday, 03 August 2025 (JB->SG)
+2025-07-20 09:38:57,207 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:38:57,210 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-01, return_date=2025-08-03, passengers=1
+2025-07-20 09:39:05,472 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:39:06,578 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:39:07,450 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:39:07,495 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:39:07,503 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 08 August 2025 (SG->JB) to Sunday, 10 August 2025 (JB->SG)
+2025-07-20 09:39:07,504 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:39:07,505 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-08, return_date=2025-08-10, passengers=1
+2025-07-20 09:39:15,072 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:39:16,162 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:39:17,258 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:39:17,298 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:39:17,306 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 09:39:17,307 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:39:17,308 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 09:39:24,617 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:39:25,696 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:39:25,732 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:39:25,777 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:39:25,785 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 22 August 2025 (SG->JB) to Sunday, 24 August 2025 (JB->SG)
+2025-07-20 09:39:25,786 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:39:25,786 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-22, return_date=2025-08-24, passengers=1
+2025-07-20 09:39:33,606 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:39:34,690 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:39:35,664 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:39:35,709 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:39:35,717 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 29 August 2025 (SG->JB) to Sunday, 31 August 2025 (JB->SG)
+2025-07-20 09:39:35,717 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:39:35,718 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-29, return_date=2025-08-31, passengers=1
+2025-07-20 09:39:43,026 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:39:44,099 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:39:45,027 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:39:45,065 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:39:45,073 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:39:45,074 - utils.logging_config - INFO - No notification for Friday, 01 August
+2025-07-20 09:39:45,075 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:39:45,075 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:39:45,076 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:39:45,076 - utils.logging_config - INFO - No notification for Friday, 08 August
+2025-07-20 09:39:45,077 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:39:45,077 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:39:45,078 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:39:45,078 - utils.logging_config - INFO - No notification for Friday, 15 August
+2025-07-20 09:39:45,079 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:39:45,079 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:39:45,080 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:39:45,080 - utils.logging_config - INFO - No notification for Friday, 22 August
+2025-07-20 09:39:45,081 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:39:45,081 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:39:45,082 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:39:45,083 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (145 seats)
+2025-07-20 09:39:45,084 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:39:45,084 - utils.logging_config - INFO - No notification for Friday, 29 August
+2025-07-20 09:39:45,084 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:39:45,085 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:39:45,086 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:39:45,086 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (245 seats)
+2025-07-20 09:46:14,384 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:46:14,385 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:46:14
+2025-07-20 09:46:14,385 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:46:14,386 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 09:46:14,386 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:46:14,387 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 09:46:14,388 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:46:14,388 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 09:46:22,282 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:46:23,383 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:46:24,368 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:46:24,405 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:46:24,413 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 09:46:24,414 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:46:24,415 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 09:46:32,466 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:46:33,555 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:46:34,638 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:46:34,926 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:46:34,947 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 09:46:34,948 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:46:34,949 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 09:46:43,141 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:46:44,346 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:46:46,488 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:46:46,518 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:46:46,527 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 09:46:46,528 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:46:46,529 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 09:46:54,757 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:46:55,835 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:46:57,118 - utils.logging_config - INFO - Round-trip results: 0 outbound, 1 return trains
+2025-07-20 09:46:57,163 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:46:57,171 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 09:46:57,172 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:46:57,173 - utils.logging_config - INFO - Time slots: ['early_morning', 'evening']
+2025-07-20 09:46:57,173 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 09:47:04,726 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:47:16,815 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:47:16,823 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:47:16,824 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 09:47:16,824 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:47:16,825 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:47:16,825 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:47:16,826 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (148 seats)
+2025-07-20 09:47:16,827 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:47:16,827 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 09:47:16,828 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:47:16,828 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:47:16,829 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:47:16,830 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (305 seats)
+2025-07-20 09:47:16,830 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:47:16,831 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 09:47:16,831 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:47:16,832 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:47:16,832 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:47:16,833 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (259 seats)
+2025-07-20 09:47:16,833 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:47:16,834 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 09:47:16,834 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 1 return trains found
+2025-07-20 09:47:16,835 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:47:16,835 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:47:16,836 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (287 seats)
+2025-07-20 09:47:17,529 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 09:47:17,530 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 09:47:17,531 - utils.logging_config - INFO - Notification sent for Friday, 31 October
+2025-07-20 09:47:17,531 - utils.logging_config - INFO - Results: 1 trains found
+2025-07-20 09:47:17,532 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:47:17,533 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 72: 08:30 → 08:35 (299 seats)
+2025-07-20 09:48:15,959 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:48:15,959 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:48:15
+2025-07-20 09:48:15,960 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:48:15,960 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 09:48:15,961 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:48:15,962 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 09:48:15,962 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:48:15,963 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 09:48:24,210 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:48:25,281 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:48:26,292 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:48:26,335 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:48:26,343 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 09:48:26,344 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:48:26,344 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 09:48:34,235 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:48:35,320 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:48:36,211 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:48:36,251 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:48:36,260 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 09:48:36,261 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:48:36,262 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 09:48:44,154 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:48:45,232 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:48:46,271 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:48:46,311 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:48:46,319 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 09:48:46,319 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:48:46,320 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 09:48:54,238 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:48:55,319 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:48:57,303 - utils.logging_config - INFO - Round-trip results: 0 outbound, 5 return trains
+2025-07-20 09:48:57,347 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:48:57,355 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 09:48:57,356 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:48:57,357 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:48:57,357 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 09:49:07,554 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:49:19,513 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:49:19,520 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:49:19,521 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 09:49:19,522 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:49:19,523 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:49:19,524 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:49:19,524 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 09:49:19,525 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 09:49:19,525 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 09:49:19,526 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:49:19,527 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:49:19,527 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 09:49:19,528 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:49:19,528 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:49:19,529 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:49:19,529 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 09:49:19,530 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 09:49:19,530 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 09:49:19,531 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:49:19,531 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:49:19,532 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 09:49:19,533 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:49:19,533 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:49:19,534 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:49:19,535 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+2025-07-20 09:49:19,535 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+2025-07-20 09:49:19,536 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+2025-07-20 09:49:19,536 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 09:49:19,536 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:49:19,537 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 09:49:19,538 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 5 return trains found
+2025-07-20 09:49:19,538 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:49:19,539 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:49:19,539 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 09:49:19,540 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 09:49:19,540 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 09:49:19,541 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 09:49:19,541 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 09:49:20,239 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 09:49:20,240 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 09:49:20,240 - utils.logging_config - INFO - Notification sent for Friday, 31 October
+2025-07-20 09:49:20,241 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 09:49:20,241 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:49:20,242 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 09:49:20,242 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 09:49:20,242 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 09:49:20,243 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 09:49:20,243 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 09:55:14,918 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:55:14,919 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:55:14,920 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:55:14
+2025-07-20 09:55:14,921 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:55:14,921 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 09:55:14,922 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:55:14,922 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 09:55:14,922 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:55:14,923 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 09:55:22,792 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:55:23,894 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:55:25,115 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:55:25,159 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:55:25,167 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 09:55:25,168 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:55:25,168 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 09:55:33,117 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:55:34,194 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:55:35,348 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:55:35,380 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:55:35,391 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 09:55:35,392 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:55:35,393 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 09:55:44,240 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:55:45,338 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:55:47,037 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:55:47,076 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:55:47,084 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 09:55:47,085 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:55:47,086 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 09:55:54,903 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:55:56,000 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:55:57,126 - utils.logging_config - INFO - Round-trip results: 0 outbound, 5 return trains
+2025-07-20 09:55:57,175 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:55:57,184 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 09:55:57,185 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:55:57,185 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:55:57,186 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 09:56:06,161 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:56:18,200 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:56:18,208 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:56:18,208 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 09:56:18,209 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:56:18,210 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:56:18,210 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:56:18,211 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 09:56:18,212 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 09:56:18,212 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 09:56:18,213 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:56:18,213 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:56:18,214 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 09:56:18,214 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:56:18,215 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:56:18,215 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:56:18,216 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 09:56:18,217 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 09:56:18,217 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 09:56:18,218 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:56:18,218 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:56:18,219 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 09:56:18,219 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:56:18,220 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:56:18,220 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:56:18,221 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+2025-07-20 09:56:18,221 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+2025-07-20 09:56:18,222 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+2025-07-20 09:56:18,222 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 09:56:18,223 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:56:18,223 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 09:56:18,224 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 5 return trains found
+2025-07-20 09:56:18,224 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:56:18,225 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:56:18,225 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 09:56:18,226 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 09:56:18,226 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 09:56:18,227 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 09:56:18,227 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 09:56:18,228 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:56:18,229 - utils.logging_config - INFO - No notification for Friday, 31 October
+2025-07-20 09:56:18,229 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 09:56:18,230 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:56:18,230 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 09:56:18,231 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 09:56:18,231 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 09:56:18,232 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 09:56:18,233 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 09:57:53,654 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 09:57:53,655 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:57:53,655 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 09:57:53
+2025-07-20 09:57:53,656 - utils.logging_config - INFO - ============================================================
+2025-07-20 09:57:53,657 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 09:57:53,657 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:57:53,658 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 09:57:53,659 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:57:53,660 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 09:58:05,489 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:58:06,586 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:58:07,664 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:58:07,708 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:58:07,731 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 09:58:07,732 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:58:07,733 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 09:58:15,507 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:58:16,591 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:58:16,628 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:58:16,668 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:58:16,677 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 09:58:16,678 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:58:16,679 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 09:58:24,899 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:58:26,009 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:58:27,287 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 09:58:27,329 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:58:27,338 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 09:58:27,339 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:58:27,340 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 09:58:34,962 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:58:36,041 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 09:58:36,076 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 09:58:36,116 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:58:36,125 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 09:58:36,125 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 09:58:36,126 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 09:58:36,127 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 09:58:43,345 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 09:58:55,322 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 09:58:55,330 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,331 - notifications - INFO - NOTIFICATION CONTENT:
+2025-07-20 09:58:55,332 - notifications - INFO - Subject: 🚂 KTMB Return Available - Friday, 03 October 2025
+2025-07-20 09:58:55,333 - notifications - INFO - Body: **KTMB Shuttle Search Results**
+**Date:** Friday, 03 October 2025
+**Type:** Round-Trip
+**Outbound:** Friday, 03 October 2025
+**Return:** Sunday, 05 October 2025
+**Searched at:** 2025-07-20 09:58:55
+
+❌ No trains available for Outbound Trains (SG→JB)
+
+✅ 4 trains available for Return Trains (JB→SG):
+   🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+   🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+   🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+   🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:58:55,333 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,334 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:58:55,334 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 09:58:55,335 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:58:55,335 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:58:55,336 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:58:55,337 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 09:58:55,337 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 09:58:55,338 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 09:58:55,338 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 09:58:55,339 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:58:55,339 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 09:58:55,339 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:58:55,340 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:58:55,341 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,341 - notifications - INFO - NOTIFICATION CONTENT:
+2025-07-20 09:58:55,342 - notifications - INFO - Subject: 🚂 KTMB Return Available - Friday, 17 October 2025
+2025-07-20 09:58:55,342 - notifications - INFO - Body: **KTMB Shuttle Search Results**
+**Date:** Friday, 17 October 2025
+**Type:** Round-Trip
+**Outbound:** Friday, 17 October 2025
+**Return:** Sunday, 19 October 2025
+**Searched at:** 2025-07-20 09:58:55
+
+❌ No trains available for Outbound Trains (SG→JB)
+
+✅ 4 trains available for Return Trains (JB→SG):
+   🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+   🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+   🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+   🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 09:58:55,343 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,343 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:58:55,344 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 09:58:55,344 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 09:58:55,345 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 09:58:55,345 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 09:58:55,346 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+2025-07-20 09:58:55,346 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+2025-07-20 09:58:55,347 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+2025-07-20 09:58:55,348 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 09:58:55,349 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 09:58:55,349 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 09:58:55,350 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 09:58:55,351 - utils.logging_config - INFO - No available trains found
+2025-07-20 09:58:55,351 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,352 - notifications - INFO - NOTIFICATION CONTENT:
+2025-07-20 09:58:55,352 - notifications - INFO - Subject: 🚂 KTMB Trains Available - Friday, 31 October 2025
+2025-07-20 09:58:55,353 - notifications - INFO - Body: **KTMB Shuttle Search Results**
+**Date:** Friday, 31 October 2025
+**Direction:** Woodlands - JB Sentral
+**Searched at:** 2025-07-20 09:58:55
+
+✅ 5 trains available for Available Trains:
+   🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+   🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+   🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+   🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+   🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 09:58:55,353 - notifications - INFO - ============================================================
+2025-07-20 09:58:55,354 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 09:58:55,354 - utils.logging_config - INFO - No notification for Friday, 31 October
+2025-07-20 09:58:55,355 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 09:58:55,355 - utils.logging_config - INFO - Available Trains:
+2025-07-20 09:58:55,356 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 09:58:55,357 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 09:58:55,357 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 09:58:55,358 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 09:58:55,358 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 10:03:39,358 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:39,564 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:39,718 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:39,883 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:40,052 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:40,206 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:03:40,360 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:09:05,349 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:09:05,350 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:09:05
+2025-07-20 10:09:05,351 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:09:05,352 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 10:09:05,352 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:09:05,355 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:09:05,356 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:09:05,357 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:09:14,936 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:09:21,045 - utils.logging_config - WARNING - Results table not found, checking for errors...
+2025-07-20 10:09:24,216 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:09:25,588 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:09:25,642 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:09:25,650 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 10:09:25,651 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:09:25,652 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 10:09:34,976 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:09:36,076 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:09:37,475 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:09:37,535 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:09:37,544 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 10:09:37,544 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:09:37,546 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 10:09:47,305 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:09:48,400 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:09:48,437 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:09:48,482 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:09:48,490 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 10:09:48,490 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:09:48,492 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 10:09:57,343 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:09:58,442 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:09:59,768 - utils.logging_config - INFO - Round-trip results: 0 outbound, 5 return trains
+2025-07-20 10:09:59,823 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:09:59,832 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 10:09:59,832 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:09:59,833 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:09:59,834 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 10:10:09,805 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:10:22,107 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:10:22,805 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:22,806 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:22,807 - utils.logging_config - INFO - Notification sent for Friday, 03 October
+2025-07-20 10:10:22,807 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:10:22,808 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:10:22,808 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:10:22,809 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:10:22,809 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:10:22,810 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:10:22,810 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:10:23,480 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:23,481 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:23,482 - utils.logging_config - INFO - Notification sent for Friday, 10 October
+2025-07-20 10:10:23,483 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:10:23,484 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:10:23,485 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:10:23,485 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 10:10:23,486 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 10:10:23,487 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:10:23,488 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:10:23,488 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:10:23,489 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 10:10:23,489 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:10:23,490 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:10:24,169 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:24,170 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:24,171 - utils.logging_config - INFO - Notification sent for Friday, 24 October
+2025-07-20 10:10:24,172 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 5 return trains found
+2025-07-20 10:10:24,172 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:10:24,173 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:10:24,173 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 10:10:24,174 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 10:10:24,174 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:10:24,175 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 10:10:24,175 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 10:10:24,849 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:24,851 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:10:24,852 - utils.logging_config - INFO - Notification sent for Friday, 31 October
+2025-07-20 10:10:24,852 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 10:10:24,853 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:10:24,853 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 10:10:24,854 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 10:10:24,854 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 10:10:24,855 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 10:10:24,856 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 10:19:38,411 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:19:38,411 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:19:38,412 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:19:38
+2025-07-20 10:19:38,412 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:19:38,413 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 10:19:38,413 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:19:38,414 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:19:38,414 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:19:38,415 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:19:46,897 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:19:47,991 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:19:48,976 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:19:49,198 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:19:49,206 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 10:19:49,207 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:19:49,208 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 10:19:57,583 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:19:58,691 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:20:00,616 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:20:00,666 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:20:00,674 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 10:20:00,675 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:20:00,676 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 10:20:10,138 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:20:11,297 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:20:11,333 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:20:11,395 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:20:11,404 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 10:20:11,405 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:20:11,406 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 10:20:19,526 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:20:20,619 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:20:21,643 - utils.logging_config - INFO - Round-trip results: 0 outbound, 5 return trains
+2025-07-20 10:20:21,691 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:20:21,699 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 10:20:21,700 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:20:21,701 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:20:21,701 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 10:20:29,151 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:20:41,331 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:20:41,338 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:20:41,338 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 10:20:41,339 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:20:41,339 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:20:41,339 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:20:41,340 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:20:41,341 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:20:41,341 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:20:41,342 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:20:41,342 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:20:41,343 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 10:20:41,343 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:20:41,344 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:20:41,344 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:20:41,345 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 10:20:41,345 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 10:20:41,346 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:20:41,346 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:20:41,347 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:20:41,347 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 10:20:41,347 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:20:41,348 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:20:41,348 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:20:41,349 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 10:20:41,349 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 5 return trains found
+2025-07-20 10:20:41,350 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:20:41,350 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:20:41,351 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 10:20:41,351 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 10:20:41,352 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:20:41,352 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 10:20:41,352 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 10:20:41,353 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:20:41,353 - utils.logging_config - INFO - No notification for Friday, 31 October
+2025-07-20 10:20:41,354 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 10:20:41,354 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:20:41,354 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 10:20:41,355 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 10:20:41,355 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 10:20:41,356 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 10:20:41,356 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 10:21:40,418 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:21:40,419 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:21:40,419 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:21:40
+2025-07-20 10:21:40,420 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:21:40,422 - utils.logging_config - INFO - Searching for round-trip: Friday, 03 October 2025 to Sunday, 05 October 2025
+2025-07-20 10:21:40,424 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:21:40,425 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:21:40,425 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:21:49,661 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:21:50,757 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:21:50,847 - utils.logging_config - INFO - Round-trip page screenshot saved as output/round_trip_screenshot_20250720_102150.png
+2025-07-20 10:21:51,885 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:21:51,947 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:21:51,955 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:21:51,956 - utils.logging_config - INFO - No notification sent
+2025-07-20 10:21:51,956 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:21:51,957 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:21:51,958 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:21:51,959 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:21:51,960 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:21:51,961 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:21:51,961 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:22:00,125 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:22:00,125 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:22:00,126 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:22:00
+2025-07-20 10:22:00,126 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:22:00,127 - utils.logging_config - INFO - Searching for round-trip: Friday, 03 October 2025 to Sunday, 05 October 2025
+2025-07-20 10:22:00,129 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:22:00,129 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:22:00,130 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:22:08,427 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:22:09,521 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:22:09,611 - utils.logging_config - INFO - Round-trip page screenshot saved as output/round_trip_screenshot_20250720_102209.png
+2025-07-20 10:22:10,515 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:22:10,566 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:22:10,574 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:22:10,575 - utils.logging_config - INFO - No notification sent
+2025-07-20 10:22:10,576 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:22:10,576 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:22:18,059 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:22:18,060 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:22:18,060 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:22:18
+2025-07-20 10:22:18,061 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:22:18,063 - utils.logging_config - INFO - Searching for trains on Friday, 03 October 2025
+2025-07-20 10:22:18,063 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:22:18,064 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:22:18,064 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=None, passengers=1
+2025-07-20 10:22:26,298 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:22:38,500 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:22:38,507 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:22:38,508 - utils.logging_config - INFO - No notification sent
+2025-07-20 10:22:38,509 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:22:38,509 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:22:38,510 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:22:38,510 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:22:38,510 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:22:38,511 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:23:16,920 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:23:16,922 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:23:16,937 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:23:16
+2025-07-20 10:23:16,941 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:23:16,941 - utils.logging_config - INFO - Searching for round-trip: Friday, 03 October 2025 to Sunday, 05 October 2025
+2025-07-20 10:23:16,943 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:23:16,943 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:23:16,944 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:23:26,710 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:23:27,819 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:23:27,922 - utils.logging_config - INFO - Round-trip page screenshot saved as output/round_trip_screenshot_20250720_102327.png
+2025-07-20 10:23:27,948 - utils.logging_config - INFO - Page contains text: ets/intercity
+komuter
+shuttle tebrau
+rail pass
+myrailtime
+ login / sign up
+journey plan
+woodlands ciq
+to
+jb sentral
+departure
+03 oct 2025
+return
+05 oct 2025
+1 pax
+modify
+filter results
+depart
+00:00 - 24:00
+0 : 24
+0
+24
+00:00
+24:00
+ 
+return
+00:00 - 24:00
+0 : 24
+0
+24
+00:00
+24:00
+this site is protected by recaptcha and the google privacy policy and terms of service apply.
+depart	woodlands ciq  jb sentral
+tue, 30 sep
+	
+wed, 1 oct
+	
+thu, 2 oct
+	
+fri, 3 oct
+	
+sat, 4 oct
+	
+sun, 5 oct
+	
+mon, 6 oct
+train ...
+2025-07-20 10:23:27,990 - utils.logging_config - INFO - Found 4 tables
+2025-07-20 10:23:29,241 - utils.logging_config - INFO - Parsed 0 outbound and 13 return trains from tables
+2025-07-20 10:23:29,242 - utils.logging_config - INFO - Raw outbound trains before filtering: 0
+2025-07-20 10:23:29,243 - utils.logging_config - INFO - Raw return trains before filtering: 13
+2025-07-20 10:23:29,243 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 72 at 08:30 with 148 seats
+2025-07-20 10:23:29,244 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 74 at 09:45 with 0 seats
+2025-07-20 10:23:29,244 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 76 at 11:00 with 54 seats
+2025-07-20 10:23:29,245 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 78 at 12:30 with 254 seats
+2025-07-20 10:23:29,246 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 80 at 13:45 with 281 seats
+2025-07-20 10:23:29,246 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 82 at 15:00 with 276 seats
+2025-07-20 10:23:29,247 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 84 at 16:15 with 276 seats
+2025-07-20 10:23:29,247 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 86 at 17:30 with 0 seats
+2025-07-20 10:23:29,248 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 88 at 18:45 with 0 seats
+2025-07-20 10:23:29,249 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 90 at 20:00 with 0 seats
+2025-07-20 10:23:29,250 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 92 at 21:15 with 0 seats
+2025-07-20 10:23:29,251 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 94 at 22:30 with 0 seats
+2025-07-20 10:23:29,251 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 96 at 23:45 with 212 seats
+2025-07-20 10:23:29,252 - utils.logging_config - INFO - Round-trip results: 0 outbound, 4 return trains
+2025-07-20 10:23:29,309 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:23:29,318 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:23:29,319 - utils.logging_config - INFO - No notification sent
+2025-07-20 10:23:29,320 - utils.logging_config - INFO - Round-trip Results: 0 outbound trains, 4 return trains found
+2025-07-20 10:23:29,320 - utils.logging_config - INFO - No available outbound trains found
+2025-07-20 10:23:29,321 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:23:29,322 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:23:29,322 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:23:29,323 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:23:29,323 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:23:55,588 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:23:55,588 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:23:55,589 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:23:55
+2025-07-20 10:23:55,589 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:23:55,590 - utils.logging_config - INFO - Searching for round-trip: Friday, 03 October 2025 to Sunday, 05 October 2025
+2025-07-20 10:23:55,591 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:23:55,591 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:23:55,592 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:24:03,577 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:24:04,656 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:24:04,742 - utils.logging_config - INFO - Round-trip page screenshot saved as output/round_trip_screenshot_20250720_102404.png
+2025-07-20 10:24:04,759 - utils.logging_config - INFO - Page contains text: ets/intercity
+komuter
+shuttle tebrau
+rail pass
+myrailtime
+ login / sign up
+journey plan
+woodlands ciq
+to
+jb sentral
+departure
+03 oct 2025
+return
+05 oct 2025
+1 pax
+modify
+filter results
+depart
+00:00 - 24:00
+0 : 24
+0
+24
+00:00
+24:00
+ 
+return
+00:00 - 24:00
+0 : 24
+0
+24
+00:00
+24:00
+this site is protected by recaptcha and the google privacy policy and terms of service apply.
+depart	woodlands ciq  jb sentral
+tue, 30 sep
+	
+wed, 1 oct
+	
+thu, 2 oct
+	
+fri, 3 oct
+	
+sat, 4 oct
+	
+sun, 5 oct
+	
+mon, 6 oct
+train ...
+2025-07-20 10:24:04,788 - utils.logging_config - INFO - Found 4 tables
+2025-07-20 10:24:04,826 - utils.logging_config - INFO - Table 1: 0 trains
+2025-07-20 10:24:05,815 - utils.logging_config - INFO - Table 2: 13 trains
+2025-07-20 10:24:05,816 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 72 at 08:30
+2025-07-20 10:24:05,817 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 74 at 09:45
+2025-07-20 10:24:05,818 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 76 at 11:00
+2025-07-20 10:24:05,818 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 78 at 12:30
+2025-07-20 10:24:05,819 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 80 at 13:45
+2025-07-20 10:24:05,820 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 82 at 15:00
+2025-07-20 10:24:05,820 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 84 at 16:15
+2025-07-20 10:24:05,820 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 86 at 17:30
+2025-07-20 10:24:05,821 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 88 at 18:45
+2025-07-20 10:24:05,823 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 90 at 20:00
+2025-07-20 10:24:05,824 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 92 at 21:15
+2025-07-20 10:24:05,824 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 94 at 22:30
+2025-07-20 10:24:05,827 - utils.logging_config - INFO -   Table 2 train: Shuttle Tebrau - 96 at 23:45
+2025-07-20 10:24:05,858 - utils.logging_config - INFO - Table 3: 0 trains
+2025-07-20 10:24:07,200 - utils.logging_config - INFO - Table 4: 18 trains
+2025-07-20 10:24:07,201 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 61 at 05:00
+2025-07-20 10:24:07,201 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 63 at 05:30
+2025-07-20 10:24:07,202 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 65 at 06:00
+2025-07-20 10:24:07,202 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 67 at 06:30
+2025-07-20 10:24:07,202 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 69 at 07:00
+2025-07-20 10:24:07,203 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 71 at 07:30
+2025-07-20 10:24:07,203 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 73 at 08:45
+2025-07-20 10:24:07,204 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 75 at 10:00
+2025-07-20 10:24:07,204 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 77 at 11:30
+2025-07-20 10:24:07,205 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 79 at 12:45
+2025-07-20 10:24:07,206 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 81 at 14:00
+2025-07-20 10:24:07,207 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 83 at 15:15
+2025-07-20 10:24:07,207 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 85 at 16:30
+2025-07-20 10:24:07,208 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 87 at 17:45
+2025-07-20 10:24:07,208 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 89 at 19:00
+2025-07-20 10:24:07,209 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 91 at 20:15
+2025-07-20 10:24:07,209 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 93 at 21:30
+2025-07-20 10:24:07,210 - utils.logging_config - INFO -   Table 4 train: Shuttle Tebrau - 95 at 22:45
+2025-07-20 10:24:07,210 - utils.logging_config - INFO - Table 1 is empty
+2025-07-20 10:24:07,211 - utils.logging_config - INFO - Table 2: 10 potential outbound, 0 potential return trains
+2025-07-20 10:24:07,211 - utils.logging_config - INFO - Classified table 2 as outbound with 13 trains
+2025-07-20 10:24:07,212 - utils.logging_config - INFO - Table 3 is empty
+2025-07-20 10:24:07,212 - utils.logging_config - INFO - Table 4: 0 potential outbound, 10 potential return trains
+2025-07-20 10:24:07,213 - utils.logging_config - INFO - Classified table 4 as return with 18 trains
+2025-07-20 10:24:07,213 - utils.logging_config - INFO - Final classification: 13 outbound and 18 return trains
+2025-07-20 10:24:07,214 - utils.logging_config - INFO - Raw outbound trains before filtering: 13
+2025-07-20 10:24:07,214 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 72 at 08:30 with 148 seats
+2025-07-20 10:24:07,215 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 74 at 09:45 with 0 seats
+2025-07-20 10:24:07,215 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 76 at 11:00 with 54 seats
+2025-07-20 10:24:07,216 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 78 at 12:30 with 254 seats
+2025-07-20 10:24:07,216 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 80 at 13:45 with 281 seats
+2025-07-20 10:24:07,217 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 82 at 15:00 with 276 seats
+2025-07-20 10:24:07,217 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 84 at 16:15 with 276 seats
+2025-07-20 10:24:07,217 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 86 at 17:30 with 0 seats
+2025-07-20 10:24:07,218 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 88 at 18:45 with 0 seats
+2025-07-20 10:24:07,223 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 90 at 20:00 with 0 seats
+2025-07-20 10:24:07,224 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 92 at 21:15 with 0 seats
+2025-07-20 10:24:07,224 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 94 at 22:30 with 0 seats
+2025-07-20 10:24:07,225 - utils.logging_config - INFO -   Raw outbound: Shuttle Tebrau - 96 at 23:45 with 212 seats
+2025-07-20 10:24:07,225 - utils.logging_config - INFO - Raw return trains before filtering: 18
+2025-07-20 10:24:07,226 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 61 at 05:00 with 315 seats
+2025-07-20 10:24:07,226 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 63 at 05:30 with 315 seats
+2025-07-20 10:24:07,226 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 65 at 06:00 with 313 seats
+2025-07-20 10:24:07,227 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 67 at 06:30 with 317 seats
+2025-07-20 10:24:07,227 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 69 at 07:00 with 315 seats
+2025-07-20 10:24:07,228 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 71 at 07:30 with 310 seats
+2025-07-20 10:24:07,228 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 73 at 08:45 with 297 seats
+2025-07-20 10:24:07,229 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 75 at 10:00 with 291 seats
+2025-07-20 10:24:07,229 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 77 at 11:30 with 0 seats
+2025-07-20 10:24:07,230 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 79 at 12:45 with 0 seats
+2025-07-20 10:24:07,230 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 81 at 14:00 with 0 seats
+2025-07-20 10:24:07,230 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 83 at 15:15 with 0 seats
+2025-07-20 10:24:07,231 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 85 at 16:30 with 0 seats
+2025-07-20 10:24:07,231 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 87 at 17:45 with 0 seats
+2025-07-20 10:24:07,232 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 89 at 19:00 with 0 seats
+2025-07-20 10:24:07,232 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 91 at 20:15 with 0 seats
+2025-07-20 10:24:07,232 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 93 at 21:30 with 0 seats
+2025-07-20 10:24:07,233 - utils.logging_config - INFO -   Raw return: Shuttle Tebrau - 95 at 22:45 with 1 seats
+2025-07-20 10:24:07,233 - utils.logging_config - INFO - Round-trip results: 4 outbound, 0 return trains
+2025-07-20 10:24:07,272 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:24:07,280 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:24:07,281 - utils.logging_config - INFO - No notification sent
+2025-07-20 10:24:07,281 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:24:07,282 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:24:07,282 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:24:07,283 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:24:07,284 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:24:07,284 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:25:34,675 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:25:34,676 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:25:34,676 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:25:34
+2025-07-20 10:25:34,676 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:25:34,677 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 10:25:34,678 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:25:34,680 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:25:34,680 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:25:34,681 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:25:44,653 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:25:45,810 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:25:48,521 - utils.logging_config - INFO - Round-trip results: 4 outbound, 0 return trains
+2025-07-20 10:25:48,562 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:25:48,583 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 10:25:48,584 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:25:48,585 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 10:25:56,474 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:25:57,554 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:26:00,322 - utils.logging_config - INFO - Round-trip results: 4 outbound, 0 return trains
+2025-07-20 10:26:00,369 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:26:00,377 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 10:26:00,377 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:26:00,378 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 10:26:08,594 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:26:09,668 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:26:12,189 - utils.logging_config - INFO - Round-trip results: 4 outbound, 2 return trains
+2025-07-20 10:26:12,228 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:26:12,237 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 10:26:12,238 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:26:12,238 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 10:26:20,148 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:26:21,258 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:26:24,018 - utils.logging_config - INFO - Round-trip results: 5 outbound, 2 return trains
+2025-07-20 10:26:24,059 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:26:24,067 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 10:26:24,068 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:26:24,068 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:26:24,069 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 10:26:31,882 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:26:44,131 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:26:44,139 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:26:44,139 - utils.logging_config - INFO - No notification for Friday, 03 October
+2025-07-20 10:26:44,140 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:26:44,140 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:26:44,141 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:26:44,141 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:26:44,142 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:26:44,142 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:26:44,143 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:26:44,143 - utils.logging_config - INFO - No notification for Friday, 10 October
+2025-07-20 10:26:44,144 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:26:44,144 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:26:44,144 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 10:26:44,145 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 10:26:44,145 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:26:44,146 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:26:44,146 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:26:44,147 - utils.logging_config - INFO - No notification for Friday, 17 October
+2025-07-20 10:26:44,147 - utils.logging_config - INFO - Round-trip Results: 4 outbound trains, 2 return trains found
+2025-07-20 10:26:44,148 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:26:44,148 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+2025-07-20 10:26:44,148 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+2025-07-20 10:26:44,149 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+2025-07-20 10:26:44,149 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 10:26:44,150 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:26:44,150 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 79: 12:45 → 12:50 (274 seats)
+2025-07-20 10:26:44,151 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 81: 14:00 → 14:05 (70 seats)
+2025-07-20 10:26:44,152 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:26:44,153 - utils.logging_config - INFO - No notification for Friday, 24 October
+2025-07-20 10:26:44,154 - utils.logging_config - INFO - Round-trip Results: 5 outbound trains, 2 return trains found
+2025-07-20 10:26:44,154 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:26:44,155 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 10:26:44,155 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 10:26:44,156 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:26:44,156 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 10:26:44,157 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 10:26:44,157 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:26:44,158 - utils.logging_config - INFO -    🟡 Shuttle Tebrau - 79: 12:45 → 12:50 (3 seats)
+2025-07-20 10:26:44,158 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 81: 14:00 → 14:05 (1 seats)
+2025-07-20 10:26:44,158 - notifications - WARNING - Failed to send Telegram notification
+2025-07-20 10:26:44,159 - utils.logging_config - INFO - No notification for Friday, 31 October
+2025-07-20 10:26:44,159 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 10:26:44,160 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:26:44,160 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 10:26:44,161 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 10:26:44,161 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 10:26:44,162 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 10:26:44,163 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 10:28:15,769 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:28:15,770 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:28:15
+2025-07-20 10:28:15,770 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:28:15,771 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 10:28:15,771 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:28:15,772 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:28:15,772 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:28:15,773 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:28:24,788 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:28:25,925 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:28:28,410 - utils.logging_config - INFO - Round-trip results: 4 outbound, 0 return trains
+2025-07-20 10:28:28,446 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:28:28,454 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 10:28:28,455 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:28:28,456 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 10:28:37,582 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:28:38,703 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:28:41,164 - utils.logging_config - INFO - Round-trip results: 4 outbound, 0 return trains
+2025-07-20 10:28:41,204 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:28:41,218 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 10:28:41,220 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:28:41,220 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 10:28:48,951 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:28:50,054 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:28:52,414 - utils.logging_config - INFO - Round-trip results: 4 outbound, 2 return trains
+2025-07-20 10:28:52,454 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:28:52,462 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 10:28:52,462 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:28:52,463 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 10:29:00,397 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:29:01,500 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:29:04,491 - utils.logging_config - INFO - Round-trip results: 5 outbound, 2 return trains
+2025-07-20 10:29:04,546 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:29:04,554 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 10:29:04,555 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:29:04,556 - utils.logging_config - INFO - Time slots: ['afternoon']
+2025-07-20 10:29:04,556 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 10:29:16,194 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:29:28,353 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:29:29,038 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:29,039 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:29,040 - utils.logging_config - INFO - Notification sent for Friday, 03 October
+2025-07-20 10:29:29,041 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:29:29,041 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:29:29,042 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (254 seats)
+2025-07-20 10:29:29,042 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (281 seats)
+2025-07-20 10:29:29,042 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (276 seats)
+2025-07-20 10:29:29,043 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:29:29,708 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:29,709 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:29,709 - utils.logging_config - INFO - Notification sent for Friday, 10 October
+2025-07-20 10:29:29,710 - utils.logging_config - INFO - Results: 4 trains found
+2025-07-20 10:29:29,710 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:29:29,711 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (298 seats)
+2025-07-20 10:29:29,711 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (292 seats)
+2025-07-20 10:29:29,712 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:29:29,712 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (276 seats)
+2025-07-20 10:29:30,394 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:30,395 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:30,395 - utils.logging_config - INFO - Notification sent for Friday, 17 October
+2025-07-20 10:29:30,396 - utils.logging_config - INFO - Round-trip Results: 4 outbound trains, 2 return trains found
+2025-07-20 10:29:30,396 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:29:30,397 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (283 seats)
+2025-07-20 10:29:30,397 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (276 seats)
+2025-07-20 10:29:30,397 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (114 seats)
+2025-07-20 10:29:30,402 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 84: 16:15 → 16:20 (1 seats)
+2025-07-20 10:29:30,410 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:29:30,421 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 79: 12:45 → 12:50 (274 seats)
+2025-07-20 10:29:30,435 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 81: 14:00 → 14:05 (70 seats)
+2025-07-20 10:29:31,142 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:31,143 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:31,144 - utils.logging_config - INFO - Notification sent for Friday, 24 October
+2025-07-20 10:29:31,145 - utils.logging_config - INFO - Round-trip Results: 5 outbound trains, 2 return trains found
+2025-07-20 10:29:31,145 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:29:31,146 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (293 seats)
+2025-07-20 10:29:31,146 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (304 seats)
+2025-07-20 10:29:31,146 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (295 seats)
+2025-07-20 10:29:31,147 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (271 seats)
+2025-07-20 10:29:31,147 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (17 seats)
+2025-07-20 10:29:31,148 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:29:31,149 - utils.logging_config - INFO -    🟡 Shuttle Tebrau - 79: 12:45 → 12:50 (3 seats)
+2025-07-20 10:29:31,151 - utils.logging_config - INFO -    🔴 Shuttle Tebrau - 81: 14:00 → 14:05 (1 seats)
+2025-07-20 10:29:31,820 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:31,821 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:29:31,822 - utils.logging_config - INFO - Notification sent for Friday, 31 October
+2025-07-20 10:29:31,822 - utils.logging_config - INFO - Results: 5 trains found
+2025-07-20 10:29:31,823 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:29:31,823 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 78: 12:30 → 12:35 (297 seats)
+2025-07-20 10:29:31,824 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 80: 13:45 → 13:50 (308 seats)
+2025-07-20 10:29:31,824 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 82: 15:00 → 15:05 (306 seats)
+2025-07-20 10:29:31,824 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 84: 16:15 → 16:20 (291 seats)
+2025-07-20 10:29:31,825 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 86: 17:30 → 17:35 (32 seats)
+2025-07-20 10:30:45,834 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:30:45,834 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:30:45
+2025-07-20 10:30:45,835 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:30:45,835 - utils.logging_config - INFO - Searching weekends in October 2025
+2025-07-20 10:30:45,836 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:30:45,838 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 03 October 2025 (SG->JB) to Sunday, 05 October 2025 (JB->SG)
+2025-07-20 10:30:45,839 - utils.logging_config - INFO - Time slots: ['morning']
+2025-07-20 10:30:45,839 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-03, return_date=2025-10-05, passengers=1
+2025-07-20 10:30:54,230 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:30:55,321 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:30:57,827 - utils.logging_config - INFO - Round-trip results: 1 outbound, 1 return trains
+2025-07-20 10:30:57,860 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:30:57,868 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 10 October 2025 (SG->JB) to Sunday, 12 October 2025 (JB->SG)
+2025-07-20 10:30:57,869 - utils.logging_config - INFO - Time slots: ['morning']
+2025-07-20 10:30:57,870 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-10, return_date=2025-10-12, passengers=1
+2025-07-20 10:31:06,020 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:31:07,093 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:31:09,621 - utils.logging_config - INFO - Round-trip results: 2 outbound, 2 return trains
+2025-07-20 10:31:09,663 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:31:09,670 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 17 October 2025 (SG->JB) to Sunday, 19 October 2025 (JB->SG)
+2025-07-20 10:31:09,671 - utils.logging_config - INFO - Time slots: ['morning']
+2025-07-20 10:31:09,672 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-17, return_date=2025-10-19, passengers=1
+2025-07-20 10:31:17,534 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:31:18,621 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:31:21,953 - utils.logging_config - INFO - Round-trip results: 2 outbound, 2 return trains
+2025-07-20 10:31:21,984 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:31:21,992 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 24 October 2025 (SG->JB) to Sunday, 26 October 2025 (JB->SG)
+2025-07-20 10:31:21,993 - utils.logging_config - INFO - Time slots: ['morning']
+2025-07-20 10:31:21,994 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-24, return_date=2025-10-26, passengers=1
+2025-07-20 10:31:36,291 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:31:37,386 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:31:39,874 - utils.logging_config - INFO - Round-trip results: 2 outbound, 2 return trains
+2025-07-20 10:31:39,917 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:31:39,925 - utils.logging_config - INFO - Searching for trains on Friday, 31 October 2025
+2025-07-20 10:31:39,926 - utils.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 10:31:39,927 - utils.logging_config - INFO - Time slots: ['morning']
+2025-07-20 10:31:39,928 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-10-31, return_date=None, passengers=1
+2025-07-20 10:31:47,641 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:31:59,644 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:32:00,346 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:00,347 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:00,348 - utils.logging_config - INFO - Notification sent for Friday, 03 October
+2025-07-20 10:32:00,349 - utils.logging_config - INFO - Round-trip Results: 1 outbound trains, 1 return trains found
+2025-07-20 10:32:00,349 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:32:00,350 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 76: 11:00 → 11:05 (54 seats)
+2025-07-20 10:32:00,350 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:32:00,351 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 75: 10:00 → 10:05 (291 seats)
+2025-07-20 10:32:01,021 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:01,021 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:01,022 - utils.logging_config - INFO - Notification sent for Friday, 10 October
+2025-07-20 10:32:01,023 - utils.logging_config - INFO - Round-trip Results: 2 outbound trains, 2 return trains found
+2025-07-20 10:32:01,025 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:32:01,025 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 74: 09:45 → 09:50 (248 seats)
+2025-07-20 10:32:01,026 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 76: 11:00 → 11:05 (278 seats)
+2025-07-20 10:32:01,026 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:32:01,028 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 75: 10:00 → 10:05 (304 seats)
+2025-07-20 10:32:01,028 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 77: 11:30 → 11:35 (256 seats)
+2025-07-20 10:32:01,702 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:01,703 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:01,704 - utils.logging_config - INFO - Notification sent for Friday, 17 October
+2025-07-20 10:32:01,704 - utils.logging_config - INFO - Round-trip Results: 2 outbound trains, 2 return trains found
+2025-07-20 10:32:01,705 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:32:01,705 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 74: 09:45 → 09:50 (224 seats)
+2025-07-20 10:32:01,706 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 76: 11:00 → 11:05 (247 seats)
+2025-07-20 10:32:01,708 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:32:01,709 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 75: 10:00 → 10:05 (310 seats)
+2025-07-20 10:32:01,710 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 77: 11:30 → 11:35 (297 seats)
+2025-07-20 10:32:02,390 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:02,399 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:02,400 - utils.logging_config - INFO - Notification sent for Friday, 24 October
+2025-07-20 10:32:02,400 - utils.logging_config - INFO - Round-trip Results: 2 outbound trains, 2 return trains found
+2025-07-20 10:32:02,401 - utils.logging_config - INFO - Outbound Trains (SG→JB):
+2025-07-20 10:32:02,401 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 74: 09:45 → 09:50 (275 seats)
+2025-07-20 10:32:02,402 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 76: 11:00 → 11:05 (277 seats)
+2025-07-20 10:32:02,402 - utils.logging_config - INFO - Return Trains (JB→SG):
+2025-07-20 10:32:02,403 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 75: 10:00 → 10:05 (308 seats)
+2025-07-20 10:32:02,403 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 77: 11:30 → 11:35 (276 seats)
+2025-07-20 10:32:03,078 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:03,079 - notifications - INFO - Telegram notification sent successfully
+2025-07-20 10:32:03,079 - utils.logging_config - INFO - Notification sent for Friday, 31 October
+2025-07-20 10:32:03,080 - utils.logging_config - INFO - Results: 2 trains found
+2025-07-20 10:32:03,080 - utils.logging_config - INFO - Available Trains:
+2025-07-20 10:32:03,081 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 74: 09:45 → 09:50 (265 seats)
+2025-07-20 10:32:03,081 - utils.logging_config - INFO -    🟢 Shuttle Tebrau - 76: 11:00 → 11:05 (307 seats)
+2025-07-20 10:37:35,250 - utils.logging_config - INFO - No specific search type provided, defaulting to weekends for next 2 months
+2025-07-20 10:37:35,253 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 10:37:35,253 - utils.logging_config - INFO - Starting continuous monitoring...
+2025-07-20 10:37:35,254 - utils.logging_config - INFO - Interval: 60 minutes
+2025-07-20 10:37:35,254 - utils.logging_config - INFO - Search type: next_two_months
+2025-07-20 10:37:35,255 - utils.logging_config - INFO - Press Ctrl+C to stop
+2025-07-20 10:37:35,255 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:37:35,256 - utils.logging_config - INFO - Iteration 1 - 2025-07-20 10:37:35
+2025-07-20 10:37:35,256 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:37:35,256 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 10:37:35
+2025-07-20 10:37:35,257 - utils.logging_config - INFO - ============================================================
+2025-07-20 10:37:35,257 - utils.logging_config - INFO - Searching weekends for the next 2 months
+2025-07-20 10:37:35,258 - utils.logging_config - INFO - Searching weekends in August 2025
+2025-07-20 10:37:35,259 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 01 August 2025 (SG->JB) to Sunday, 03 August 2025 (JB->SG)
+2025-07-20 10:37:35,260 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:37:35,260 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-01, return_date=2025-08-03, passengers=1
+2025-07-20 10:37:44,100 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:37:45,192 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:37:47,859 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:37:47,907 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:37:47,916 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 08 August 2025 (SG->JB) to Sunday, 10 August 2025 (JB->SG)
+2025-07-20 10:37:47,917 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:37:47,917 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-08, return_date=2025-08-10, passengers=1
+2025-07-20 10:37:55,650 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:37:56,737 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:37:59,603 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:37:59,657 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:37:59,665 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 10:37:59,665 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:37:59,666 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 10:38:08,060 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:38:09,150 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:38:14,820 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:38:14,851 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:38:14,860 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 22 August 2025 (SG->JB) to Sunday, 24 August 2025 (JB->SG)
+2025-07-20 10:38:14,861 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:38:14,861 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-22, return_date=2025-08-24, passengers=1
+2025-07-20 10:38:24,211 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:38:25,292 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:38:28,220 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:38:28,264 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:38:28,273 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 29 August 2025 (SG->JB) to Sunday, 31 August 2025 (JB->SG)
+2025-07-20 10:38:28,274 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:38:28,275 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-29, return_date=2025-08-31, passengers=1
+2025-07-20 10:38:35,986 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:38:37,066 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:38:39,837 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:38:39,884 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:38:39,892 - utils.logging_config - INFO - Searching weekends in September 2025
+2025-07-20 10:38:39,893 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 05 September 2025 (SG->JB) to Sunday, 07 September 2025 (JB->SG)
+2025-07-20 10:38:39,893 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:38:39,894 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-05, return_date=2025-09-07, passengers=1
+2025-07-20 10:38:47,441 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:38:48,529 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:38:50,938 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:38:50,982 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:38:50,992 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 12 September 2025 (SG->JB) to Sunday, 14 September 2025 (JB->SG)
+2025-07-20 10:38:50,992 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:38:50,993 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-12, return_date=2025-09-14, passengers=1
+2025-07-20 10:38:58,643 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:38:59,740 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:39:02,292 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:39:02,342 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:39:02,351 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 19 September 2025 (SG->JB) to Sunday, 21 September 2025 (JB->SG)
+2025-07-20 10:39:02,352 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:39:02,353 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-19, return_date=2025-09-21, passengers=1
+2025-07-20 10:39:10,389 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:39:11,482 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:39:14,095 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:39:14,138 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:39:14,145 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 26 September 2025 (SG->JB) to Sunday, 28 September 2025 (JB->SG)
+2025-07-20 10:39:14,146 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 10:39:14,147 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-26, return_date=2025-09-28, passengers=1
+2025-07-20 10:39:23,794 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 10:39:24,972 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 10:39:28,972 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 10:39:29,020 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 10:39:29,029 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,030 - utils.logging_config - INFO - No notification for Friday, 01 August
+2025-07-20 10:39:29,030 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,031 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,032 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,032 - utils.logging_config - INFO - No notification for Friday, 08 August
+2025-07-20 10:39:29,032 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,033 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,033 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,034 - utils.logging_config - INFO - No notification for Friday, 15 August
+2025-07-20 10:39:29,034 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,035 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,035 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,036 - utils.logging_config - INFO - No notification for Friday, 22 August
+2025-07-20 10:39:29,036 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,037 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,037 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,038 - utils.logging_config - INFO - No notification for Friday, 29 August
+2025-07-20 10:39:29,038 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,039 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,040 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,041 - utils.logging_config - INFO - No notification for Friday, 05 September
+2025-07-20 10:39:29,042 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,042 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,043 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,043 - utils.logging_config - INFO - No notification for Friday, 12 September
+2025-07-20 10:39:29,044 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,044 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,044 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,045 - utils.logging_config - INFO - No notification for Friday, 19 September
+2025-07-20 10:39:29,045 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,046 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,046 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 10:39:29,047 - utils.logging_config - INFO - No notification for Friday, 26 September
+2025-07-20 10:39:29,047 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 10:39:29,048 - utils.logging_config - INFO - No available trains found
+2025-07-20 10:39:29,048 - utils.logging_config - INFO - Waiting 60 minutes until next check...
+2025-07-20 10:39:29,049 - utils.logging_config - INFO - Next check: 2025-07-20 11:39:29
+2025-07-20 10:44:00,120 - utils.logging_config - INFO - Received signal 2, shutting down gracefully...
+2025-07-20 10:44:00,536 - utils.logging_config - INFO - Monitoring stopped
+2025-07-20 02:57:13,260 - utils.logging_config - INFO - No specific search type provided, defaulting to weekends for next 2 months
+2025-07-20 02:57:13,264 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 02:57:13,264 - utils.logging_config - INFO - Starting continuous monitoring...
+2025-07-20 02:57:13,265 - utils.logging_config - INFO - Interval: 60 minutes
+2025-07-20 02:57:13,266 - utils.logging_config - INFO - Search type: next_two_months
+2025-07-20 02:57:13,266 - utils.logging_config - INFO - Press Ctrl+C to stop
+2025-07-20 02:57:13,267 - utils.logging_config - INFO - ============================================================
+2025-07-20 02:57:13,268 - utils.logging_config - INFO - Iteration 1 - 2025-07-20 02:57:13
+2025-07-20 02:57:13,268 - utils.logging_config - INFO - ============================================================
+2025-07-20 02:57:13,269 - utils.logging_config - INFO - KTMB Monitor - 2025-07-20 02:57:13
+2025-07-20 02:57:13,270 - utils.logging_config - INFO - ============================================================
+2025-07-20 02:57:13,271 - utils.logging_config - INFO - Searching weekends for the next 2 months
+2025-07-20 02:57:13,272 - utils.logging_config - INFO - Searching weekends in August 2025
+2025-07-20 02:57:13,273 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 01 August 2025 (SG->JB) to Sunday, 03 August 2025 (JB->SG)
+2025-07-20 02:57:13,274 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:13,275 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-08-01, return_date=2025-08-03, passengers=1
+2025-07-20 02:57:16,527 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:17,577 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:18,120 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:18,157 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:18,162 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 08 August 2025 (SG->JB) to Sunday, 10 August 2025 (JB->SG)
+2025-07-20 02:57:18,163 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:18,164 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-08-08, return_date=2025-08-10, passengers=1
+2025-07-20 02:57:21,160 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:22,245 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:22,806 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:22,837 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:22,843 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 15 August 2025 (SG->JB) to Sunday, 17 August 2025 (JB->SG)
+2025-07-20 02:57:22,844 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:22,844 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-08-15, return_date=2025-08-17, passengers=1
+2025-07-20 02:57:25,845 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:26,895 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:27,433 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:27,474 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:27,479 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 22 August 2025 (SG->JB) to Sunday, 24 August 2025 (JB->SG)
+2025-07-20 02:57:27,480 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:27,481 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-08-22, return_date=2025-08-24, passengers=1
+2025-07-20 02:57:30,533 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:31,578 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:32,199 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:32,235 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:32,241 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 29 August 2025 (SG->JB) to Sunday, 31 August 2025 (JB->SG)
+2025-07-20 02:57:32,242 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:32,242 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-08-29, return_date=2025-08-31, passengers=1
+2025-07-20 02:57:35,246 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:36,297 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:36,864 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:36,901 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:36,907 - utils.logging_config - INFO - Searching weekends in September 2025
+2025-07-20 02:57:36,907 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 05 September 2025 (SG->JB) to Sunday, 07 September 2025 (JB->SG)
+2025-07-20 02:57:36,908 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:36,909 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-09-05, return_date=2025-09-07, passengers=1
+2025-07-20 02:57:39,912 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:40,961 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:41,522 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:41,562 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:41,568 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 12 September 2025 (SG->JB) to Sunday, 14 September 2025 (JB->SG)
+2025-07-20 02:57:41,568 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:41,569 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-09-12, return_date=2025-09-14, passengers=1
+2025-07-20 02:57:44,666 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:45,711 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:46,280 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:46,317 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:46,322 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 19 September 2025 (SG->JB) to Sunday, 21 September 2025 (JB->SG)
+2025-07-20 02:57:46,323 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:46,324 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-09-19, return_date=2025-09-21, passengers=1
+2025-07-20 02:57:49,314 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:50,361 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:50,911 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:50,945 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:50,950 - utils.logging_config - INFO - Searching for weekend round-trip: Friday, 26 September 2025 (SG->JB) to Sunday, 28 September 2025 (JB->SG)
+2025-07-20 02:57:50,951 - utils.logging_config - INFO - Time slots: ['evening']
+2025-07-20 02:57:50,952 - utils.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=Direction.SG_TO_JB, depart_date=2025-09-26, return_date=2025-09-28, passengers=1
+2025-07-20 02:57:53,978 - utils.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 02:57:55,026 - utils.logging_config - INFO - Parsing round-trip results
+2025-07-20 02:57:55,555 - utils.logging_config - INFO - Round-trip results: 0 outbound, 0 return trains
+2025-07-20 02:57:55,587 - utils.logging_config - INFO - Scraping process completed successfully
+2025-07-20 02:57:55,591 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,592 - utils.logging_config - INFO - No notification for Friday, 01 August
+2025-07-20 02:57:55,592 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,593 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,594 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,595 - utils.logging_config - INFO - No notification for Friday, 08 August
+2025-07-20 02:57:55,595 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,596 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,597 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,598 - utils.logging_config - INFO - No notification for Friday, 15 August
+2025-07-20 02:57:55,599 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,599 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,600 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,600 - utils.logging_config - INFO - No notification for Friday, 22 August
+2025-07-20 02:57:55,601 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,602 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,602 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,603 - utils.logging_config - INFO - No notification for Friday, 29 August
+2025-07-20 02:57:55,603 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,604 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,605 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,605 - utils.logging_config - INFO - No notification for Friday, 05 September
+2025-07-20 02:57:55,606 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,607 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,607 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,608 - utils.logging_config - INFO - No notification for Friday, 12 September
+2025-07-20 02:57:55,608 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,609 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,610 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,610 - utils.logging_config - INFO - No notification for Friday, 19 September
+2025-07-20 02:57:55,611 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,612 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,613 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 02:57:55,614 - utils.logging_config - INFO - No notification for Friday, 26 September
+2025-07-20 02:57:55,615 - utils.logging_config - INFO - Results: 0 trains found
+2025-07-20 02:57:55,615 - utils.logging_config - INFO - No available trains found
+2025-07-20 02:57:55,616 - utils.logging_config - INFO - Waiting 60 minutes until next check...
+2025-07-20 02:57:55,617 - utils.logging_config - INFO - Next check: 2025-07-20 03:57:55
+2025-07-20 02:59:15,633 - utils.logging_config - INFO - Received signal 15, shutting down gracefully...
+2025-07-20 02:59:15,736 - utils.logging_config - INFO - Monitoring stopped

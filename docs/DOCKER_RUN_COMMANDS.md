@@ -28,7 +28,7 @@ The KTMB scraper supports the following environment variables:
 docker run --rm \
   -v $(pwd)/output:/app/output \
   ktmb-scraper:latest \
-  python -u ktmb_search.py --date 2025-01-15 --direction jb_to_sg
+  python -u ktmb_search.py --date 2025-01-15 --direction jb-to-sg
 ```
 
 ### 2. Search with Telegram Notifications

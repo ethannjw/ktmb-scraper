@@ -58,10 +58,21 @@ class NotificationSender:
         if self.config.only_notify_on_availability:
             # Check if there are any available trains with sufficient seats
             available_trains = result.get("available_trains", [])
-            return any(
+            return_trains = result.get("return_trains", [])
+            
+            # For round-trip searches, check both outbound and return trains
+            has_available_outbound = any(
                 train.get("available_seats", 0) >= self.config.min_seats_threshold 
                 for train in available_trains
             )
+            
+            has_available_return = any(
+                train.get("available_seats", 0) >= self.config.min_seats_threshold 
+                for train in return_trains
+            )
+            
+            # Send notification if either direction has available trains
+            return has_available_outbound or has_available_return
         
         return True
     
@@ -93,14 +104,30 @@ class NotificationSender:
         direction_name = DIRECTION_MAPPING.get(search_settings.direction, str(search_settings.direction))
         date_str = search_settings.depart_date.strftime("%A, %d %B %Y")
         
+        # Check if this is a round-trip search
+        is_round_trip = bool(search_settings.return_date)
+        
         if result.get("success", False):
             available_trains = result.get("available_trains", [])
-            has_available = any(t.get("available_seats", 0) >= self.config.min_seats_threshold for t in available_trains)
+            return_trains = result.get("return_trains", [])
             
-            if has_available:
-                subject = f"🚂 KTMB Trains Available - {date_str}"
+            has_available_outbound = any(t.get("available_seats", 0) >= self.config.min_seats_threshold for t in available_trains)
+            has_available_return = any(t.get("available_seats", 0) >= self.config.min_seats_threshold for t in return_trains)
+            
+            if is_round_trip:
+                if has_available_outbound and has_available_return:
+                    subject = f"🚂 KTMB Round-Trip Available - {date_str}"
+                elif has_available_outbound:
+                    subject = f"🚂 KTMB Outbound Available - {date_str}"
+                elif has_available_return:
+                    subject = f"🚂 KTMB Return Available - {date_str}"
+                else:
+                    subject = f"⚠️ KTMB Round-Trip Search Complete - {date_str}"
             else:
-                subject = f"⚠️ KTMB Search Complete - {date_str}"
+                if has_available_outbound:
+                    subject = f"🚂 KTMB Trains Available - {date_str}"
+                else:
+                    subject = f"⚠️ KTMB Search Complete - {date_str}"
         else:
             subject = f"❌ KTMB Search Failed - {date_str}"
         
@@ -108,14 +135,35 @@ class NotificationSender:
         body_lines = [
             f"**KTMB Shuttle Search Results**",
             f"**Date:** {date_str}",
-            f"**Direction:** {direction_name}",
+        ]
+        
+        if is_round_trip:
+            return_date_str = search_settings.return_date.strftime("%A, %d %B %Y")
+            body_lines.extend([
+                f"**Type:** Round-Trip",
+                f"**Outbound:** {date_str}",
+                f"**Return:** {return_date_str}",
+            ])
+        else:
+            body_lines.extend([
+                f"**Direction:** {direction_name}",
+            ])
+        
+        body_lines.extend([
             f"**Searched at:** {timestamp}",
             "",
-        ]
+        ])
         
         if result.get("success", False):
             available_trains = result.get("available_trains", [])
-            body_lines.append(self.format_train_info(available_trains, "Available Trains"))
+            return_trains = result.get("return_trains", [])
+            
+            if is_round_trip:
+                body_lines.append(self.format_train_info(available_trains, "Outbound Trains (SG→JB)"))
+                body_lines.append("")  # Add spacing
+                body_lines.append(self.format_train_info(return_trains, "Return Trains (JB→SG)"))
+            else:
+                body_lines.append(self.format_train_info(available_trains, "Available Trains"))
         else:
             body_lines.append(f"❌ Search failed: {result.get('error', 'Unknown error')}")
         
