@@ -7,7 +7,7 @@ output/*
 .ruff_cache/*
 .mypy_cache/*
 .ruff_cache/*
-**/logs/**
+logs/**
 **/output/**
 **/screenshots/**
 **/screenshots/**

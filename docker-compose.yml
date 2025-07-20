@@ -9,6 +9,7 @@ services:
       - ./logs:/app/logs
       # Mount environment file if needed
       - ./.env:/app/.env:ro
+    user: "1000:1000"
     environment:
       # Set to false to see browser UI (for debugging)
       - PLAYWRIGHT_HEADLESS=true
@@ -16,6 +17,9 @@ services:
       - PLAYWRIGHT_TIMEOUT=60000
       # Force Python to run in unbuffered mode for immediate log output
       - PYTHONUNBUFFERED=1
+      # - NOTIFICATION_TELEGRAM_CHAT_ID=1025008 
+      # - NOTIFICATION_TELEGRAM_BOT_TOKEN=7618442659:AAH9L8wlrfpzQgMM2kvh3Yxg1WjeZZ-WNM0
+
 
     # Example command - override this when running
     # -u is to force python to run in unbuffered mode for immediate log output
