@@ -19,6 +19,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scraper.main import KTMBShuttleScraper
 from config import ScraperSettings, Direction, TimeSlot
 from notifications import create_notification_sender
+from scraper.logging_config import setup_logging, get_logger
+
+# Setup logging
+logger = setup_logging()
 
 
 class KTMBMonitor:
@@ -35,7 +39,7 @@ class KTMBMonitor:
     
     def _signal_handler(self, signum, frame):
         """Handle shutdown signals gracefully"""
-        print(f"\n🛑 Received signal {signum}, shutting down gracefully...")
+        logger.info(f"Received signal {signum}, shutting down gracefully...")
         self.running = False
     
     def search_specific_date(self, search_date: date, direction: Direction, time_slots: Optional[List[TimeSlot]] = None) -> tuple[dict, ScraperSettings]:
@@ -51,9 +55,9 @@ class KTMBMonitor:
             desired_time_slots=time_slots
         )
         
-        print(f"🔍 Searching for trains on {search_date.strftime('%A, %d %B %Y')}")
-        print(f"   Direction: {direction.value}")
-        print(f"   Time slots: {[slot.value for slot in time_slots]}")
+        logger.info(f"Searching for trains on {search_date.strftime('%A, %d %B %Y')}")
+        logger.info(f"Direction: {direction.value}")
+        logger.info(f"Time slots: {[slot.value for slot in time_slots]}")
         
         scraper = KTMBShuttleScraper(settings)
         result = scraper.run()
@@ -96,7 +100,7 @@ class KTMBMonitor:
                 year = current_date.year
                 month = current_date.month + i
             
-            print(f"🔍 Searching weekends in {date(year, month, 1).strftime('%B %Y')}")
+            logger.info(f"Searching weekends in {date(year, month, 1).strftime('%B %Y')}")
             month_results = self.search_weekends(year, month, Direction.SG_TO_JB, time_slots)
             results.extend(month_results)
         
@@ -105,9 +109,9 @@ class KTMBMonitor:
     def run_single_search(self, search_type: str, **kwargs) -> None:
         """Run a single search based on type"""
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(f"\n{'='*60}")
-        print(f"🚂 KTMB Monitor - {timestamp}")
-        print(f"{'='*60}")
+        logger.info("=" * 60)
+        logger.info(f"KTMB Monitor - {timestamp}")
+        logger.info("=" * 60)
         
         if search_type == "specific_date":
             search_date = kwargs['date']
@@ -117,9 +121,9 @@ class KTMBMonitor:
             
             # Send notification
             if self.notification_sender.send_notification(result, settings):
-                print("✅ Notification sent successfully!")
+                logger.info("Notification sent successfully!")
             else:
-                print("ℹ️ No notification sent")
+                logger.info("No notification sent")
             
             # Display results
             self._display_results(result)
@@ -130,33 +134,33 @@ class KTMBMonitor:
             direction = kwargs['direction']
             time_slots = kwargs.get('time_slots')
             
-            print(f"🔍 Searching weekends in {date(year, month, 1).strftime('%B %Y')}")
-            print(f"   Direction: {direction.value}")
+            logger.info(f"Searching weekends in {date(year, month, 1).strftime('%B %Y')}")
+            logger.info(f"Direction: {direction.value}")
             
             results = self.search_weekends(year, month, direction, time_slots)
             
             # Send notifications for each result
             for result, settings in results:
                 if self.notification_sender.send_notification(result, settings):
-                    print(f"✅ Notification sent for {settings.depart_date.strftime('%A, %d %B')}")
+                    logger.info(f"Notification sent for {settings.depart_date.strftime('%A, %d %B')}")
                 else:
-                    print(f"ℹ️ No notification for {settings.depart_date.strftime('%A, %d %B')}")
+                    logger.info(f"No notification for {settings.depart_date.strftime('%A, %d %B')}")
                 
                 self._display_results(result)
         
         elif search_type == "next_two_months":
             time_slots = kwargs.get('time_slots')
             
-            print("🔍 Searching weekends for the next 2 months")
+            logger.info("Searching weekends for the next 2 months")
             
             results = self.search_next_two_months_weekends(time_slots)
             
             # Send notifications for each result
             for result, settings in results:
                 if self.notification_sender.send_notification(result, settings):
-                    print(f"✅ Notification sent for {settings.depart_date.strftime('%A, %d %B')}")
+                    logger.info(f"Notification sent for {settings.depart_date.strftime('%A, %d %B')}")
                 else:
-                    print(f"ℹ️ No notification for {settings.depart_date.strftime('%A, %d %B')}")
+                    logger.info(f"No notification for {settings.depart_date.strftime('%A, %d %B')}")
                 
                 self._display_results(result)
     
@@ -164,41 +168,41 @@ class KTMBMonitor:
         """Display search results"""
         if result.get("success", False):
             available_trains = result.get("available_trains", [])
-            print(f"\n📊 Results: {len(available_trains)} trains found")
+            logger.info(f"Results: {len(available_trains)} trains found")
             
             if available_trains:
-                print("🚂 Available Trains:")
+                logger.info("Available Trains:")
                 for train in available_trains:
                     seats = train.get("available_seats", 0)
                     status = "🟢" if seats >= 5 else "🟡" if seats >= 2 else "🔴"
-                    print(f"   {status} {train.get('train_number', 'Unknown')}: "
+                    logger.info(f"   {status} {train.get('train_number', 'Unknown')}: "
                           f"{train.get('departure_time', '')} → {train.get('arrival_time', '')} "
                           f"({seats} seats)")
             else:
-                print("❌ No available trains found")
+                logger.info("No available trains found")
         else:
-            print(f"❌ Search failed: {result.get('error', 'Unknown error')}")
+            logger.error(f"Search failed: {result.get('error', 'Unknown error')}")
     
     def run_continuous_monitoring(self, search_type: str, **kwargs) -> None:
         """Run continuous monitoring with specified interval"""
-        print(f"🚀 Starting continuous monitoring...")
-        print(f"   Interval: {self.interval_minutes} minutes")
-        print(f"   Search type: {search_type}")
-        print(f"   Press Ctrl+C to stop")
-        print(f"{'='*60}")
+        logger.info("Starting continuous monitoring...")
+        logger.info(f"Interval: {self.interval_minutes} minutes")
+        logger.info(f"Search type: {search_type}")
+        logger.info("Press Ctrl+C to stop")
+        logger.info("=" * 60)
         
         iteration = 1
         
         while self.running:
             try:
-                print(f"\n🔄 Iteration {iteration} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+                logger.info(f"Iteration {iteration} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
                 self.run_single_search(search_type, **kwargs)
                 
                 if not self.running:
                     break
                 
-                print(f"\n⏰ Waiting {self.interval_minutes} minutes until next check...")
-                print(f"   Next check: {(datetime.now() + timedelta(minutes=self.interval_minutes)).strftime('%Y-%m-%d %H:%M:%S')}")
+                logger.info(f"Waiting {self.interval_minutes} minutes until next check...")
+                logger.info(f"Next check: {(datetime.now() + timedelta(minutes=self.interval_minutes)).strftime('%Y-%m-%d %H:%M:%S')}")
                 
                 # Sleep in smaller intervals to allow for graceful shutdown
                 for _ in range(self.interval_minutes * 60):
@@ -209,14 +213,14 @@ class KTMBMonitor:
                 iteration += 1
                 
             except KeyboardInterrupt:
-                print("\n🛑 Monitoring stopped by user")
+                logger.info("Monitoring stopped by user")
                 break
             except Exception as e:
-                print(f"❌ Error during monitoring: {e}")
-                print("⏰ Waiting 5 minutes before retrying...")
+                logger.error(f"Error during monitoring: {e}")
+                logger.info("Waiting 5 minutes before retrying...")
                 time.sleep(300)
         
-        print("👋 Monitoring stopped")
+        logger.info("Monitoring stopped")
 
 
 def parse_date(date_str: str) -> date:
@@ -326,7 +330,7 @@ Examples:
     if not args.date and not args.weekends:
         # Default to next two months weekends
         args.weekends = True
-        print("ℹ️ No specific search type provided, defaulting to weekends for next 2 months")
+        logger.info("No specific search type provided, defaulting to weekends for next 2 months")
     
     if args.interval < 1:
         parser.error("Interval must be at least 1 minute")

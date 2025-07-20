@@ -3,10 +3,16 @@ from config import ScraperSettings, Direction, DIRECTION_MAPPING, KTMB_CONFIG, T
 from typing import Dict, Any
 import time as time_module
 from datetime import datetime, time as datetime_time
+from .logging_config import setup_logging, LoggingConfig, get_logger
+
+# Initialize logger with default configuration
+logger = setup_logging()
 
 class KTMBShuttleScraper:
     def __init__(self, settings: ScraperSettings):
         self.settings = settings
+        logger.info(f"Initialized KTMB Shuttle Scraper with settings: direction={settings.direction}, "
+                   f"depart_date={settings.depart_date}, passengers={settings.total_pax}")
 
     def _get_time_slot(self, time_str: str) -> TimeSlot:
         """Determine which time slot a given time falls into"""
@@ -27,6 +33,7 @@ class KTMBShuttleScraper:
             
             if not parsed_time:
                 # Default to evening if we can't parse the time
+                logger.debug(f"Could not parse time '{time_str}', defaulting to evening slot")
                 return TimeSlot.EVENING
             
             # Check which time slot this time falls into
@@ -34,34 +41,42 @@ class KTMBShuttleScraper:
                 if slot == TimeSlot.NIGHT:
                     # Night slot spans midnight, so check if time is after 22:00 or before 05:00
                     if parsed_time >= start_time or parsed_time <= datetime_time(4, 59):
+                        logger.debug(f"Time '{time_str}' falls into {slot} slot")
                         return slot
                 else:
                     # Regular time slots
                     if start_time <= parsed_time <= end_time:
+                        logger.debug(f"Time '{time_str}' falls into {slot} slot")
                         return slot
             
             # Default to evening if no match found
+            logger.debug(f"Time '{time_str}' didn't match any slot, defaulting to evening")
             return TimeSlot.EVENING
             
         except Exception as e:
-            print(f"Error parsing time '{time_str}': {e}")
+            logger.error(f"Error parsing time '{time_str}': {e}")
             return TimeSlot.EVENING
 
     def _is_train_in_desired_time_slots(self, departure_time: str) -> bool:
         """Check if a train's departure time falls within desired time slots"""
         if not self.settings.desired_time_slots or len(self.settings.desired_time_slots) == 0:
+            logger.debug("No time slots specified, accepting all trains")
             return True  # If no time slots specified, accept all trains
         
         train_time_slot = self._get_time_slot(departure_time)
-        return train_time_slot in self.settings.desired_time_slots
+        is_desired = train_time_slot in self.settings.desired_time_slots
+        logger.debug(f"Train departure time '{departure_time}' slot '{train_time_slot}' is desired: {is_desired}")
+        return is_desired
 
     def run(self) -> Dict[str, Any]:
+        logger.info("Starting KTMB Shuttle scraping process")
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             
             try:
                 # Navigate to the KTMB Shuttle page
+                logger.info("Navigating to KTMB Shuttle page")
                 page.goto('https://shuttleonline.ktmb.com.my/Home/Shuttle')
                 page.wait_for_load_state('networkidle')
                 
@@ -84,10 +99,12 @@ class KTMBShuttleScraper:
                 # Parse results
                 results = self._parse_results(page)
                 browser.close()
+                logger.info("Scraping process completed successfully")
                 return results
                 
             except Exception as e:
                 browser.close()
+                logger.error(f"Scraping process failed: {e}", exc_info=True)
                 return {"error": str(e), "success": False}
 
     def _select_direction(self, page):
@@ -104,20 +121,20 @@ class KTMBShuttleScraper:
                     }
                 """)
                 page.wait_for_timeout(1000)
-                print("Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)")
+                logger.info("Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)")
             else:
                 # Default is JB -> SG, so no need to swap
-                print("Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)")
+                logger.info("Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)")
                     
         except Exception as e:
-            print(f"Error selecting direction: {e}")
+            logger.error(f"Error selecting direction: {e}", exc_info=True)
 
     def _select_departure_date(self, page):
         """Handle departure date selection using JavaScript"""
         try:
             # Use JavaScript to set the date directly - this works reliably
             date_str = self.settings.depart_date.strftime('%d %b %Y')  # "01 Aug 2025" format
-            print(f"Setting departure date to: {date_str}")
+            logger.info(f"Setting departure date to: {date_str}")
             
             page.evaluate(f"""
                 document.querySelector('input[name="OnwardDate"]').value = '{date_str}';
@@ -125,10 +142,10 @@ class KTMBShuttleScraper:
             """)
             page.wait_for_timeout(500)
             
-            print(f"Departure date set successfully to: {date_str}")
+            logger.info(f"Departure date set successfully to: {date_str}")
             
         except Exception as e:
-            print(f"Error selecting departure date: {e}")
+            logger.error(f"Error selecting departure date: {e}", exc_info=True)
             raise e
     
     def _get_month_name(self, month_number):
@@ -164,10 +181,10 @@ class KTMBShuttleScraper:
                 return_field.press('Enter')
                 page.wait_for_timeout(500)
                 
-                print(f"Return date set to: {return_date_str}")
+                logger.info(f"Return date set to: {return_date_str}")
                 
         except Exception as e:
-            print(f"Error selecting return date: {e}")
+            logger.error(f"Error selecting return date: {e}", exc_info=True)
 
     def _select_passengers(self, page):
         """Handle passenger selection"""
@@ -180,10 +197,10 @@ class KTMBShuttleScraper:
             passenger_option = f"{self.settings.total_pax} Pax"
             passenger_dropdown.select_option(passenger_option)
             
-            print(f"Passengers set to: {passenger_option}")
+            logger.info(f"Passengers set to: {passenger_option}")
             
         except Exception as e:
-            print(f"Error selecting passengers: {e}")
+            logger.error(f"Error selecting passengers: {e}", exc_info=True)
 
     def _perform_search(self, page):
         """Perform the search and wait for results"""
@@ -191,38 +208,38 @@ class KTMBShuttleScraper:
             # Click the search button
             search_button = page.get_by_role('button', name='SEARCH')
             search_button.click()
-            print("Search button clicked")
+            logger.info("Search button clicked")
             
             # Wait a moment for the search to process (reduced timeout)
             page.wait_for_timeout(1000)
             
             # Check current URL to see if we were redirected
             current_url = page.url
-            print(f"Current URL after search: {current_url}")
+            logger.debug(f"Current URL after search: {current_url}")
             
             # If we were redirected to the results page, that's good
             if "ShuttleTrip" in current_url:
-                print("Successfully redirected to results page")
+                logger.info("Successfully redirected to results page")
                 return
             
             # Check for various possible outcomes on the search page
             try:
                 # Wait for results table to appear (faster timeout)
                 page.wait_for_selector('#tblTrainList', timeout=5000)
-                print("Search completed successfully - results found")
+                logger.info("Search completed successfully - results found")
             except:
-                print("Results table not found, checking for errors...")
+                logger.warning("Results table not found, checking for errors...")
                 
                 # Check for validation error - use a more specific selector
                 try:
                     error_element = page.locator('#OnwardDate-error')
                     if error_element.is_visible():
                         error_text = error_element.inner_text()
-                        print(f"Found validation error: {error_text}")
+                        logger.error(f"Found validation error: {error_text}")
                         if "Please select departing date" in error_text:
                             raise Exception("Validation error: Please select departing date")
                 except Exception as error_check:
-                    print(f"Error check failed: {error_check}")
+                    logger.debug(f"Error check failed: {error_check}")
                 
                 # Check for other error messages
                 try:
@@ -231,19 +248,19 @@ class KTMBShuttleScraper:
                     error_count = error_messages.count()
                     for i in range(error_count):
                         error_text = error_messages.nth(i).inner_text()
-                        print(f"Found error message: {error_text}")
+                        logger.error(f"Found error message: {error_text}")
                 except:
                     pass
                 
                 # Take a screenshot for debugging
                 page.screenshot(path="debug_screenshot.png")
-                print("Screenshot saved as debug_screenshot.png")
+                logger.debug("Screenshot saved as debug_screenshot.png")
                 
                 # Wait a bit more for results
                 page.wait_for_timeout(3000)
                     
         except Exception as e:
-            print(f"Error during search: {e}")
+            logger.error(f"Error during search: {e}", exc_info=True)
             raise e
 
     def _parse_results(self, page) -> Dict[str, Any]:
@@ -251,7 +268,7 @@ class KTMBShuttleScraper:
         try:
             # Check if we're on the results page
             current_url = page.url
-            print(f"Parsing results from URL: {current_url}")
+            logger.debug(f"Parsing results from URL: {current_url}")
             
             # Wait for page to load (faster timeout)
             page.wait_for_load_state('domcontentloaded')
@@ -269,7 +286,7 @@ class KTMBShuttleScraper:
             for selector in table_selectors:
                 try:
                     page.wait_for_selector(selector, timeout=5000)
-                    print(f"Found results table with selector: {selector}")
+                    logger.debug(f"Found results table with selector: {selector}")
                     table_found = True
                     break
                 except:
@@ -278,7 +295,7 @@ class KTMBShuttleScraper:
             if not table_found:
                 # Take a screenshot to see what's on the page
                 page.screenshot(path="results_page_screenshot.png")
-                print("No results table found, screenshot saved as results_page_screenshot.png")
+                logger.warning("No results table found, screenshot saved as results_page_screenshot.png")
                 
                 # Check if there's a "no results" message
                 no_results_selectors = [
@@ -291,7 +308,7 @@ class KTMBShuttleScraper:
                 for no_result_selector in no_results_selectors:
                     try:
                         if page.locator(no_result_selector).is_visible():
-                            print("No trains available for the selected criteria")
+                            logger.info("No trains available for the selected criteria")
                             return {
                                 "success": True,
                                 "available_trains": [],
@@ -318,6 +335,7 @@ class KTMBShuttleScraper:
             
             # Get all train rows
             rows = page.query_selector_all(f'{selector} tbody tr, {selector} tr')
+            logger.debug(f"Found {len(rows)} train rows to parse")
             
             available_trains = []
             
@@ -347,6 +365,8 @@ class KTMBShuttleScraper:
                         arrival_time = cells[1].inner_text().strip()
                         available_seats = int(cells[2].inner_text().strip())
                     
+                    logger.debug(f"Parsed train: {train_number}, {departure_time}-{arrival_time}, {available_seats} seats")
+                    
                     # Check if this train meets our criteria
                     if available_seats >= self.settings.min_available_seats:
                         # Check if train is in desired time slots
@@ -359,11 +379,18 @@ class KTMBShuttleScraper:
                                 "direction": self.settings.direction.value
                             }
                             available_trains.append(train_info)
+                            logger.debug(f"Added train to available list: {train_number}")
+                        else:
+                            logger.debug(f"Train {train_number} not in desired time slots")
+                    else:
+                        logger.debug(f"Train {train_number} has insufficient seats ({available_seats} < {self.settings.min_available_seats})")
                         
                 except (ValueError, IndexError) as e:
                     # Skip rows that can't be parsed
-                    print(f"Skipping row due to parsing error: {e}")
+                    logger.warning(f"Skipping row due to parsing error: {e}")
                     continue
+            
+            logger.info(f"Successfully parsed {len(available_trains)} available trains out of {len(rows)} total trains")
             
             return {
                 "success": True,
@@ -380,6 +407,7 @@ class KTMBShuttleScraper:
             }
             
         except Exception as e:
+            logger.error(f"Error parsing results: {str(e)}", exc_info=True)
             return {
                 "success": False,
                 "error": f"Error parsing results: {str(e)}",

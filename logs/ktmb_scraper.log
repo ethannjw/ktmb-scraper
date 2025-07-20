@@ -1,0 +1,335 @@
+2025-07-20 08:35:18,440 - scraper.logging_config - INFO - Test info message
+2025-07-20 08:35:18,441 - scraper.logging_config - WARNING - Test warning message
+2025-07-20 08:35:18,442 - scraper.logging_config - ERROR - Test error message
+2025-07-20 08:35:38,691 - scraper.logging_config - INFO - No specific search type provided, defaulting to weekends for next 2 months
+2025-07-20 08:35:38,694 - notifications - WARNING - Notification configuration errors: ['NOTIFICATION_TELEGRAM_BOT_TOKEN is required when Telegram notifications are enabled', 'NOTIFICATION_TELEGRAM_CHAT_ID is required when Telegram notifications are enabled']
+2025-07-20 08:35:38,697 - scraper.logging_config - INFO - ============================================================
+2025-07-20 08:35:38,697 - scraper.logging_config - INFO - KTMB Monitor - 2025-07-20 08:35:38
+2025-07-20 08:35:38,698 - scraper.logging_config - INFO - ============================================================
+2025-07-20 08:35:38,699 - scraper.logging_config - INFO - Searching weekends for the next 2 months
+2025-07-20 08:35:38,699 - scraper.logging_config - INFO - Searching weekends in August 2025
+2025-07-20 08:35:38,703 - scraper.logging_config - INFO - Searching for trains on Friday, 01 August 2025
+2025-07-20 08:35:38,704 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:35:38,704 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:35:38,705 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-01, passengers=1
+2025-07-20 08:35:38,705 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:35:44,868 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:35:46,651 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:35:46,653 - scraper.logging_config - INFO - Setting departure date to: 01 Aug 2025
+2025-07-20 08:35:47,181 - scraper.logging_config - INFO - Departure date set successfully to: 01 Aug 2025
+2025-07-20 08:35:47,284 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:35:47,341 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:35:48,357 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:35:59,413 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:35:59,463 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:35:59,469 - scraper.logging_config - INFO - Searching for trains on Sunday, 03 August 2025
+2025-07-20 08:35:59,469 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:35:59,470 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:35:59,470 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-08-03, passengers=1
+2025-07-20 08:35:59,471 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:36:04,412 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:36:05,332 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:36:05,333 - scraper.logging_config - INFO - Setting departure date to: 03 Aug 2025
+2025-07-20 08:36:05,347 - scraper.logging_config - INFO - Departure date set successfully to: 03 Aug 2025
+2025-07-20 08:36:05,428 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:36:05,479 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:36:06,489 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:36:17,744 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:36:17,785 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:36:17,793 - scraper.logging_config - INFO - Searching for trains on Friday, 08 August 2025
+2025-07-20 08:36:17,794 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:36:17,794 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:36:17,795 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-08, passengers=1
+2025-07-20 08:36:17,796 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:36:22,764 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:36:24,479 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:36:24,480 - scraper.logging_config - INFO - Setting departure date to: 08 Aug 2025
+2025-07-20 08:36:25,004 - scraper.logging_config - INFO - Departure date set successfully to: 08 Aug 2025
+2025-07-20 08:36:25,097 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:36:25,162 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:36:26,177 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:36:36,453 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:36:36,500 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:36:36,508 - scraper.logging_config - INFO - Searching for trains on Sunday, 10 August 2025
+2025-07-20 08:36:36,508 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:36:36,510 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:36:36,510 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-08-10, passengers=1
+2025-07-20 08:36:36,511 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:36:41,479 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:36:42,173 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:36:42,173 - scraper.logging_config - INFO - Setting departure date to: 10 Aug 2025
+2025-07-20 08:36:42,705 - scraper.logging_config - INFO - Departure date set successfully to: 10 Aug 2025
+2025-07-20 08:36:42,808 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:36:42,865 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:36:43,882 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:36:55,083 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:36:55,129 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:36:55,136 - scraper.logging_config - INFO - Searching for trains on Friday, 15 August 2025
+2025-07-20 08:36:55,137 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:36:55,137 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:36:55,138 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-15, passengers=1
+2025-07-20 08:36:55,138 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:37:05,170 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:37:08,553 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:37:08,555 - scraper.logging_config - INFO - Setting departure date to: 15 Aug 2025
+2025-07-20 08:37:09,091 - scraper.logging_config - INFO - Departure date set successfully to: 15 Aug 2025
+2025-07-20 08:37:09,176 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:37:09,231 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:37:10,245 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:37:21,175 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:37:21,244 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:37:21,263 - scraper.logging_config - INFO - Searching for trains on Sunday, 17 August 2025
+2025-07-20 08:37:21,264 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:37:21,265 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:37:21,266 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-08-17, passengers=1
+2025-07-20 08:37:21,266 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:37:26,037 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:37:26,748 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:37:26,749 - scraper.logging_config - INFO - Setting departure date to: 17 Aug 2025
+2025-07-20 08:37:27,287 - scraper.logging_config - INFO - Departure date set successfully to: 17 Aug 2025
+2025-07-20 08:37:27,364 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:37:27,431 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:37:28,442 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:37:38,889 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:37:38,931 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:37:38,940 - scraper.logging_config - INFO - Searching for trains on Friday, 22 August 2025
+2025-07-20 08:37:38,941 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:37:38,942 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:37:38,942 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-22, passengers=1
+2025-07-20 08:37:38,943 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:37:43,550 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:37:45,298 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:37:45,299 - scraper.logging_config - INFO - Setting departure date to: 22 Aug 2025
+2025-07-20 08:37:45,871 - scraper.logging_config - INFO - Departure date set successfully to: 22 Aug 2025
+2025-07-20 08:37:45,957 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:37:46,009 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:37:47,025 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:37:58,062 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:37:58,118 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:37:58,129 - scraper.logging_config - INFO - Searching for trains on Sunday, 24 August 2025
+2025-07-20 08:37:58,130 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:37:58,131 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:37:58,131 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-08-24, passengers=1
+2025-07-20 08:37:58,133 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:38:02,029 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:38:02,737 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:38:02,737 - scraper.logging_config - INFO - Setting departure date to: 24 Aug 2025
+2025-07-20 08:38:03,275 - scraper.logging_config - INFO - Departure date set successfully to: 24 Aug 2025
+2025-07-20 08:38:03,366 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:38:03,426 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:38:04,457 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:38:15,851 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:38:15,898 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:38:15,906 - scraper.logging_config - INFO - Searching for trains on Friday, 29 August 2025
+2025-07-20 08:38:15,907 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:38:15,908 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:38:15,908 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-08-29, passengers=1
+2025-07-20 08:38:15,909 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:38:21,035 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:38:22,783 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:38:22,784 - scraper.logging_config - INFO - Setting departure date to: 29 Aug 2025
+2025-07-20 08:38:23,309 - scraper.logging_config - INFO - Departure date set successfully to: 29 Aug 2025
+2025-07-20 08:38:23,402 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:38:23,457 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:38:24,488 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:38:34,539 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:38:34,586 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:38:34,596 - scraper.logging_config - INFO - Searching for trains on Sunday, 31 August 2025
+2025-07-20 08:38:34,597 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:38:34,597 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:38:34,598 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-08-31, passengers=1
+2025-07-20 08:38:34,598 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:38:39,614 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:38:40,329 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:38:40,329 - scraper.logging_config - INFO - Setting departure date to: 31 Aug 2025
+2025-07-20 08:38:40,855 - scraper.logging_config - INFO - Departure date set successfully to: 31 Aug 2025
+2025-07-20 08:38:40,930 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:38:40,985 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:38:41,996 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:38:53,303 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:38:53,364 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:38:53,373 - scraper.logging_config - INFO - Searching weekends in September 2025
+2025-07-20 08:38:53,374 - scraper.logging_config - INFO - Searching for trains on Friday, 05 September 2025
+2025-07-20 08:38:53,375 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:38:53,375 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:38:53,376 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-05, passengers=1
+2025-07-20 08:38:53,377 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:38:58,678 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:39:00,060 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:39:00,063 - scraper.logging_config - INFO - Setting departure date to: 05 Sep 2025
+2025-07-20 08:39:00,116 - scraper.logging_config - INFO - Departure date set successfully to: 05 Sep 2025
+2025-07-20 08:39:00,196 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:39:00,247 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:39:01,259 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:39:13,165 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:39:13,223 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:39:13,233 - scraper.logging_config - INFO - Searching for trains on Sunday, 07 September 2025
+2025-07-20 08:39:13,234 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:39:13,234 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:39:13,235 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-09-07, passengers=1
+2025-07-20 08:39:13,236 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:39:20,882 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:39:21,616 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:39:21,616 - scraper.logging_config - INFO - Setting departure date to: 07 Sep 2025
+2025-07-20 08:39:22,145 - scraper.logging_config - INFO - Departure date set successfully to: 07 Sep 2025
+2025-07-20 08:39:22,253 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:39:22,348 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:39:23,360 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:39:33,912 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:39:33,957 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:39:33,966 - scraper.logging_config - INFO - Searching for trains on Friday, 12 September 2025
+2025-07-20 08:39:33,967 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:39:33,967 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:39:33,968 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-12, passengers=1
+2025-07-20 08:39:33,969 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:39:40,008 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:39:41,787 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:39:41,788 - scraper.logging_config - INFO - Setting departure date to: 12 Sep 2025
+2025-07-20 08:39:42,311 - scraper.logging_config - INFO - Departure date set successfully to: 12 Sep 2025
+2025-07-20 08:39:42,408 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:39:42,468 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:39:43,481 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:39:54,479 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:39:54,528 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:39:54,539 - scraper.logging_config - INFO - Searching for trains on Sunday, 14 September 2025
+2025-07-20 08:39:54,539 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:39:54,540 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:39:54,541 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-09-14, passengers=1
+2025-07-20 08:39:54,541 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:39:59,227 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:39:59,994 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:39:59,995 - scraper.logging_config - INFO - Setting departure date to: 14 Sep 2025
+2025-07-20 08:40:00,527 - scraper.logging_config - INFO - Departure date set successfully to: 14 Sep 2025
+2025-07-20 08:40:00,622 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:40:00,672 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:40:01,684 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:40:12,954 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:40:12,994 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:40:13,003 - scraper.logging_config - INFO - Searching for trains on Friday, 19 September 2025
+2025-07-20 08:40:13,004 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:40:13,004 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:40:13,005 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-19, passengers=1
+2025-07-20 08:40:13,005 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:40:17,951 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:40:19,916 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:40:19,919 - scraper.logging_config - INFO - Setting departure date to: 19 Sep 2025
+2025-07-20 08:40:20,607 - scraper.logging_config - INFO - Departure date set successfully to: 19 Sep 2025
+2025-07-20 08:40:20,841 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:40:21,020 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:40:22,132 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:40:32,317 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:40:32,365 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:40:32,375 - scraper.logging_config - INFO - Searching for trains on Sunday, 21 September 2025
+2025-07-20 08:40:32,375 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:40:32,376 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:40:32,377 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-09-21, passengers=1
+2025-07-20 08:40:32,377 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:40:37,501 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:40:38,223 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:40:38,224 - scraper.logging_config - INFO - Setting departure date to: 21 Sep 2025
+2025-07-20 08:40:38,754 - scraper.logging_config - INFO - Departure date set successfully to: 21 Sep 2025
+2025-07-20 08:40:38,848 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:40:38,906 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:40:39,915 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:40:51,145 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:40:51,189 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:40:51,199 - scraper.logging_config - INFO - Searching for trains on Friday, 26 September 2025
+2025-07-20 08:40:51,200 - scraper.logging_config - INFO - Direction: SG_TO_JB
+2025-07-20 08:40:51,200 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:40:51,201 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=SG_TO_JB, depart_date=2025-09-26, passengers=1
+2025-07-20 08:40:51,201 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:40:56,499 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:40:57,355 - scraper.logging_config - INFO - Direction set to SG -> JB (Woodlands CIQ -> JB Sentral)
+2025-07-20 08:40:57,357 - scraper.logging_config - INFO - Setting departure date to: 26 Sep 2025
+2025-07-20 08:40:57,903 - scraper.logging_config - INFO - Departure date set successfully to: 26 Sep 2025
+2025-07-20 08:40:57,978 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:40:58,031 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:40:59,048 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:41:10,145 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 15 total trains
+2025-07-20 08:41:10,194 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:41:10,202 - scraper.logging_config - INFO - Searching for trains on Sunday, 28 September 2025
+2025-07-20 08:41:10,203 - scraper.logging_config - INFO - Direction: JB_TO_SG
+2025-07-20 08:41:10,203 - scraper.logging_config - INFO - Time slots: ['evening']
+2025-07-20 08:41:10,204 - scraper.logging_config - INFO - Initialized KTMB Shuttle Scraper with settings: direction=JB_TO_SG, depart_date=2025-09-28, passengers=1
+2025-07-20 08:41:10,205 - scraper.logging_config - INFO - Starting KTMB Shuttle scraping process
+2025-07-20 08:41:15,149 - scraper.logging_config - INFO - Navigating to KTMB Shuttle page
+2025-07-20 08:41:15,887 - scraper.logging_config - INFO - Direction set to JB -> SG (JB Sentral -> Woodlands CIQ)
+2025-07-20 08:41:15,887 - scraper.logging_config - INFO - Setting departure date to: 28 Sep 2025
+2025-07-20 08:41:16,416 - scraper.logging_config - INFO - Departure date set successfully to: 28 Sep 2025
+2025-07-20 08:41:16,500 - scraper.logging_config - INFO - Passengers set to: 1 Pax
+2025-07-20 08:41:16,546 - scraper.logging_config - INFO - Search button clicked
+2025-07-20 08:41:17,558 - scraper.logging_config - INFO - Successfully redirected to results page
+2025-07-20 08:41:30,112 - scraper.logging_config - INFO - Successfully parsed 0 available trains out of 20 total trains
+2025-07-20 08:41:30,144 - scraper.logging_config - INFO - Scraping process completed successfully
+2025-07-20 08:41:30,157 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,158 - scraper.logging_config - INFO - No notification for Friday, 01 August
+2025-07-20 08:41:30,159 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,160 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,161 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,162 - scraper.logging_config - INFO - No notification for Sunday, 03 August
+2025-07-20 08:41:30,163 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,164 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,165 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,165 - scraper.logging_config - INFO - No notification for Friday, 08 August
+2025-07-20 08:41:30,166 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,167 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,168 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,169 - scraper.logging_config - INFO - No notification for Sunday, 10 August
+2025-07-20 08:41:30,169 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,171 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,173 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,174 - scraper.logging_config - INFO - No notification for Friday, 15 August
+2025-07-20 08:41:30,174 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,175 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,176 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,176 - scraper.logging_config - INFO - No notification for Sunday, 17 August
+2025-07-20 08:41:30,177 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,178 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,179 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,179 - scraper.logging_config - INFO - No notification for Friday, 22 August
+2025-07-20 08:41:30,180 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,180 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,181 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,182 - scraper.logging_config - INFO - No notification for Sunday, 24 August
+2025-07-20 08:41:30,183 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,183 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,184 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,185 - scraper.logging_config - INFO - No notification for Friday, 29 August
+2025-07-20 08:41:30,185 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,186 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,187 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,187 - scraper.logging_config - INFO - No notification for Sunday, 31 August
+2025-07-20 08:41:30,188 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,189 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,189 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,190 - scraper.logging_config - INFO - No notification for Friday, 05 September
+2025-07-20 08:41:30,191 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,192 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,192 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,193 - scraper.logging_config - INFO - No notification for Sunday, 07 September
+2025-07-20 08:41:30,193 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,194 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,195 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,195 - scraper.logging_config - INFO - No notification for Friday, 12 September
+2025-07-20 08:41:30,196 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,196 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,197 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,198 - scraper.logging_config - INFO - No notification for Sunday, 14 September
+2025-07-20 08:41:30,198 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,199 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,200 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,200 - scraper.logging_config - INFO - No notification for Friday, 19 September
+2025-07-20 08:41:30,201 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,202 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,203 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,203 - scraper.logging_config - INFO - No notification for Sunday, 21 September
+2025-07-20 08:41:30,204 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,205 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,205 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,206 - scraper.logging_config - INFO - No notification for Friday, 26 September
+2025-07-20 08:41:30,207 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,207 - scraper.logging_config - INFO - No available trains found
+2025-07-20 08:41:30,208 - notifications - INFO - Skipping notification - no available trains or notification not required
+2025-07-20 08:41:30,208 - scraper.logging_config - INFO - No notification for Sunday, 28 September
+2025-07-20 08:41:30,209 - scraper.logging_config - INFO - Results: 0 trains found
+2025-07-20 08:41:30,210 - scraper.logging_config - INFO - No available trains found

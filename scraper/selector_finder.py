@@ -1,8 +1,11 @@
 """Helper tool to find and test selectors on KTMB website."""
 
 from playwright.sync_api import sync_playwright
-from loguru import logger
+from .logging_config import get_logger
 import time
+
+# Get logger for this module
+logger = get_logger(__name__)
 
 
 class SelectorFinder:
@@ -13,11 +16,14 @@ class SelectorFinder:
     
     def inspect_page(self):
         """Launch browser in non-headless mode to inspect elements."""
+        logger.info("Starting page inspection mode")
+        
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=self.headless)
             page = browser.new_page()
             
             print("🚀 Opening KTMB website for inspection...")
+            logger.info("Navigating to KTMB website")
             page.goto('https://shuttleonline.ktmb.com.my/Home/Shuttle')
             
             print("\n📋 INSPECTION GUIDE:")
@@ -27,11 +33,15 @@ class SelectorFinder:
             print("\n⏳ Browser will stay open for 60 seconds for inspection...")
             
             # Keep browser open for inspection
+            logger.info("Browser will stay open for 60 seconds for inspection")
             time.sleep(60)
             browser.close()
+            logger.info("Page inspection completed")
     
     def test_selectors(self):
         """Test various selector strategies on the KTMB page."""
+        logger.info("Starting selector testing")
+        
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
@@ -39,6 +49,7 @@ class SelectorFinder:
             
             # Wait for page to load
             page.wait_for_load_state('networkidle')
+            logger.info("Page loaded successfully")
             
             print("🔍 Testing common selectors on KTMB page...\n")
             
@@ -72,6 +83,7 @@ class SelectorFinder:
             
             for element_name, selectors in selectors_to_test.items():
                 print(f"🎯 Testing selectors for: {element_name}")
+                logger.debug(f"Testing selectors for: {element_name}")
                 
                 for selector in selectors:
                     try:
@@ -85,6 +97,7 @@ class SelectorFinder:
                         count = elements.count()
                         if count > 0:
                             print(f"  ✅ {selector} → Found {count} element(s)")
+                            logger.debug(f"Selector '{selector}' found {count} element(s)")
                             
                             # Get element details
                             first_element = elements.first
@@ -93,42 +106,53 @@ class SelectorFinder:
                             if tag_name.lower() == 'select':
                                 options = first_element.locator('option').all_inner_texts()
                                 print(f"     Options: {options[:3]}...")  # Show first 3 options
+                                logger.debug(f"Select options: {options[:3]}...")
                             elif tag_name.lower() == 'input':
                                 input_type = first_element.get_attribute('type')
                                 placeholder = first_element.get_attribute('placeholder')
                                 print(f"     Type: {input_type}, Placeholder: {placeholder}")
+                                logger.debug(f"Input type: {input_type}, placeholder: {placeholder}")
                         else:
                             print(f"  ❌ {selector} → Not found")
+                            logger.debug(f"Selector '{selector}' not found")
                             
                     except Exception as e:
                         print(f"  ⚠️  {selector} → Error: {str(e)[:50]}...")
+                        logger.warning(f"Error testing selector '{selector}': {e}")
                 
                 print()
             
             browser.close()
+            logger.info("Selector testing completed")
     
     def extract_page_structure(self):
         """Extract and display the page structure for analysis."""
+        logger.info("Starting page structure analysis")
+        
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             page.goto('https://shuttleonline.ktmb.com.my/Home/Shuttle')
             page.wait_for_load_state('networkidle')
+            logger.info("Page loaded for structure analysis")
             
             print("📄 KTMB Page Structure Analysis\n")
             
             # Extract forms
             forms = page.locator('form').all()
             print(f"🔍 Found {len(forms)} form(s):")
+            logger.info(f"Found {len(forms)} form(s)")
             
             for i, form in enumerate(forms):
                 form_id = form.get_attribute('id')
                 form_action = form.get_attribute('action')
                 print(f"  Form {i+1}: id='{form_id}', action='{form_action}'")
+                logger.debug(f"Form {i+1}: id='{form_id}', action='{form_action}'")
                 
                 # Get form inputs
                 inputs = form.locator('input, select, textarea').all()
                 print(f"    Inputs ({len(inputs)}):")
+                logger.debug(f"Form {i+1} has {len(inputs)} inputs")
                 
                 for input_elem in inputs:
                     tag = input_elem.evaluate("el => el.tagName").lower()
@@ -137,11 +161,13 @@ class SelectorFinder:
                     input_id = input_elem.get_attribute('id')
                     
                     print(f"      <{tag}> name='{name}' type='{input_type}' id='{input_id}'")
+                    logger.debug(f"Input: <{tag}> name='{name}' type='{input_type}' id='{input_id}'")
                 print()
             
             # Extract tables (for results)
             tables = page.locator('table').all()
             print(f"📊 Found {len(tables)} table(s):")
+            logger.info(f"Found {len(tables)} table(s)")
             
             for i, table in enumerate(tables):
                 table_class = table.get_attribute('class')
@@ -149,15 +175,19 @@ class SelectorFinder:
                 headers = table.locator('th').all_inner_texts()
                 
                 print(f"  Table {i+1}: class='{table_class}', id='{table_id}'")
+                logger.debug(f"Table {i+1}: class='{table_class}', id='{table_id}'")
                 if headers:
                     print(f"    Headers: {headers}")
+                    logger.debug(f"Table {i+1} headers: {headers}")
                 print()
             
             browser.close()
+            logger.info("Page structure analysis completed")
 
 
 def main():
     """Interactive selector finder tool."""
+    logger.info("Starting KTMB Selector Finder Tool")
     finder = SelectorFinder()
     
     print("🔧 KTMB Selector Finder Tool")
@@ -173,15 +203,20 @@ def main():
         choice = input("\nEnter choice (1-4): ").strip()
         
         if choice == '1':
+            logger.info("User selected: Manual inspection")
             finder.inspect_page()
         elif choice == '2':
+            logger.info("User selected: Test selectors")
             finder.test_selectors()
         elif choice == '3':
+            logger.info("User selected: Extract page structure")
             finder.extract_page_structure()
         elif choice == '4':
+            logger.info("User selected: Exit")
             print("👋 Goodbye!")
             break
         else:
+            logger.warning(f"Invalid choice entered: {choice}")
             print("❌ Invalid choice. Please try again.")
 
 

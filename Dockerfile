@@ -26,7 +26,7 @@ COPY monitor.py ./
 RUN pip install uv
 
 # Install Python dependencies directly using uv
-RUN uv pip install --system click>=8.0.0 loguru>=0.7.0 playwright>=1.40.0 pydantic>=2.0.0 python-dateutil>=2.8.0 requests>=2.25.0 python-dotenv>=1.0.0
+RUN uv pip install --system click>=8.0.0 playwright>=1.40.0 pydantic>=2.0.0 python-dateutil>=2.8.0 requests>=2.25.0 python-dotenv>=1.0.0
 
 # Create output directory
 RUN mkdir -p output

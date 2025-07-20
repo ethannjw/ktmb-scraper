@@ -1,11 +1,14 @@
 """HTML parsing module for KTMB train data."""
 
 from playwright.sync_api import Page
-from loguru import logger
+from .logging_config import get_logger
 from config import TrainTiming, TimeSlot, TIME_SLOT_RANGES
 from typing import List, Optional
 from datetime import time
 import re
+
+# Get logger for this module
+logger = get_logger(__name__)
 
 
 class TrainDataParser:
