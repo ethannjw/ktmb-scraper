@@ -28,17 +28,10 @@ The KTMB scraper supports the following environment variables:
 docker run --rm \
   -v $(pwd)/output:/app/output \
   ktmb-scraper:latest \
-  python ktmb_search.py --date 2025-01-15 --direction jb_to_sg
+  python -u ktmb_search.py --date 2025-01-15 --direction jb_to_sg
 ```
 
 ### 2. Search with Telegram Notifications
 ```bash
-docker run --rm \
-  -v $(pwd)/output:/app/output \
-  -e NOTIFICATION_TELEGRAM_ENABLED=true \
-  -e NOTIFICATION_TELEGRAM_ENABLED=true \
-  -e NOTIFICATION_TELEGRAM_BOT_TOKEN=7618442659:AAH9L8wlrfpzQgMM2kvh3Yxg1WjeZZ-WNM0 \
-  -e NOTIFICATION_TELEGRAM_CHAT_ID=1025008 \
-  ethannjw/ktmb-scraper:latest \
-  python monitor.py --continous --interval 60
+docker run --rm -v $(pwd)/output:/app/output -e NOTIFICATION_TELEGRAM_ENABLED=true -e NOTIFICATION_TELEGRAM_BOT_TOKEN=<> -e NOTIFICATION_TELEGRAM_CHAT_ID=<> ethannjw/ktmb-scraper:latest python -u monitor.py --continuous --interval 60
 ```
