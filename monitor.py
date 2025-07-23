@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from scraper.main import KTMBShuttleScraper
 from utils.config import ScraperSettings, Direction, TimeSlot
-from notifications import create_notification_sender
+from notifications.notifications import create_notification_sender
 from utils.logging_config import setup_logging, get_logger
 from scraper.healthcheck import run_healthcheck_server
 
