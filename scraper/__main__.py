@@ -1,9 +1,15 @@
+import os
+import threading
 from utils.config import ScraperSettings, Direction, TimeSlot
 from .main import KTMBShuttleScraper
 from utils.logging_config import setup_logging
 from datetime import date
+from .healthcheck import run_healthcheck_server
 
 if __name__ == '__main__':
+    if os.environ.get('HEALTHCHECK') == '1':
+        t = threading.Thread(target=run_healthcheck_server, daemon=True)
+        t.start()
     # Setup logging
     logger = setup_logging()
     

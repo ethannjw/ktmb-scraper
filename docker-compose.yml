@@ -1,7 +1,7 @@
 services:
   ktmb-scraper:
     build: .
-    image: ethannjw/ktmb-scraper
+    image: choco.eclaire.tk:9500/ktmb-scraper
     container_name: ktmb-scraper
     volumes:
       # Mount output directory to persist results
@@ -19,7 +19,9 @@ services:
       - PYTHONUNBUFFERED=1
       # - NOTIFICATION_TELEGRAM_CHAT_ID=1025008 
       # - NOTIFICATION_TELEGRAM_BOT_TOKEN=7618442659:AAH9L8wlrfpzQgMM2kvh3Yxg1WjeZZ-WNM0
-
+      - HEALTHCHECK=1
+    ports:
+      - "8080:8080"
 
     # Example command - override this when running
     # -u is to force python to run in unbuffered mode for immediate log output

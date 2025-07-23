@@ -12,6 +12,7 @@ import argparse
 from datetime import datetime, date, timedelta
 from typing import Optional, List
 from dotenv import load_dotenv
+import threading
 
 # Add the current directory to Python path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -20,6 +21,7 @@ from scraper.main import KTMBShuttleScraper
 from utils.config import ScraperSettings, Direction, TimeSlot
 from notifications import create_notification_sender
 from utils.logging_config import setup_logging, get_logger
+from scraper.healthcheck import run_healthcheck_server
 
 # Setup logging
 logger = setup_logging()
@@ -447,6 +449,11 @@ Examples:
     
     # Load environment variables
     load_dotenv()
+    
+    # Start healthcheck server in a background thread
+    if os.environ.get('HEALTHCHECK') == '1':
+        t = threading.Thread(target=run_healthcheck_server, daemon=True)
+        t.start()
     
     # Create monitor
     monitor = KTMBMonitor(interval_minutes=args.interval)

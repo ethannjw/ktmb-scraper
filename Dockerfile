@@ -34,3 +34,10 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
 
 # Install Playwright browsers
 RUN playwright install --with-deps chromium
+
+# Expose healthcheck port
+EXPOSE 8080
+
+# Add Docker healthcheck
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD curl -f http://localhost:8080/health || exit 1
