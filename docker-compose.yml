@@ -10,14 +10,20 @@ services:
       # Mount environment file if needed
       - ./.env:/app/.env:ro
     user: "1000:1000"
+    env_file:
+      - .env
     environment:
+      # Values can be set in .env; defaults apply if unset
       # Set to false to see browser UI (for debugging)
       - PLAYWRIGHT_HEADLESS=true
       # Increase timeout for slow connections
       - PLAYWRIGHT_TIMEOUT=60000
       # Force Python to run in unbuffered mode for immediate log output
-      - PYTHONUNBUFFERED=1
-      - HEALTHCHECK=1
+      - PYTHONUNBUFFERED=${PYTHONUNBUFFERED:-1}
+      - HEALTHCHECK=${HEALTHCHECK:-1}
+      - NOTIFICATION_TELEGRAM_CHAT_ID=${NOTIFICATION_TELEGRAM_CHAT_ID}
+      - NOTIFICATION_TELEGRAM_BOT_TOKEN=${NOTIFICATION_TELEGRAM_BOT_TOKEN}
+      - HEALTHCHECKS_IO_URL=${HEALTHCHECKS_IO_URL}
     ports:
       - "8080:8080"
 
