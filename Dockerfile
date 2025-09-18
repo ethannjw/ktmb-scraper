@@ -17,7 +17,6 @@ RUN apt-get update && apt-get install -y \
 COPY pyproject.toml uv.lock ./
 COPY scraper/ ./scraper/
 COPY utils/ ./utils/
-COPY notifications.py ./
 COPY monitor.py ./
 
 # Install uv for dependency management

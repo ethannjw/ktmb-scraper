@@ -91,15 +91,57 @@ class KTMBShuttleScraper:
 
     def run(self) -> Dict[str, Any]:
         logger.debug("Starting KTMB Shuttle scraping process")
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
+        max_retries = 3
+        retry_delay = 5  # seconds
+        
 
+        for attempt in range(max_retries):
             try:
-                # Navigate to the KTMB Shuttle page
+                return self._run_with_retry(attempt, max_retries)
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    logger.error(f"All {max_retries} attempts failed. Final error: {e}")
+                    return {"error": str(e), "success": False}
+                else:
+                    logger.warning(f"Attempt {attempt + 1} failed: {e}. Retrying in {retry_delay} seconds...")
+                    time_module.sleep(retry_delay)
+                    retry_delay *= 2  # Exponential backoff
+
+    def _run_with_retry(self, attempt: int, max_retries: int) -> Dict[str, Any]:
+        """Run the scraper with retry logic"""
+        logger.debug(f"Starting scraping attempt {attempt + 1}/{max_retries}")
+        
+        try:
+            with sync_playwright() as p:
+                # Launch browser with additional options for stability
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        '--no-sandbox',
+                        '--disable-dev-shm-usage',
+                        '--disable-gpu',
+                        '--disable-web-security',
+                        '--disable-features=VizDisplayCompositor',
+                        '--memory-pressure-off',
+                        '--max_old_space_size=4096'
+                    ]
+                )
+                
+                # Create new context with increased timeout
+                context = browser.new_context(
+                    viewport={'width': 1920, 'height': 1080},
+                    user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                )
+                page = context.new_page()
+                
+                # Set longer timeouts
+                page.set_default_timeout(60000)  # 60 seconds
+                page.set_default_navigation_timeout(60000)  # 60 seconds
+
+                # Navigate to the KTMB Shuttle page with retry logic
                 logger.debug("Navigating to KTMB Shuttle page")
-                page.goto("https://shuttleonline.ktmb.com.my/Home/Shuttle")
-                page.wait_for_load_state("networkidle")
+                self._navigate_with_retry(page, "https://shuttleonline.ktmb.com.my/Home/Shuttle")
+                page.wait_for_load_state("networkidle", timeout=30000)
 
                 # Handle direction selection
                 self._select_direction(page)
@@ -119,14 +161,28 @@ class KTMBShuttleScraper:
 
                 # Parse results
                 results = self._parse_results(page)
-                browser.close()
                 logger.info("Scraping process completed successfully")
                 return results
 
+        except Exception as e:
+            logger.error(f"Scraping process failed: {e}", exc_info=True)
+            raise e  # Re-raise to trigger retry logic
+
+    def _navigate_with_retry(self, page, url: str, max_retries: int = 3) -> None:
+        """Navigate to URL with retry logic for timeout issues"""
+        for attempt in range(max_retries):
+            try:
+                logger.debug(f"Navigation attempt {attempt + 1}/{max_retries} to {url}")
+                page.goto(url, wait_until="load", timeout=60000)
+                logger.debug("Navigation successful")
+                return
             except Exception as e:
-                browser.close()
-                logger.error(f"Scraping process failed: {e}", exc_info=True)
-                return {"error": str(e), "success": False}
+                if attempt == max_retries - 1:
+                    logger.error(f"All navigation attempts failed: {e}")
+                    raise e
+                else:
+                    logger.warning(f"Navigation attempt {attempt + 1} failed: {e}. Retrying...")
+                    time_module.sleep(2)  # Short delay before retry
 
     def _select_direction(self, page):
         """Handle direction selection using JavaScript"""

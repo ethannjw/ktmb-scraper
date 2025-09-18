@@ -246,7 +246,7 @@ class NotificationSender:
             return False
 
     def send_notification(self, result: Dict[str, Any], search_settings: Any) -> bool:
-        """Send Telegram notification when trains are available, and ping healthchecks.io if configured"""
+        """Send Telegram notification when trains are available"""
         should_notify = self.should_send_notification(result)
         telegram_sent = False
         if should_notify and self.config.telegram_enabled:
@@ -258,9 +258,7 @@ class NotificationSender:
                 logger.warning("Failed to send Telegram notification")
         else:
             logger.info("Skipping Telegram notification (not required or disabled)")
-        # Always ping healthchecks.io if configured
-        hc_success = result.get("success", False)
-        HealthCheckPinger.send_healthchecks_ping(self.config.healthchecks_io_url, success=hc_success)
+
         return telegram_sent
 
 

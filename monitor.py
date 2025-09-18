@@ -39,14 +39,22 @@ class KTMBMonitor:
         self.running = True
         self.notification_sender = create_notification_sender()
 
-        # Set up signal handlers for graceful shutdown
-        signal.signal(signal.SIGINT, self._signal_handler)
+        # Set up signal handlers for graceful shutdown (only SIGTERM)
         signal.signal(signal.SIGTERM, self._signal_handler)
 
     def _signal_handler(self, signum, frame):
         """Handle shutdown signals gracefully"""
         logger.info(f"Received signal {signum}, shutting down gracefully...")
         self.running = False
+        
+        # If we get a second signal, force exit
+        if hasattr(self, '_shutdown_requested'):
+            logger.warning("Force shutdown requested, exiting immediately...")
+            import sys
+            sys.exit(1)
+        else:
+            self._shutdown_requested = True
+
 
     def search_specific_date(
         self,
@@ -319,7 +327,7 @@ class KTMBMonitor:
         else:
             logger.error(f"Search failed: {result.get('error', 'Unknown error')}")
 
-    def run_continuous_monitoring(self, search_type: str, **kwargs) -> None:
+    def run_continuous_monitoring(self, search_type: str, healthcheck_pinger=None, **kwargs) -> None:
         """Run continuous monitoring with specified interval"""
         logger.info("Starting continuous monitoring...")
         logger.info(f"Interval: {self.interval_minutes} minutes")
@@ -334,6 +342,14 @@ class KTMBMonitor:
                 logger.info(
                     f"Iteration {iteration} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                 )
+
+                # Send healthcheck ping at the start of each iteration
+                if healthcheck_pinger:
+                    if healthcheck_pinger.ping():
+                        logger.debug("Healthcheck ping sent successfully")
+                    else:
+                        logger.warning("Failed to send healthcheck ping")
+
                 self.run_single_search(search_type, **kwargs)
 
                 if not self.running:
@@ -358,9 +374,26 @@ class KTMBMonitor:
                 logger.info("Monitoring stopped by user")
                 break
             except Exception as e:
+                # Check if this is a user interruption
+                if "Interrupted by user" in str(e):
+                    logger.info("Monitoring interrupted by user")
+                    break
+                
+                # Send error healthcheck ping if encountering any error
+                if healthcheck_pinger:
+                    if healthcheck_pinger.ping_fail():
+                        logger.debug("Error healthcheck ping sent successfully")
+                    else:
+                        logger.warning("Failed to send error healthcheck ping")
+                
                 logger.error(f"Error during monitoring: {e}")
                 logger.info("Waiting 5 minutes before retrying...")
-                time.sleep(300)
+                
+                # Sleep in smaller intervals to allow for graceful shutdown
+                for _ in range(300):  # 5 minutes = 300 seconds
+                    if not self.running:
+                        break
+                    time.sleep(1)
 
         logger.info("Monitoring stopped")
 
@@ -531,18 +564,12 @@ Examples:
         t = threading.Thread(target=run_healthcheck_server, daemon=True)
         t.start()
 
-    # Start periodic healthchecks.io ping using HealthCheckPinger if configured
+    # Initialize healthchecks.io pinger if configured
     healthchecks_url = os.getenv("HEALTHCHECKS_IO_URL")
     healthcheck_pinger = None
     if healthchecks_url:
-        healthcheck_pinger = HealthCheckPinger(
-            healthchecks_url, ping_interval_sec=300
-        )  # 5 minutes
-        if healthcheck_pinger.start():
-            logger.info("HealthCheckPinger started successfully")
-        else:
-            logger.error("Failed to start HealthCheckPinger")
-            healthcheck_pinger = None
+        healthcheck_pinger = HealthCheckPinger(healthchecks_url)
+        logger.info("HealthCheckPinger initialized for on-demand pings")
     else:
         logger.info("HEALTHCHECKS_IO_URL not set, HealthCheckPinger not configured")
 
@@ -588,17 +615,13 @@ Examples:
             search_type = "next_two_months"
             kwargs = {"time_slots": time_slots}
 
-    try:
-        # Run monitoring
-        if args.continuous:
-            monitor.run_continuous_monitoring(search_type, **kwargs)
-        else:
-            monitor.run_single_search(search_type, **kwargs)
-    finally:
-        # Cleanup healthcheck pinger
-        if healthcheck_pinger:
-            healthcheck_pinger.stop()
-            logger.info("HealthCheckPinger stopped")
+
+    # Run monitoring
+    if args.continuous:
+        monitor.run_continuous_monitoring(search_type, healthcheck_pinger=healthcheck_pinger, **kwargs)
+    else:
+        monitor.run_single_search(search_type, **kwargs)
+
 
 
 if __name__ == "__main__":
