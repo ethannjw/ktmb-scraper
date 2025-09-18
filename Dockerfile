@@ -18,6 +18,8 @@ COPY pyproject.toml uv.lock ./
 COPY scraper/ ./scraper/
 COPY utils/ ./utils/
 COPY monitor.py ./
+COPY notifications/ ./notifications/
+
 
 # Install uv for dependency management
 RUN pip install uv
