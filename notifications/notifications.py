@@ -122,10 +122,13 @@ class NotificationSender:
         direction_name = DIRECTION_MAPPING.get(
             search_settings.direction, str(search_settings.direction)
         )
-        date_str = search_settings.depart_date.strftime("%A, %d %B %Y")
-
+        depart_date_str = search_settings.depart_date.strftime("%A, %d %B %Y")
+        return_date_str = None
         # Check if this is a round-trip search
         is_round_trip = bool(search_settings.return_date)
+
+        if is_round_trip:
+            return_date_str = search_settings.return_date.strftime("%A, %d %B %Y")
 
         if result.get("success", False):
             available_trains = result.get("available_trains", [])
@@ -142,25 +145,25 @@ class NotificationSender:
 
             if is_round_trip:
                 if has_available_outbound and has_available_return:
-                    subject = f"🚂 KTMB Round-Trip Available - {date_str}"
+                    subject = f"🚂 KTMB Round-Trip Available - {depart_date_str}"
                 elif has_available_outbound:
-                    subject = f"🚂 KTMB Outbound Available - {date_str}"
+                    subject = f"🚂 KTMB Outbound Available - {depart_date_str}"
                 elif has_available_return:
-                    subject = f"🚂 KTMB Return Available - {date_str}"
+                    subject = f"🚂 KTMB Return Available - {return_date_str}"
                 else:
-                    subject = f"⚠️ KTMB Round-Trip Search Complete - {date_str}"
+                    subject = f"⚠️ KTMB Round-Trip Search Complete - {depart_date_str}"
             else:
                 if has_available_outbound:
-                    subject = f"🚂 KTMB Trains Available - {date_str}"
+                    subject = f"🚂 KTMB Trains Available - {depart_date_str}"
                 else:
-                    subject = f"⚠️ KTMB Search Complete - {date_str}"
+                    subject = f"⚠️ KTMB Search Complete - {depart_date_str}"
         else:
-            subject = f"❌ KTMB Search Failed - {date_str}"
+            subject = f"❌ KTMB Search Failed - {depart_date_str}"
 
         # Create message body
         body_lines = [
             f"**KTMB Shuttle Search Results**",
-            f"**Date:** {date_str}",
+            f"**Date:** {depart_date_str}",
         ]
 
         if is_round_trip:
@@ -168,7 +171,7 @@ class NotificationSender:
             body_lines.extend(
                 [
                     f"**Type:** Round-Trip",
-                    f"**Outbound:** {date_str}",
+                    f"**Outbound:** {depart_date_str}",
                     f"**Return:** {return_date_str}",
                 ]
             )

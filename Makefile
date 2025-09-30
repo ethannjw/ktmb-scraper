@@ -40,5 +40,5 @@ search-date:
 	python monitor.py --date $(DATE) --direction $(DIRECTION)
 
 weekend: 
-	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH) time slot $(TIMESLOT)"
-	python monitor.py --weekends --year $(YEAR) --month $(MONTH) --time-slots $(TIMESLOT)
+	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH)"
+	python monitor.py --weekends --year $(YEAR) --month $(MONTH)
