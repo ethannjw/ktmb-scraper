@@ -7,8 +7,6 @@ services:
       # Mount output directory to persist results
       - ./output:/app/output
       - ./logs:/app/logs
-      # Mount environment file if needed
-      - ./.env:/app/.env:ro
 
     env_file:
       - .env
