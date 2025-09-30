@@ -1,7 +1,7 @@
 services:
   ktmb-scraper:
     build: .
-    image: choco.eclaire.tk:9500/ktmb-scraper
+    image: ${REGISTRY_HOST:-ethannjw}/ktmb-scraper
     container_name: ktmb-scraper
     volumes:
       # Mount output directory to persist results
