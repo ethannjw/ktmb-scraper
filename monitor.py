@@ -13,6 +13,7 @@ import time
 import signal
 import argparse
 from datetime import datetime, date, timedelta
+from dateutil.relativedelta import relativedelta
 from typing import Optional, List
 from dotenv import load_dotenv
 import threading
@@ -150,28 +151,22 @@ class KTMBMonitor:
 
         return results
 
-    def search_next_two_months_weekends(
+    def search_next_3_months_weekends(
         self, time_slots: Optional[List[TimeSlot]] = None
     ) -> List[tuple]:
-        """Search for weekend trains in the next 2 months"""
+        """Search for weekend trains in the next 3 months"""
         results = []
         current_date = datetime.now().date()
 
-        # Get next 2 months (starting from next month)
-        for i in range(1, 3):  # Start from 1 to skip current month
-            # Calculate next month properly
-            if current_date.month == 12:
-                year = current_date.year + 1
-                month = 1
-            else:
-                year = current_date.year
-                month = current_date.month + i
+        for i in range(1, 4):
+            next_month_date = current_date + relativedelta(months=+i)
 
+            next_month_date.year
             logger.info(
-                f"Searching weekends in {date(year, month, 1).strftime('%B %Y')}"
+                f"Searching weekends in {date(next_month_date.year, next_month_date.month, 1).strftime('%B %Y')}"
             )
             month_results = self.search_weekends(
-                year, month, Direction.SG_TO_JB, time_slots
+                next_month_date.year, next_month_date.month, Direction.SG_TO_JB, time_slots
             )
             results.extend(month_results)
 
@@ -249,12 +244,12 @@ class KTMBMonitor:
 
                 self._display_results(result)
 
-        elif search_type == "next_two_months":
+        elif search_type == "next_3_months":
             time_slots = kwargs.get("time_slots")
 
-            logger.info("Searching weekends for the next 2 months")
+            logger.info("Searching weekends for the next 3 months")
 
-            results = self.search_next_two_months_weekends(time_slots)
+            results = self.search_next_3_months_weekends(time_slots)
 
             # Send notifications for each result
             for result, settings in results:
@@ -414,7 +409,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Default: Search weekends for next 2 months (evening trains)
+  # Default: Search weekends for next 3 months (evening trains)
   python monitor.py
 
   # Single search for specific date (default: evening trains)
@@ -435,7 +430,7 @@ Examples:
   # Round-trip search with specific time slots
   python monitor.py --round-trip --depart-date 2025-08-15 --return-date 2025-08-17 --time-slots morning evening
 
-  # Continuous monitoring for next 2 months every 30 minutes
+  # Continuous monitoring for next 3 months every 30 minutes
   python monitor.py --continuous --interval 30
 
   # Continuous monitoring for specific date every 30 minutes
@@ -550,7 +545,7 @@ Examples:
         # Default to next two months weekends
         args.weekends = True
         logger.info(
-            "No specific search type provided, defaulting to weekends for next 2 months"
+            "No specific search type provided, defaulting to weekends for next 3 months"
         )
 
     if args.interval < 1:
@@ -612,7 +607,7 @@ Examples:
             }
         else:
             # Next two months weekends (default)
-            search_type = "next_two_months"
+            search_type = "next_3_months"
             kwargs = {"time_slots": time_slots}
 
 

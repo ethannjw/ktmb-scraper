@@ -1,6 +1,5 @@
 import unittest
 import time
-import threading
 from unittest.mock import patch, MagicMock
 import sys
 import os
@@ -34,7 +33,7 @@ class TestHealthCheckPinger(unittest.TestCase):
         pinger = HealthCheckPinger(self.test_url, self.short_interval)
 
         self.assertEqual(pinger.url, self.test_url)
-        self.assertEqual(pinger.ping_interval_sec, self.short_interval)
+        self.assertEqual(pinger.ping_interval, self.short_interval)
         self.assertFalse(pinger.is_running())
 
     @patch("notifications.healthchecks.requests.get")
@@ -76,6 +75,41 @@ class TestHealthCheckPinger(unittest.TestCase):
 
         # Should be stopped after context exit
         self.assertFalse(pinger.is_running())
+
+    @patch("notifications.healthchecks.requests.get")
+    def test_healthcheck_pinger_failure_ping(self, mock_get):
+        """Test sending failure pings"""
+        # Mock successful response
+        mock_response = MagicMock()
+        mock_response.raise_for_status.return_value = None
+        mock_get.return_value = mock_response
+
+        pinger = HealthCheckPinger(self.test_url, self.short_interval)
+
+        # Send failure ping
+        result = pinger.send_failure_ping()
+        self.assertTrue(result)
+
+        # Verify failure URL was called
+        expected_failure_url = f"{self.test_url}/fail"
+        mock_get.assert_called_with(expected_failure_url, timeout=10)
+
+    @patch("notifications.healthchecks.requests.get")
+    def test_healthcheck_pinger_no_url(self, mock_get):
+        """Test pinger behavior with no URL"""
+        pinger = HealthCheckPinger("", self.short_interval)
+
+        # Should not start without URL
+        result = pinger.start()
+        self.assertFalse(result)
+        self.assertFalse(pinger.is_running())
+
+        # Should not send pings without URL
+        result = pinger.send_failure_ping()
+        self.assertFalse(result)
+
+        # No HTTP requests should be made
+        mock_get.assert_not_called()
 
     @patch("notifications.healthchecks.requests.get")
     def test_healthcheck_pinger_double_start(self, mock_get):
@@ -148,12 +182,18 @@ class TestHealthCheckPinger(unittest.TestCase):
             mock_get.return_value = mock_response
 
             # Test success ping
-            result = HealthCheckPinger.send_healthchecks_ping(self.test_url)
+            result = HealthCheckPinger.send_healthchecks_ping(self.test_url, success=True)
             self.assertTrue(result)
             mock_get.assert_called_with(self.test_url, timeout=10)
 
+            # Test failure ping
+            result = HealthCheckPinger.send_healthchecks_ping(self.test_url, success=False)
+            self.assertTrue(result)
+            expected_failure_url = f"{self.test_url}/fail"
+            mock_get.assert_called_with(expected_failure_url, timeout=10)
+
             # Test with empty URL
-            result = HealthCheckPinger.send_healthchecks_ping("")
+            result = HealthCheckPinger.send_healthchecks_ping("", success=True)
             self.assertFalse(result)
 
 
