@@ -42,3 +42,7 @@ search-date:
 weekend: 
 	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH)"
 	python monitor.py --weekends --year $(YEAR) --month $(MONTH)
+
+weekend-min-seats:
+	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH) with minimum $(MIN_SEATS) seats"
+	python monitor.py --weekends --year $(YEAR) --month $(MONTH) --min-available-seats $(MIN_SEATS)
