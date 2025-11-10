@@ -68,4 +68,7 @@ echo "[5/5] Deploying on remote host with docker compose..."
 ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" \
   "cd '${REMOTE_DIR}' && docker compose -f '${REMOTE_COMPOSE_PATH}' pull && docker compose -f '${REMOTE_COMPOSE_PATH}' up -d --remove-orphans"
 
+echo "Cleaning up unused Docker images on remote host..."
+ssh -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" "docker image prune -af"
+
 echo "✅ Deployment triggered on ${SSH_USER}@${SSH_HOST}."
