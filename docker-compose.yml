@@ -27,7 +27,7 @@ services:
 
     # Example command - override this when running
     # -u is to force python to run in unbuffered mode for immediate log output
-    command: ["python", "-u", "monitor.py", "--continuous", "--interval", "60"]
+    command: ["python", "-u", "monitor.py", "--continuous", "--interval", "60", "--min-available-seats", "2"]
     # Restart policy for monitoring scenarios
     restart: "unless-stopped"
     # Resource limits

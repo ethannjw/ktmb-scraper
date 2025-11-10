@@ -62,6 +62,7 @@ class KTMBMonitor:
         search_date: date,
         direction: Direction,
         time_slots: Optional[List[TimeSlot]] = None,
+        min_available_seats: int = 1,
     ) -> tuple[dict, ScraperSettings]:
         """Search for trains on a specific date"""
         if time_slots is None:
@@ -71,7 +72,7 @@ class KTMBMonitor:
             direction=direction,
             depart_date=search_date,
             num_adults=1,
-            min_available_seats=1,
+            min_available_seats=min_available_seats,
             desired_time_slots=time_slots,
         )
 
@@ -145,7 +146,7 @@ class KTMBMonitor:
                     else:
                         # If Sunday is in next month, just search Friday one-way
                         result, settings = self.search_specific_date(
-                            friday_date, Direction.SG_TO_JB, time_slots
+                            friday_date, Direction.SG_TO_JB, time_slots, min_available_seats
                         )
                         results.append((result, settings))
 
