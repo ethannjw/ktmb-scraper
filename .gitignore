@@ -10,4 +10,4 @@ output/*
 logs/**
 **/output/**
 **/screenshots/**
-**/screenshots/**
+**/cache/**
