@@ -7,6 +7,7 @@ services:
       # Mount output directory to persist results
       - ./output:/app/output
       - ./logs:/app/logs
+      - ./cache:/app/cache
 
     env_file:
       - .env
@@ -22,12 +23,14 @@ services:
       - NOTIFICATION_TELEGRAM_CHAT_ID=${NOTIFICATION_TELEGRAM_CHAT_ID}
       - NOTIFICATION_TELEGRAM_BOT_TOKEN=${NOTIFICATION_TELEGRAM_BOT_TOKEN}
       - HEALTHCHECKS_IO_URL=${HEALTHCHECKS_IO_URL}
+      - NOTIFICATION_CACHE_ENABLED=${NOTIFICATION_CACHE_ENABLED:-true}
+      - NOTIFICATION_CACHE_EXPIRY_HOURS=${NOTIFICATION_CACHE_EXPIRY_HOURS:-24}
     ports:
       - "8080:8080"
 
     # Example command - override this when running
     # -u is to force python to run in unbuffered mode for immediate log output
-    command: ["python", "-u", "monitor.py", "--continuous", "--interval", "60", "--min-available-seats", "2"]
+    command: [ "python", "-u", "monitor.py", "--continuous", "--interval", "60", "--min-available-seats", "2" ]
     # Restart policy for monitoring scenarios
     restart: "unless-stopped"
     # Resource limits

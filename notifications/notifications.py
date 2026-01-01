@@ -11,6 +11,7 @@ from datetime import datetime
 import logging
 from utils.config import TrainTiming, ScrapingResult, Direction, DIRECTION_MAPPING
 from notifications.healthchecks import HealthCheckPinger
+from utils.notification_cache import NotificationCache
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -35,6 +36,11 @@ class NotificationConfig:
 
         # Healthchecks.io configuration
         self.healthchecks_io_url = os.getenv("HEALTHCHECKS_IO_URL")
+        
+        # Cache configuration
+        self.cache_enabled = os.getenv("NOTIFICATION_CACHE_ENABLED", "true").lower() == "true"
+        self.cache_file_path = os.getenv("NOTIFICATION_CACHE_FILE", "./cache/notification_cache.json")
+        self.cache_expiry_hours = float(os.getenv("NOTIFICATION_CACHE_EXPIRY_HOURS", "24"))
 
     def validate(self) -> List[str]:
         """Validate configuration and return list of errors"""
@@ -61,6 +67,17 @@ class NotificationSender:
         self.errors = config.validate()
         if self.errors:
             logger.warning(f"Notification configuration errors: {self.errors}")
+        
+        # Initialize notification cache
+        if config.cache_enabled:
+            self.cache = NotificationCache(
+                cache_file_path=config.cache_file_path,
+                expiry_hours=config.cache_expiry_hours
+            )
+            logger.info(f"Notification cache enabled (expiry: {config.cache_expiry_hours}h)")
+        else:
+            self.cache = None
+            logger.info("Notification cache disabled")
 
     def should_send_notification(self, result: Dict[str, Any]) -> bool:
         """Determine if notification should be sent based on results"""
@@ -251,16 +268,31 @@ class NotificationSender:
     def send_notification(self, result: Dict[str, Any], search_settings: Any) -> bool:
         """Send Telegram notification when trains are available"""
         should_notify = self.should_send_notification(result)
+        
+        if not should_notify:
+            logger.debug("Skipping notification (not required)")
+            return False
+        
+        # Check cache before sending
+        if self.cache and not self.cache.should_send_notification(result, search_settings):
+            logger.info("Skipping notification (already notified - cache hit)")
+            return False
+        
         telegram_sent = False
-        if should_notify and self.config.telegram_enabled:
+        if self.config.telegram_enabled:
             content = self.create_notification_content(result, search_settings)
             telegram_sent = self.send_telegram_notification(content)
             if telegram_sent:
                 logger.info("Telegram notification sent successfully")
+                
+                # Add to cache after successful send
+                if self.cache:
+                    self.cache.add_to_cache(result, search_settings)
+                    self.cache.cleanup_expired()
             else:
                 logger.warning("Failed to send Telegram notification")
         else:
-            logger.info("Skipping Telegram notification (not required or disabled)")
+            logger.info("Skipping Telegram notification (disabled)")
 
         return telegram_sent
 
