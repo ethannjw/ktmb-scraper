@@ -3,6 +3,9 @@ set -euo pipefail
 
 # Script to SSH into another server and deploy
 
+# Requirements:
+# - SSH key installed in key
+
 # 1. Build the Docker image
 # 2. tag the image with the latest version
 # 3. Push the Docker image to the registry docker.io/ethannjw/ktmb-scraper

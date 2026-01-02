@@ -46,3 +46,8 @@ weekend:
 weekend-min-seats:
 	@echo "🏖️ Searching weekends in year $(YEAR) month $(MONTH) with minimum $(MIN_SEATS) seats"
 	python monitor.py --weekends --year $(YEAR) --month $(MONTH) --min-available-seats $(MIN_SEATS)
+
+# Deploy to remote machine
+deploy: ## Deploy the Docker image to remote machine
+	@echo "Deploying KTMB scraper Docker image to remote machine..."
+	./deploy.sh
