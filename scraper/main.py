@@ -111,6 +111,10 @@ class KTMBShuttleScraper:
         """Run the scraper with retry logic"""
         logger.debug(f"Starting scraping attempt {attempt + 1}/{max_retries}")
         
+        browser = None
+        context = None
+        page = None
+        
         try:
             with sync_playwright() as p:
                 # Launch browser with additional options for stability
@@ -167,6 +171,30 @@ class KTMBShuttleScraper:
         except Exception as e:
             logger.error(f"Scraping process failed: {e}", exc_info=True)
             raise e  # Re-raise to trigger retry logic
+        
+        finally:
+            # Always cleanup browser resources in reverse order of creation
+            # This prevents memory leaks in both success and failure cases
+            try:
+                if page:
+                    page.close()
+                    logger.debug("Page closed successfully")
+            except Exception as e:
+                logger.warning(f"Error closing page: {e}")
+            
+            try:
+                if context:
+                    context.close()
+                    logger.debug("Context closed successfully")
+            except Exception as e:
+                logger.warning(f"Error closing context: {e}")
+            
+            try:
+                if browser:
+                    browser.close()
+                    logger.debug("Browser closed successfully")
+            except Exception as e:
+                logger.warning(f"Error closing browser: {e}")
 
     def _navigate_with_retry(self, page, url: str, max_retries: int = 3) -> None:
         """Navigate to URL with retry logic for timeout issues"""
