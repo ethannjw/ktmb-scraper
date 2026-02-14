@@ -66,6 +66,7 @@ class ScraperSettings(BaseModel):
     num_children: int = Field(default=0, ge=0, le=9)
     desired_time_slots: List[TimeSlot] = Field(default_factory=lambda: list(TimeSlot))
     min_available_seats: int = Field(default=1, ge=1)
+    max_available_seats: Optional[int] = Field(default=100, ge=1) 
 
     @validator("return_date")
     def validate_return_date(cls, v, values):

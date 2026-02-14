@@ -63,6 +63,7 @@ class KTMBMonitor:
         direction: Direction,
         time_slots: Optional[List[TimeSlot]] = None,
         min_available_seats: int = 1,
+        max_available_seats: Optional[int] = None,
     ) -> tuple[dict, ScraperSettings]:
         """Search for trains on a specific date"""
         if time_slots is None:
@@ -73,6 +74,7 @@ class KTMBMonitor:
             depart_date=search_date,
             num_adults=1,
             min_available_seats=min_available_seats,
+            max_available_seats=max_available_seats,
             desired_time_slots=time_slots,
         )
 
@@ -91,6 +93,7 @@ class KTMBMonitor:
         sunday_date: date,
         time_slots: Optional[List[TimeSlot]] = None,
         min_available_seats: int = 1,
+        max_available_seats: Optional[int] = None,
     ) -> tuple[dict, ScraperSettings]:
         """Search for round-trip weekend trains (Friday SG->JB, Sunday JB->SG) in a single scrape"""
         if time_slots is None:
@@ -102,6 +105,7 @@ class KTMBMonitor:
             return_date=sunday_date,  # Add return date for round-trip search
             num_adults=1,
             min_available_seats=min_available_seats,
+            max_available_seats=max_available_seats,
             desired_time_slots=time_slots,
         )
 
@@ -122,6 +126,7 @@ class KTMBMonitor:
         direction: Direction,
         time_slots: Optional[List[TimeSlot]] = None,
         min_available_seats: int = 1,
+        max_available_seats: Optional[int] = None,
     ) -> List[tuple]:
         """Search for weekend trains in a month using round-trip searches for efficiency"""
         results = []
@@ -140,13 +145,13 @@ class KTMBMonitor:
                     # Only search if Sunday is also in the same month
                     if sunday_date.month == month:
                         result, settings = self.search_weekend_round_trip(
-                            friday_date, sunday_date, time_slots, min_available_seats
+                            friday_date, sunday_date, time_slots, min_available_seats, max_available_seats
                         )
                         results.append((result, settings))
                     else:
                         # If Sunday is in next month, just search Friday one-way
                         result, settings = self.search_specific_date(
-                            friday_date, Direction.SG_TO_JB, time_slots, min_available_seats
+                            friday_date, Direction.SG_TO_JB, time_slots, min_available_seats, max_available_seats
                         )
                         results.append((result, settings))
 
@@ -155,7 +160,7 @@ class KTMBMonitor:
         return results
 
     def search_next_3_months_weekends(
-        self, time_slots: Optional[List[TimeSlot]] = None, min_available_seats: int = 1
+        self, time_slots: Optional[List[TimeSlot]] = None, min_available_seats: int = 1, max_available_seats: Optional[int] = None
     ) -> List[tuple]:
         """Search for weekend trains in the next 3 months"""
         results = []
@@ -169,7 +174,7 @@ class KTMBMonitor:
                 f"Searching weekends in {date(next_month_date.year, next_month_date.month, 1).strftime('%B %Y')}"
             )
             month_results = self.search_weekends(
-                next_month_date.year, next_month_date.month, Direction.SG_TO_JB, time_slots, min_available_seats
+                next_month_date.year, next_month_date.month, Direction.SG_TO_JB, time_slots, min_available_seats, max_available_seats
             )
             results.extend(month_results)
 
@@ -188,7 +193,7 @@ class KTMBMonitor:
             time_slots = kwargs.get("time_slots")
             min_available_seats = kwargs.get("min_available_seats", 1)
             result, settings = self.search_specific_date(
-                search_date, direction, time_slots, min_available_seats
+                search_date, direction, time_slots, min_available_seats, kwargs.get("max_available_seats")
             )
 
             # Send notification
@@ -211,7 +216,7 @@ class KTMBMonitor:
             )
 
             result, settings = self.search_weekend_round_trip(
-                depart_date, return_date, time_slots, min_available_seats
+                depart_date, return_date, time_slots, min_available_seats, kwargs.get("max_available_seats")
             )
 
             # Send notification
@@ -235,7 +240,7 @@ class KTMBMonitor:
             )
             logger.info(f"Direction: {direction.value}")
 
-            results = self.search_weekends(year, month, direction, time_slots, min_available_seats)
+            results = self.search_weekends(year, month, direction, time_slots, min_available_seats, kwargs.get("max_available_seats"))
 
             # Send notifications for each result
             for result, settings in results:
@@ -255,7 +260,7 @@ class KTMBMonitor:
             min_available_seats = kwargs.get("min_available_seats", 1)
             logger.info("Searching weekends for the next 3 months")
 
-            results = self.search_next_3_months_weekends(time_slots, min_available_seats)
+            results = self.search_next_3_months_weekends(time_slots, min_available_seats, kwargs.get("max_available_seats"))
 
             # Send notifications for each result
             for result, settings in results:
@@ -529,6 +534,13 @@ Examples:
         help="Minimum number of available seats to search for (default: 1)",
     )
     parser.add_argument(
+        "--max-available-seats",
+        "-xs",
+        type=int,
+        default=100,
+        help="Maximum number of available seats to search for - filters out non-popular periods (default: 100)",
+    )
+    parser.add_argument(
         "--interval",
         "-i",
         type=int,
@@ -597,13 +609,14 @@ Examples:
             "return_date": args.return_date,
             "time_slots": time_slots,
             "min_available_seats": args.min_available_seats,
+            "max_available_seats": args.max_available_seats,
         }
     elif args.date:
         search_type = "specific_date"
         direction = (
             Direction.JB_TO_SG if args.direction == "jb-to-sg" else Direction.SG_TO_JB
         )
-        kwargs = {"date": args.date, "direction": direction, "time_slots": time_slots, "min_available_seats": args.min_available_seats}
+        kwargs = {"date": args.date, "direction": direction, "time_slots": time_slots, "min_available_seats": args.min_available_seats, "max_available_seats": args.max_available_seats}
     elif args.weekends:
         if args.year is not None and args.month is not None:
             # Specific month weekends
@@ -619,11 +632,12 @@ Examples:
                 "direction": direction,
                 "time_slots": time_slots,
                 "min_available_seats": args.min_available_seats,
+                "max_available_seats": args.max_available_seats,
             }
         else:
             # Next two months weekends (default)
             search_type = "next_3_months"
-            kwargs = {"time_slots": time_slots, "min_available_seats": args.min_available_seats}
+            kwargs = {"time_slots": time_slots, "min_available_seats": args.min_available_seats, "max_available_seats": args.max_available_seats}
 
 
     # Run monitoring

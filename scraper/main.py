@@ -111,90 +111,92 @@ class KTMBShuttleScraper:
         """Run the scraper with retry logic"""
         logger.debug(f"Starting scraping attempt {attempt + 1}/{max_retries}")
         
-        browser = None
-        context = None
-        page = None
-        
         try:
             with sync_playwright() as p:
-                # Launch browser with additional options for stability
-                browser = p.chromium.launch(
-                    headless=True,
-                    args=[
-                        '--no-sandbox',
-                        '--disable-dev-shm-usage',
-                        '--disable-gpu',
-                        '--disable-web-security',
-                        '--disable-features=VizDisplayCompositor',
-                        '--memory-pressure-off',
-                        '--max_old_space_size=4096'
-                    ]
-                )
+                browser = None
+                context = None
+                page = None
                 
-                # Create new context with increased timeout
-                context = browser.new_context(
-                    viewport={'width': 1920, 'height': 1080},
-                    user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-                )
-                page = context.new_page()
-                
-                # Set longer timeouts
-                page.set_default_timeout(60000)  # 60 seconds
-                page.set_default_navigation_timeout(60000)  # 60 seconds
+                try:
+                    # Launch browser with additional options for stability
+                    browser = p.chromium.launch(
+                        headless=True,
+                        args=[
+                            '--no-sandbox',
+                            '--disable-dev-shm-usage',
+                            '--disable-gpu',
+                            '--disable-web-security',
+                            '--disable-features=VizDisplayCompositor',
+                            '--memory-pressure-off',
+                            '--max_old_space_size=4096'
+                        ]
+                    )
+                    
+                    # Create new context with increased timeout
+                    context = browser.new_context(
+                        viewport={'width': 1920, 'height': 1080},
+                        user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                    )
+                    page = context.new_page()
+                    
+                    # Set longer timeouts
+                    page.set_default_timeout(60000)  # 60 seconds
+                    page.set_default_navigation_timeout(60000)  # 60 seconds
 
-                # Navigate to the KTMB Shuttle page with retry logic
-                logger.debug("Navigating to KTMB Shuttle page")
-                self._navigate_with_retry(page, "https://shuttleonline.ktmb.com.my/Home/Shuttle")
-                page.wait_for_load_state("networkidle", timeout=30000)
+                    # Navigate to the KTMB Shuttle page with retry logic
+                    logger.debug("Navigating to KTMB Shuttle page")
+                    self._navigate_with_retry(page, "https://shuttleonline.ktmb.com.my/Home/Shuttle")
+                    page.wait_for_load_state("networkidle", timeout=30000)
 
-                # Handle direction selection
-                self._select_direction(page)
+                    # Handle direction selection
+                    self._select_direction(page)
 
-                # Handle date selection
-                self._select_departure_date(page)
+                    # Handle date selection
+                    self._select_departure_date(page)
 
-                # Handle return date if specified
-                if self.settings.return_date:
-                    self._select_return_date(page)
+                    # Handle return date if specified
+                    if self.settings.return_date:
+                        self._select_return_date(page)
 
-                # Select number of passengers
-                self._select_passengers(page)
+                    # Select number of passengers
+                    self._select_passengers(page)
 
-                # Perform search
-                self._perform_search(page)
+                    # Perform search
+                    self._perform_search(page)
 
-                # Parse results
-                results = self._parse_results(page)
-                logger.info("Scraping process completed successfully")
-                return results
+                    # Parse results
+                    results = self._parse_results(page)
+                    logger.info("Scraping process completed successfully")
+                    return results
+
+                finally:
+                    # Always cleanup browser resources in reverse order of creation
+                    # MUST be inside the 'with' block so event loop is still active
+                    try:
+                        if page:
+                            page.close()
+                            logger.debug("Page closed successfully")
+                    except Exception as e:
+                        logger.warning(f"Error closing page: {e}")
+                    
+                    try:
+                        if context:
+                            context.close()
+                            logger.debug("Context closed successfully")
+                    except Exception as e:
+                        logger.warning(f"Error closing context: {e}")
+                    
+                    try:
+                        if browser:
+                            browser.close()
+                            logger.debug("Browser closed successfully")
+                    except Exception as e:
+                        logger.warning(f"Error closing browser: {e}")
 
         except Exception as e:
             logger.error(f"Scraping process failed: {e}", exc_info=True)
             raise e  # Re-raise to trigger retry logic
-        
-        finally:
-            # Always cleanup browser resources in reverse order of creation
-            # This prevents memory leaks in both success and failure cases
-            try:
-                if page:
-                    page.close()
-                    logger.debug("Page closed successfully")
-            except Exception as e:
-                logger.warning(f"Error closing page: {e}")
-            
-            try:
-                if context:
-                    context.close()
-                    logger.debug("Context closed successfully")
-            except Exception as e:
-                logger.warning(f"Error closing context: {e}")
-            
-            try:
-                if browser:
-                    browser.close()
-                    logger.debug("Browser closed successfully")
-            except Exception as e:
-                logger.warning(f"Error closing browser: {e}")
+
 
     def _navigate_with_retry(self, page, url: str, max_retries: int = 3) -> None:
         """Navigate to URL with retry logic for timeout issues"""
@@ -540,7 +542,11 @@ class KTMBShuttleScraper:
                 )
 
                 # Check if this train meets our criteria
-                if available_seats >= self.settings.min_available_seats:
+                seats_in_range = available_seats >= self.settings.min_available_seats
+                if self.settings.max_available_seats is not None:
+                    seats_in_range = seats_in_range and available_seats <= self.settings.max_available_seats
+                
+                if seats_in_range:
                     # Check if train is in desired time slots
                     if self._is_train_in_desired_time_slots(departure_time):
                         train_info = {
@@ -555,9 +561,14 @@ class KTMBShuttleScraper:
                     else:
                         logger.debug(f"Train {train_number} not in desired time slots")
                 else:
-                    logger.debug(
-                        f"Train {train_number} has insufficient seats ({available_seats} < {self.settings.min_available_seats})"
-                    )
+                    if available_seats < self.settings.min_available_seats:
+                        logger.debug(
+                            f"Train {train_number} has insufficient seats ({available_seats} < {self.settings.min_available_seats})"
+                        )
+                    elif self.settings.max_available_seats is not None and available_seats > self.settings.max_available_seats:
+                        logger.debug(
+                            f"Train {train_number} has too many seats ({available_seats} > {self.settings.max_available_seats}), indicating non-popular period"
+                        )
 
             except (ValueError, IndexError) as e:
                 # Skip rows that can't be parsed
@@ -870,7 +881,7 @@ class KTMBShuttleScraper:
         filtered = []
 
         logger.debug(
-            f"Filtering {len(trains)} trains with criteria: min_seats={self.settings.min_available_seats}, time_slots={[ts.value for ts in self.settings.desired_time_slots]}"
+            f"Filtering {len(trains)} trains with criteria: min_seats={self.settings.min_available_seats}, max_seats={self.settings.max_available_seats}, time_slots={[ts.value for ts in self.settings.desired_time_slots]}"
         )
 
         for train in trains:
@@ -883,9 +894,13 @@ class KTMBShuttleScraper:
             )
 
             # Check if this train meets our criteria
-            if available_seats >= self.settings.min_available_seats:
+            seats_in_range = available_seats >= self.settings.min_available_seats
+            if self.settings.max_available_seats is not None:
+                seats_in_range = seats_in_range and available_seats <= self.settings.max_available_seats
+            
+            if seats_in_range:
                 logger.debug(
-                    f"  Train {train_number} has sufficient seats ({available_seats} >= {self.settings.min_available_seats})"
+                    f"  Train {train_number} has seats in range ({self.settings.min_available_seats} <= {available_seats} <= {self.settings.max_available_seats or 'unlimited'})"
                 )
                 # Check if train is in desired time slots
                 if self._is_train_in_desired_time_slots(departure_time):
@@ -894,9 +909,14 @@ class KTMBShuttleScraper:
                 else:
                     logger.debug(f"  ✗ Train {train_number} not in desired time slots")
             else:
-                logger.debug(
-                    f"  ✗ Train {train_number} has insufficient seats ({available_seats} < {self.settings.min_available_seats})"
-                )
+                if available_seats < self.settings.min_available_seats:
+                    logger.debug(
+                        f"  ✗ Train {train_number} has insufficient seats ({available_seats} < {self.settings.min_available_seats})"
+                    )
+                elif self.settings.max_available_seats is not None and available_seats > self.settings.max_available_seats:
+                    logger.debug(
+                        f"  ✗ Train {train_number} has too many seats ({available_seats} > {self.settings.max_available_seats}), indicating non-popular period"
+                    )
 
         logger.debug(f"Filtered result: {len(filtered)} trains out of {len(trains)}")
         return filtered
