@@ -27,6 +27,7 @@ from notifications.notifications import create_notification_sender
 from utils.logging_config import setup_logging, get_logger
 from scraper.healthcheck import run_healthcheck_server
 from notifications.healthchecks import HealthCheckPinger
+from utils.holidays import get_holidays, get_travel_dates_for_week, get_years_for_month
 
 # Setup logging
 logger = setup_logging()
@@ -128,32 +129,30 @@ class KTMBMonitor:
         min_available_seats: int = 1,
         max_available_seats: Optional[int] = None,
     ) -> List[tuple]:
-        """Search for weekend trains in a month using round-trip searches for efficiency"""
+        """Search for weekend trains in a month using holiday-aware travel dates"""
         results = []
         today = date.today()
 
-        # Get all Fridays and Sundays in the month
+        # Load holidays for the relevant year(s)
+        holiday_years = get_years_for_month(year, month)
+        holiday_set = get_holidays(holiday_years)
+
+        # Find all Fridays in the month
         current_date = date(year, month, 1)
         while current_date.month == month:
-            # Only search for future dates
-            if current_date >= today:
-                if current_date.weekday() == 4:  # Friday
-                    # Search for round-trip: Friday (SG->JB) and Sunday (JB->SG)
-                    friday_date = current_date
-                    sunday_date = current_date + timedelta(days=2)
+            if current_date.weekday() == 4:  # Friday
+                # Get holiday-aware travel date pairs for this weekend
+                travel_pairs = get_travel_dates_for_week(current_date, holiday_set)
 
-                    # Only search if Sunday is also in the same month
-                    if sunday_date.month == month:
-                        result, settings = self.search_weekend_round_trip(
-                            friday_date, sunday_date, time_slots, min_available_seats, max_available_seats
-                        )
-                        results.append((result, settings))
-                    else:
-                        # If Sunday is in next month, just search Friday one-way
-                        result, settings = self.search_specific_date(
-                            friday_date, Direction.SG_TO_JB, time_slots, min_available_seats, max_available_seats
-                        )
-                        results.append((result, settings))
+                for outbound_date, return_date in travel_pairs:
+                    # Only search for future dates
+                    if outbound_date < today:
+                        continue
+
+                    result, settings = self.search_weekend_round_trip(
+                        outbound_date, return_date, time_slots, min_available_seats, max_available_seats
+                    )
+                    results.append((result, settings))
 
             current_date += timedelta(days=1)
 
@@ -635,7 +634,7 @@ Examples:
                 "max_available_seats": args.max_available_seats,
             }
         else:
-            # Next two months weekends (default)
+            # Next 3 months weekends (default)
             search_type = "next_3_months"
             kwargs = {"time_slots": time_slots, "min_available_seats": args.min_available_seats, "max_available_seats": args.max_available_seats}
 

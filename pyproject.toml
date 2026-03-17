@@ -10,6 +10,7 @@ dependencies = [
     "python-dateutil>=2.8.0",
     "requests>=2.25.0",
     "python-dotenv>=1.0.0",
+    "holidays>=0.65",
 ]
 
 [project.optional-dependencies]
