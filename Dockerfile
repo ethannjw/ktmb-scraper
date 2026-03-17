@@ -1,5 +1,5 @@
-# Use Python 3.11 slim image as base
-FROM python:3.11-slim
+# Use Python 3.11 slim image as base (pinned to Bookworm for Playwright compatibility)
+FROM python:3.11-slim-bookworm
 
 # Set working directory
 WORKDIR /app
@@ -25,14 +25,15 @@ COPY notifications/ ./notifications/
 # Install uv for dependency management
 RUN pip install uv
 
-# Install Python dependencies directly using uv
-RUN uv pip install --system click>=8.0.0 playwright>=1.40.0 pydantic>=2.0.0 python-dateutil>=2.8.0 requests>=2.25.0 python-dotenv>=1.0.0
+# Install Python dependencies from lockfile
+RUN uv sync --frozen --no-dev --no-editable
 
 RUN mkdir -p output logs
 
 # Set environment variables
 ENV PYTHONPATH=/app
 ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+ENV PATH="/app/.venv/bin:$PATH"
 
 # Install Playwright browsers
 RUN playwright install --with-deps chromium
