@@ -8,6 +8,7 @@ from utils.config import (
     TIME_SLOT_RANGES,
 )
 from typing import Dict, Any, List
+import os
 import time as time_module
 from datetime import datetime, time as datetime_time
 from utils.logging_config import setup_logging, LoggingConfig, get_logger
@@ -119,9 +120,9 @@ class KTMBShuttleScraper:
                 
                 try:
                     # Launch browser with additional options for stability
-                    browser = p.chromium.launch(
-                        headless=True,
-                        args=[
+                    launch_kwargs = {
+                        "headless": True,
+                        "args": [
                             '--no-sandbox',
                             '--disable-dev-shm-usage',
                             '--disable-gpu',
@@ -129,9 +130,13 @@ class KTMBShuttleScraper:
                             '--disable-features=VizDisplayCompositor',
                             '--memory-pressure-off',
                             '--max_old_space_size=4096'
-                        ]
-                    )
-                    
+                        ],
+                    }
+                    executable_path = os.getenv("PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH")
+                    if executable_path:
+                        launch_kwargs["executable_path"] = executable_path
+                    browser = p.chromium.launch(**launch_kwargs)
+
                     # Create new context with increased timeout
                     context = browser.new_context(
                         viewport={'width': 1920, 'height': 1080},

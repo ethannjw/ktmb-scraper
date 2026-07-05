@@ -33,6 +33,9 @@ class NotificationConfig:
         self.only_notify_on_availability = (
             os.getenv("NOTIFICATION_ONLY_AVAILABLE", "true").lower() == "true"
         )
+        self.stdout_enabled = (
+            os.getenv("NOTIFICATION_STDOUT_ENABLED", "false").lower() == "true"
+        )
 
         # Healthchecks.io configuration
         self.healthchecks_io_url = os.getenv("HEALTHCHECKS_IO_URL")
@@ -265,8 +268,18 @@ class NotificationSender:
             logger.error(f"Failed to send Telegram notification: {e}")
             return False
 
+    def send_stdout_notification(self, content: Dict[str, str]) -> bool:
+        """Print notification content for script/cron integrations."""
+        if not self.config.stdout_enabled:
+            return False
+
+        message = f"*{content['subject']}*\n\n{content['body']}"
+        print(message)
+        logger.info("Stdout notification emitted successfully")
+        return True
+
     def send_notification(self, result: Dict[str, Any], search_settings: Any) -> bool:
-        """Send Telegram notification when trains are available"""
+        """Send configured notifications when trains are available"""
         should_notify = self.should_send_notification(result)
         
         if not should_notify:
@@ -278,23 +291,27 @@ class NotificationSender:
             logger.info("Skipping notification (already notified - cache hit)")
             return False
         
+        content = self.create_notification_content(result, search_settings)
         telegram_sent = False
+        stdout_sent = False
         if self.config.telegram_enabled:
-            content = self.create_notification_content(result, search_settings)
             telegram_sent = self.send_telegram_notification(content)
             if telegram_sent:
                 logger.info("Telegram notification sent successfully")
-                
-                # Add to cache after successful send
-                if self.cache:
-                    self.cache.add_to_cache(result, search_settings)
-                    self.cache.cleanup_expired()
             else:
                 logger.warning("Failed to send Telegram notification")
         else:
             logger.info("Skipping Telegram notification (disabled)")
 
-        return telegram_sent
+        if self.config.stdout_enabled:
+            stdout_sent = self.send_stdout_notification(content)
+
+        notification_sent = telegram_sent or stdout_sent
+        if notification_sent and self.cache:
+            self.cache.add_to_cache(result, search_settings)
+            self.cache.cleanup_expired()
+
+        return notification_sent
 
 
 def create_notification_sender() -> NotificationSender:

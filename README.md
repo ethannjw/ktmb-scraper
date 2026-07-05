@@ -67,6 +67,38 @@ settings = ScraperSettings(
 uv run python test_scraper.py
 ```
 
+## Hermes Cron / No-Agent Weekend Alerts
+
+Hermes can use the existing `monitor.py` one-shot weekend search directly. Set `NOTIFICATION_STDOUT_ENABLED=true` so the existing notification adapter prints the same Markdown notification format to stdout. When no trains meet the threshold, stdout stays empty, which is suitable for Hermes `no_agent=true` cron jobs.
+
+Example:
+
+```bash
+PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser \
+NOTIFICATION_STDOUT_ENABLED=true \
+NOTIFICATION_TELEGRAM_ENABLED=false \
+NOTIFICATION_MIN_SEATS=2 \
+uv run python monitor.py --time-slots evening --min-available-seats 2
+```
+
+Useful environment variables:
+
+| Variable | Default | Purpose |
+|---|---:|---|
+| `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` | unset | Use a system Chromium when Playwright browser downloads are unavailable |
+| `NOTIFICATION_STDOUT_ENABLED` | `false` | Print notification-adapter-formatted Markdown to stdout |
+| `NOTIFICATION_MIN_SEATS` | `1` | Minimum seats required to alert |
+| `NOTIFICATION_CACHE_EXPIRY_HOURS` | `24` | Suppress duplicate alerts for this many hours |
+
+Hermes cron example:
+
+```text
+schedule: every 1h
+script: ktmb_weekend_watch.sh  # wrapper can call monitor.py with the env above
+no_agent: true
+deliver: origin
+```
+
 ## Configuration
 
 ### ScraperSettings Options
