@@ -1,10 +1,12 @@
 """Browser automation module for KTMB scraper."""
 
+import os
+import time
+from typing import Optional
+
 from playwright.sync_api import sync_playwright, Page, Browser
 from utils.logging_config import get_logger
 from utils.config import BROWSER_CONFIG, KTMB_CONFIG
-from typing import Optional
-import time
 
 # Get logger for this module
 logger = get_logger(__name__)
@@ -32,9 +34,14 @@ class BrowserManager:
         """Initialize browser and page."""
         try:
             self.playwright = sync_playwright().start()
-            self.browser = self.playwright.chromium.launch(
-                headless=self.headless, args=["--no-sandbox", "--disable-dev-shm-usage"]
-            )
+            launch_kwargs = {
+                "headless": self.headless,
+                "args": ["--no-sandbox", "--disable-dev-shm-usage"],
+            }
+            executable_path = os.getenv("PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH")
+            if executable_path:
+                launch_kwargs["executable_path"] = executable_path
+            self.browser = self.playwright.chromium.launch(**launch_kwargs)
 
             self.page = self.browser.new_page(
                 viewport=BROWSER_CONFIG["viewport"],
