@@ -13,6 +13,18 @@ import time as time_module
 from datetime import datetime, time as datetime_time
 from utils.logging_config import setup_logging, LoggingConfig, get_logger
 
+
+def _env_int(name: str, default: int) -> int:
+    try:
+        return int(os.getenv(name, str(default)))
+    except ValueError:
+        return default
+
+
+PAGE_TIMEOUT_MS = _env_int("KTMB_PAGE_TIMEOUT_MS", 15000)
+NAV_TIMEOUT_MS = _env_int("KTMB_NAV_TIMEOUT_MS", 30000)
+SHORT_TIMEOUT_MS = _env_int("KTMB_SHORT_TIMEOUT_MS", 3000)
+
 # Initialize logger with default configuration
 logger = setup_logging()
 
@@ -144,14 +156,14 @@ class KTMBShuttleScraper:
                     )
                     page = context.new_page()
                     
-                    # Set longer timeouts
-                    page.set_default_timeout(60000)  # 60 seconds
-                    page.set_default_navigation_timeout(60000)  # 60 seconds
+                    # Bound waits so a broken KTMB page cannot stall broad scans.
+                    page.set_default_timeout(PAGE_TIMEOUT_MS)
+                    page.set_default_navigation_timeout(NAV_TIMEOUT_MS)
 
                     # Navigate to the KTMB Shuttle page with retry logic
                     logger.debug("Navigating to KTMB Shuttle page")
                     self._navigate_with_retry(page, "https://shuttleonline.ktmb.com.my/Home/Shuttle")
-                    page.wait_for_load_state("networkidle", timeout=30000)
+                    page.wait_for_load_state("networkidle", timeout=SHORT_TIMEOUT_MS)
 
                     # Handle direction selection
                     self._select_direction(page)
@@ -208,7 +220,7 @@ class KTMBShuttleScraper:
         for attempt in range(max_retries):
             try:
                 logger.debug(f"Navigation attempt {attempt + 1}/{max_retries} to {url}")
-                page.goto(url, wait_until="load", timeout=60000)
+                page.goto(url, wait_until="load", timeout=NAV_TIMEOUT_MS)
                 logger.debug("Navigation successful")
                 return
             except Exception as e:
@@ -372,7 +384,7 @@ class KTMBShuttleScraper:
                 # Check for validation error - use a more specific selector
                 try:
                     error_element = page.locator("#OnwardDate-error")
-                    if error_element.is_visible():
+                    if error_element.is_visible(timeout=1000):
                         error_text = error_element.inner_text()
                         logger.error(f"Found validation error: {error_text}")
                         if "Please select departing date" in error_text:
@@ -388,7 +400,7 @@ class KTMBShuttleScraper:
                     error_messages = page.locator(".alert, .error, .validation-error")
                     error_count = error_messages.count()
                     for i in range(error_count):
-                        error_text = error_messages.nth(i).inner_text()
+                        error_text = error_messages.nth(i).inner_text(timeout=1000)
                         logger.error(f"Found error message: {error_text}")
                 except:
                     pass
@@ -396,8 +408,14 @@ class KTMBShuttleScraper:
                 # Take a screenshot for debugging
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 screenshot_path = f"output/debug_screenshot_{timestamp}.png"
-                page.screenshot(path=screenshot_path)
-                logger.debug(f"Screenshot saved as {screenshot_path}")
+                try:
+                    page.screenshot(path=screenshot_path, timeout=SHORT_TIMEOUT_MS)
+                    logger.debug(f"Screenshot saved as {screenshot_path}")
+                except Exception as screenshot_error:
+                    logger.warning(
+                        "Skipping debug screenshot after timeout/crash: "
+                        f"{screenshot_error}"
+                    )
 
                 # Wait a bit more for results
                 page.wait_for_timeout(3000)
@@ -461,10 +479,15 @@ class KTMBShuttleScraper:
             # Take a screenshot to see what's on the page
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             results_screenshot_path = f"output/results_page_screenshot_{timestamp}.png"
-            page.screenshot(path=results_screenshot_path)
-            logger.warning(
-                f"No results table found, screenshot saved as {results_screenshot_path}"
-            )
+            try:
+                page.screenshot(path=results_screenshot_path, timeout=SHORT_TIMEOUT_MS)
+                logger.warning(
+                    f"No results table found, screenshot saved as {results_screenshot_path}"
+                )
+            except Exception as screenshot_error:
+                logger.warning(
+                    f"No results table found and screenshot failed: {screenshot_error}"
+                )
 
             # Check if there's a "no results" message
             no_results_selectors = [
@@ -476,7 +499,7 @@ class KTMBShuttleScraper:
 
             for no_result_selector in no_results_selectors:
                 try:
-                    if page.locator(no_result_selector).is_visible():
+                    if page.locator(no_result_selector).is_visible(timeout=1000):
                         logger.info("No trains available for the selected criteria")
                         return {
                             "success": True,
@@ -615,7 +638,22 @@ class KTMBShuttleScraper:
         return_trains = []
 
         # First, let's see what's actually on the page
-        page_text = page.inner_text("body").lower()
+        try:
+            page_text = page.locator("body").inner_text(
+                timeout=SHORT_TIMEOUT_MS
+            ).lower()
+        except Exception as e:
+            logger.warning(
+                "Could not read result page body quickly; "
+                f"treating this date as failed/no-result: {e}"
+            )
+            return {
+                "success": False,
+                "error": f"Could not read result page body: {e}",
+                "available_trains": [],
+                "return_trains": [],
+                "total_available": 0,
+            }
         logger.debug(f"Page contains text: {page_text[:500]}...")  # First 500 chars
 
         # Look for section headers that might indicate outbound vs return
